@@ -21,6 +21,7 @@ const DisplayWrapper = styled.div`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor200
       : theme.darkMode.blackColor200};
+  transition: all 0.5s ease-in-out;
 `;
 
 const MainContent = styled.div`
@@ -28,4 +29,5 @@ const MainContent = styled.div`
     theme.currentTheme === "light"
       ? theme.globalColors.whiteColor
       : theme.darkMode.blackColor100};
+  transition: all 0.5s ease-in-out;
 `;

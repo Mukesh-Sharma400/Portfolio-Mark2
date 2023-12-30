@@ -1,7 +1,7 @@
+import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { themeFn, uiState } from "../redux/uiSlice";
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
 
 export default function ThemeSwitch() {
   const { theme } = useSelector(uiState);
@@ -13,6 +13,15 @@ export default function ThemeSwitch() {
     setIsDarkMode(theme === "dark");
   }, [theme]);
 
+  useEffect(() => {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
+      return new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }, []);
+
   const handleToggle = () => {
     const newTheme = isDarkMode ? "light" : "dark";
     dispatch(themeFn(newTheme));
@@ -22,11 +31,17 @@ export default function ThemeSwitch() {
 
   return (
     <div className="d-flex align-items-center justify-content-center">
-      <ToggleLabel htmlFor="switch">
+      <ToggleLabel
+        className="shadow"
+        htmlFor="switch"
+        data-bs-toggle="tooltip"
+        data-bs-title="Switch Theme"
+        data-bs-custom-class="custom-tooltip"
+      >
         <StyledSwitch
           id="switch"
           type="checkbox"
-          checked={isDarkMode}
+          checked={!isDarkMode}
           onChange={handleToggle}
         />
         <MoonIcon>
@@ -38,9 +53,9 @@ export default function ThemeSwitch() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
+              clipRule="evenodd"
               d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             ></path>
           </svg>
         </MoonIcon>
@@ -61,35 +76,40 @@ export default function ThemeSwitch() {
 }
 
 const ToggleLabel = styled.label`
-  background-color: #fff;
+  background-color: white;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   cursor: pointer;
-  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
   line-height: 1;
+  transition: all 0.5s ease-in-out;
 `;
 
 const ToggleInput = styled.input`
   display: none;
+  transition: all 0.5s ease-in-out;
 `;
 
 const Icon = styled.div`
   grid-column: 1 / 1;
   grid-row: 1 / 1;
+  transition: all 0.5s ease-in-out;
 `;
 
 const MoonIcon = styled(Icon)`
   transition-delay: 200ms;
+  transition: all 0.5s ease-in-out;
 `;
 
 const SunIcon = styled(Icon)`
   transform: scale(0);
+  transition: all 0.5s ease-in-out;
 `;
 
 const StyledSwitch = styled(ToggleInput)`
+  transition: all 0.5s ease-in-out;
   &:checked + ${MoonIcon} {
     transform: rotate(360deg) scale(0);
   }

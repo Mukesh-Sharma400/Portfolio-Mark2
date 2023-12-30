@@ -1,15 +1,26 @@
+"use client";
+
+import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 
-export const metadata = {
-  title: "Education | Mukesh Sharma",
-};
-
 export default function Education() {
+  const { theme } = useSelector(uiState);
+
   return (
     <BaseLayout>
       <div>
-        <h1>Education</h1>
+        <Heading>Education</Heading>
       </div>
     </BaseLayout>
   );
 }
+
+const Heading = styled.h1`
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
