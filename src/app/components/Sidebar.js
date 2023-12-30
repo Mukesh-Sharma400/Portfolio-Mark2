@@ -22,8 +22,8 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <DisplayWrapper className="d-flex flex-column align-items-center justify-content-between text-center px-4 py-5">
-      <div className="d-flex flex-column align-items-center gap-1 w-100">
+    <DisplayWrapper>
+      <PicNameWrapper className="gap-1">
         <Image
           className="rounded-3"
           src={profilePic}
@@ -35,58 +35,58 @@ export default function Sidebar() {
           <MyName>Mukesh Sharma</MyName>
           <MyDesc>MERN STACK DEVELOPER</MyDesc>
         </div>
-      </div>
-      <div className="d-flex align-items-center justify-content-between w-100">
-        <Link
-          className="bi bi-github fs-5 text-secondary"
+      </PicNameWrapper>
+      <SocialLinksWrapper>
+        <SocialLink
+          className="bi bi-github"
           href="https://github.com/Mukesh-Sharma400"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="GitHub"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-        <Link
-          className="bi bi-linkedin fs-5 text-secondary"
+        ></SocialLink>
+        <SocialLink
+          className="bi bi-linkedin"
           href="https://www.linkedin.com/in/mukesh-sharma-dev"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="LinkedIn"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-        <Link
-          className="bi bi-twitter-x fs-5 text-secondary"
+        ></SocialLink>
+        <SocialLink
+          className="bi bi-twitter-x"
           href="https://twitter.com/mukesh_sharma36"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="Twitter / X"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-        <Link
-          className="bi bi-facebook fs-5 text-secondary"
+        ></SocialLink>
+        <SocialLink
+          className="bi bi-facebook"
           href="https://www.facebook.com/Mukesh400f"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="Facebook"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-        <Link
-          className="bi bi-instagram fs-5 text-secondary"
+        ></SocialLink>
+        <SocialLink
+          className="bi bi-instagram"
           href="https://www.instagram.com/mukesh_sharma400"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="Instagram"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-        <Link
-          className="bi bi-threads fs-5 text-secondary"
+        ></SocialLink>
+        <SocialLink
+          className="bi bi-threads"
           href="https://www.threads.net/mukesh_sharma400"
           target="_blank"
           data-bs-toggle="tooltip"
           data-bs-title="Threads"
           data-bs-custom-class="custom-tooltip"
-        ></Link>
-      </div>
-      <div className="d-flex flex-column gap-1 w-100">
+        ></SocialLink>
+      </SocialLinksWrapper>
+      <RoutesWrapper className="gap-1">
         <Route
           className={`px-2 py-1 rounded-3 w-100 ${
             pathname === "/" ? "active" : ""
@@ -135,16 +135,36 @@ export default function Sidebar() {
         >
           Contact
         </Route>
-      </div>
-      <div>
-        <ThemeSwitch />
-      </div>
+      </RoutesWrapper>
+      <ThemeSwitch />
     </DisplayWrapper>
   );
 }
 
 const DisplayWrapper = styled.div`
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    width: 25%;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const PicNameWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -166,6 +186,41 @@ const MyDesc = styled.p`
   transition: all 0.5s ease-in-out;
 `;
 
+const SocialLinksWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+`;
+
+const SocialLink = styled(Link)`
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 50%;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor201
+      : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
+`;
+
+const RoutesWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+`;
+
 const Route = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) =>
@@ -176,35 +231,35 @@ const Route = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &.active {
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor201
         : theme.darkMode.blackColor201};
+  }
+
+  &:focus {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor150
         : theme.globalColors.whiteColor};
-  }
-
-  &:focus {
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor201
         : theme.darkMode.blackColor201} !important;
+  }
+
+  &:hover {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor150
         : theme.globalColors.whiteColor};
-  }
-
-  &:hover {
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor202
         : theme.darkMode.blackColor202};
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
   }
 `;
