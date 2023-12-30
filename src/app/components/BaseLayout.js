@@ -1,7 +1,7 @@
 "use client";
 
-import styled from "styled-components";
 import Sidebar from "./Sidebar";
+import styled from "styled-components";
 
 export default function BaseLayout({ children }) {
   return (

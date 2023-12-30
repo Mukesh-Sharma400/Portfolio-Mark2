@@ -1,6 +1,6 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { uiReducer } from "./uiSlice";
 import { persistReducer } from "redux-persist";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
 const createNoopStorage = () => {
@@ -16,6 +16,7 @@ const createNoopStorage = () => {
     },
   };
 };
+
 const storage =
   typeof window !== "undefined"
     ? createWebStorage("local")

@@ -1,30 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
-
-import profilePic from "../../../public/assets/profile-picture-red.png";
+import Image from "next/image";
 import styled from "styled-components";
+import ThemeSwitch from "./ThemeSwitch";
+import { useSelector } from "react-redux";
+import { uiState } from "../redux/uiSlice";
 import { usePathname } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
-import { themeFn, uiState } from "../redux/uiSlice";
-import { useEffect, useState } from "react";
+import profilePic from "../../../public/assets/profile-picture-blue.png";
 
 export default function Sidebar() {
   const pathname = usePathname();
   const { theme } = useSelector(uiState);
-  const dispatch = useDispatch();
-  const [isDarkMode, setIsDarkMode] = useState(theme === "dark" ? false : true);
-
-  useEffect(() => {
-    setIsDarkMode(theme === "dark" ? true : false);
-  }, [theme]);
-
-  const handleToggle = () => {
-    setIsDarkMode((prev) => {
-      const newTheme = !prev ? "dark" : "light";
-      dispatch(themeFn(newTheme));
-      return !prev;
-    });
-  };
 
   return (
     <DisplayWrapper className="d-flex flex-column align-items-center justify-content-between text-center px-4 py-5">
@@ -98,7 +83,7 @@ export default function Sidebar() {
         </Route>
       </div>
       <div>
-        <button onClick={() => handleToggle(!isDarkMode)}>Change Theme</button>
+        <ThemeSwitch />
       </div>
     </DisplayWrapper>
   );

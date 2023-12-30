@@ -1,9 +1,9 @@
 "use client";
 
-import { ThemeProvider } from "styled-components";
-import { darkMode, lightMode, globalColors } from "../theme";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
+import { ThemeProvider } from "styled-components";
+import { darkMode, lightMode, globalColors } from "../theme";
 
 export default function Theme({ children }) {
   const { theme } = useSelector(uiState);

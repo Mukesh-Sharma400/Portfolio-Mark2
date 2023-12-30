@@ -3,9 +3,10 @@
 import { store } from "./redux";
 import { Provider } from "react-redux";
 import Theme from "./components/Theme";
+import { persistStore } from "redux-persist";
 import StyledComponentsRegistry from "./registry";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
+
 export const persistor = persistStore(store);
 
 export function Providers({ children }) {
