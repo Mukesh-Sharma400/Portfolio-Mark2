@@ -116,6 +116,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="GitHub"
             data-bs-custom-class="custom-tooltip"
+            aria-label="GitHub"
           ></SocialLink>
           <SocialLink
             className="bi bi-linkedin"
@@ -124,6 +125,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="LinkedIn"
             data-bs-custom-class="custom-tooltip"
+            aria-label="LinkedIn"
           ></SocialLink>
           <SocialLink
             className="bi bi-twitter-x"
@@ -132,6 +134,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="Twitter / X"
             data-bs-custom-class="custom-tooltip"
+            aria-label="Twitter / X"
           ></SocialLink>
           <SocialLink
             className="bi bi-facebook"
@@ -140,6 +143,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="Facebook"
             data-bs-custom-class="custom-tooltip"
+            aria-label="Facebook"
           ></SocialLink>
           <SocialLink
             className="bi bi-instagram"
@@ -148,6 +152,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="Instagram"
             data-bs-custom-class="custom-tooltip"
+            aria-label="Instagram"
           ></SocialLink>
           <SocialLink
             className="bi bi-threads"
@@ -156,6 +161,7 @@ export default function Header() {
             data-bs-toggle="tooltip"
             data-bs-title="Threads"
             data-bs-custom-class="custom-tooltip"
+            aria-label="Threads"
           ></SocialLink>
         </SocialLinksWrapper>
       </ContentWrapper>
