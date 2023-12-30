@@ -6,7 +6,23 @@ import Head from "next/head";
 import { Providers } from "./providers";
 
 export const metadata = {
-  title: "Mukesh Sharma | MERN STACK DEVELOPER",
+  title: "Mukesh Sharma - Experienced MERN Stack Developer",
+  description:
+    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
+  keywords:
+    "MERN stack, web development, MongoDB, Express.js, React, Node.js, full-stack developer",
+  author: "Mukesh Sharma",
+  image: "../../public/assets/profile-picture-blue.png",
+  url: "https://mukesh-sharma.vercel.app",
+  type: "website",
+  ogTitle: "Mukesh Sharma - MERN Stack Developer",
+  ogDescription:
+    "Experienced MERN stack developer specializing in creating robust and scalable web applications.",
+  ogImage: "../../public/assets/profile-picture-blue.png",
+  twitterTitle: "Mukesh Sharma - MERN Stack Developer",
+  twitterDescription:
+    "Experienced MERN stack developer specializing in creating robust and scalable web applications.",
+  twitterImage: "../../public/assets/profile-picture-blue.png",
 };
 
 export default function Layout({ children }) {
