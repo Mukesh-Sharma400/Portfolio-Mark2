@@ -6,7 +6,7 @@ import Head from "next/head";
 import { Providers } from "./providers";
 
 export const metadata = {
-  title: "Mukesh Sharma - Experienced MERN Stack Developer",
+  title: "Mukesh Sharma - MERN Stack Developer",
   description:
     "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   keywords:
@@ -17,11 +17,11 @@ export const metadata = {
   type: "website",
   ogTitle: "Mukesh Sharma - MERN Stack Developer",
   ogDescription:
-    "Experienced MERN stack developer specializing in creating robust and scalable web applications.",
+    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   ogImage: "../../public/assets/profile-picture-blue.png",
   twitterTitle: "Mukesh Sharma - MERN Stack Developer",
   twitterDescription:
-    "Experienced MERN stack developer specializing in creating robust and scalable web applications.",
+    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   twitterImage: "../../public/assets/profile-picture-blue.png",
 };
 

@@ -212,6 +212,7 @@ const MyName = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
+  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 321px) {
@@ -225,6 +226,7 @@ const MyDesc = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
+  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 321px) {

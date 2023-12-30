@@ -23,125 +23,127 @@ export default function Sidebar() {
 
   return (
     <DisplayWrapper>
-      <PicNameWrapper className="gap-1">
-        <Image
-          className="rounded-3"
-          src={profilePic}
-          alt="Profile Picture"
-          width={70}
-          height={70}
-        />
-        <div>
-          <MyName>Mukesh Sharma</MyName>
-          <MyDesc>MERN STACK DEVELOPER</MyDesc>
-        </div>
-      </PicNameWrapper>
-      <SocialLinksWrapper>
-        <SocialLink
-          className="bi bi-github"
-          href="https://github.com/Mukesh-Sharma400"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="GitHub"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="GitHub"
-        ></SocialLink>
-        <SocialLink
-          className="bi bi-linkedin"
-          href="https://www.linkedin.com/in/mukesh-sharma-dev"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="LinkedIn"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="LinkedIn"
-        ></SocialLink>
-        <SocialLink
-          className="bi bi-twitter-x"
-          href="https://twitter.com/mukesh_sharma36"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="Twitter / X"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="Twitter / X"
-        ></SocialLink>
-        <SocialLink
-          className="bi bi-facebook"
-          href="https://www.facebook.com/Mukesh400f"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="Facebook"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="Facebook"
-        ></SocialLink>
-        <SocialLink
-          className="bi bi-instagram"
-          href="https://www.instagram.com/mukesh_sharma400"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="Instagram"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="Instagram"
-        ></SocialLink>
-        <SocialLink
-          className="bi bi-threads"
-          href="https://www.threads.net/mukesh_sharma400"
-          target="_blank"
-          data-bs-toggle="tooltip"
-          data-bs-title="Threads"
-          data-bs-custom-class="custom-tooltip"
-          aria-label="Threads"
-        ></SocialLink>
-      </SocialLinksWrapper>
-      <RoutesWrapper className="gap-1">
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/" ? "active" : ""
-          }`}
-          href="/"
-        >
-          Home
-        </Route>
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/projects" ? "active" : ""
-          }`}
-          href="/projects"
-        >
-          Projects
-        </Route>
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/education" ? "active" : ""
-          }`}
-          href="/education"
-        >
-          Education
-        </Route>
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/experience" ? "active" : ""
-          }`}
-          href="/experience"
-        >
-          Experience
-        </Route>
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/testimonials" ? "active" : ""
-          }`}
-          href="/testimonials"
-        >
-          Testimonials
-        </Route>
-        <Route
-          className={`px-2 py-1 rounded-3 w-100 ${
-            pathname === "/contact" ? "active" : ""
-          }`}
-          href="/contact"
-        >
-          Contact
-        </Route>
-      </RoutesWrapper>
+      <ContentWrapper>
+        <PicNameWrapper className="gap-1">
+          <Image
+            className="rounded-3"
+            src={profilePic}
+            alt="Profile Picture"
+            width={60}
+            height={60}
+          />
+          <div>
+            <MyName>Mukesh Sharma</MyName>
+            <MyDesc>MERN STACK DEVELOPER</MyDesc>
+          </div>
+        </PicNameWrapper>
+        <SocialLinksWrapper>
+          <SocialLink
+            className="bi bi-github"
+            href="https://github.com/Mukesh-Sharma400"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="GitHub"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="GitHub"
+          ></SocialLink>
+          <SocialLink
+            className="bi bi-linkedin"
+            href="https://www.linkedin.com/in/mukesh-sharma-dev"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="LinkedIn"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="LinkedIn"
+          ></SocialLink>
+          <SocialLink
+            className="bi bi-twitter-x"
+            href="https://twitter.com/mukesh_sharma36"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="Twitter / X"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="Twitter / X"
+          ></SocialLink>
+          <SocialLink
+            className="bi bi-facebook"
+            href="https://www.facebook.com/Mukesh400f"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="Facebook"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="Facebook"
+          ></SocialLink>
+          <SocialLink
+            className="bi bi-instagram"
+            href="https://www.instagram.com/mukesh_sharma400"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="Instagram"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="Instagram"
+          ></SocialLink>
+          <SocialLink
+            className="bi bi-threads"
+            href="https://www.threads.net/mukesh_sharma400"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-title="Threads"
+            data-bs-custom-class="custom-tooltip"
+            aria-label="Threads"
+          ></SocialLink>
+        </SocialLinksWrapper>
+        <RoutesWrapper className="gap-1">
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/" ? "active" : ""
+            }`}
+            href="/"
+          >
+            Home
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/projects" ? "active" : ""
+            }`}
+            href="/projects"
+          >
+            Projects
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/education" ? "active" : ""
+            }`}
+            href="/education"
+          >
+            Education
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/experience" ? "active" : ""
+            }`}
+            href="/experience"
+          >
+            Experience
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/testimonials" ? "active" : ""
+            }`}
+            href="/testimonials"
+          >
+            Testimonials
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/contact" ? "active" : ""
+            }`}
+            href="/contact"
+          >
+            Contact
+          </Route>
+        </RoutesWrapper>
+      </ContentWrapper>
       <ThemeSwitch />
     </DisplayWrapper>
   );
@@ -158,12 +160,21 @@ const DisplayWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1024px) {
-    width: 25%;
+    width: 26%;
   }
 
   @media (max-width: 768px) {
     display: none;
   }
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
 `;
 
 const PicNameWrapper = styled.div`
@@ -180,6 +191,7 @@ const MyName = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
+  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -189,6 +201,7 @@ const MyDesc = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
+  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 `;
 

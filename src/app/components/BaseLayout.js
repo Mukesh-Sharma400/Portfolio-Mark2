@@ -33,7 +33,7 @@ const DisplayWrapper = styled.div`
 const MainContent = styled.div`
   width: 100%;
   margin: 20px;
-  padding: 30px 50px;
+  padding: 100px;
   background-color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.globalColors.whiteColor
@@ -45,8 +45,17 @@ const MainContent = styled.div`
     display: none;
   }
 
+  @media (max-width: 1024px) {
+    padding: 70px;
+  }
+
   @media (max-width: 768px) {
     width: calc(100% - 40px);
     margin-top: 100px;
+    padding: 50px;
+  }
+
+  @media (max-width: 426px) {
+    padding: 20px;
   }
 `;
