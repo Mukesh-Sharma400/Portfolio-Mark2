@@ -10,7 +10,8 @@ export default function Footer() {
           Next.js
         </Route>{" "}
         &nbsp;·&nbsp; Designed and Developed by{" "}
-        <Route href="/">Mukesh Sharma</Route> &nbsp;·&nbsp; © 2024 Portfolio
+        <Route href="/about">Mukesh Sharma</Route> &nbsp;·&nbsp; © 2024
+        Portfolio
       </p>
     </DisplayWrapper>
   );
@@ -42,9 +43,6 @@ const Route = styled(Link)`
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.globalColors.orangeColor
-        : theme.globalColors.orangeColor};
+    color: royalblue;
   }
 `;
