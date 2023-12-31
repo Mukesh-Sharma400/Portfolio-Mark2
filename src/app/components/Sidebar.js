@@ -191,7 +191,6 @@ const MyName = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
-  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -201,7 +200,6 @@ const MyDesc = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
-  margin-bottom: 0;
   transition: all 0.5s ease-in-out;
 `;
 
@@ -231,6 +229,17 @@ const SocialLink = styled(Link)`
       ? theme.lightMode.whiteColor201
       : theme.darkMode.blackColor201};
   transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
+    background-color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor202
+        : theme.darkMode.blackColor202};
+  }
 `;
 
 const RoutesWrapper = styled.div`
