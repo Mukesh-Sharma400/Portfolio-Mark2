@@ -104,11 +104,11 @@ export default function Sidebar() {
           </Route>
           <Route
             className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/skills" ? "active" : ""
+              pathname === "/about" ? "active" : ""
             }`}
-            href="/skills"
+            href="/about"
           >
-            Skills
+            About
           </Route>
           <Route
             className={`px-2 py-1 rounded-3 w-100 ${
