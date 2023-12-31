@@ -2,9 +2,9 @@
 
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import Footer from "@/app/components/Footer";
 
 export default function Contact() {
   const { theme } = useSelector(uiState);
@@ -169,6 +169,7 @@ const SecondaryBtn = styled.button`
 
 const MessageWrapper = styled.div`
   margin: 100px 0px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const HeadingTwo = styled.h2`

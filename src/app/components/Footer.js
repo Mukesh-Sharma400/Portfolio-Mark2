@@ -29,6 +29,7 @@ const DisplayWrapper = styled.div`
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor201
         : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
 `;
 
 const Route = styled(Link)`

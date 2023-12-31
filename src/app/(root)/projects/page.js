@@ -2,9 +2,9 @@
 
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import Footer from "@/app/components/Footer";
 
 export default function Projects() {
   const { theme } = useSelector(uiState);

@@ -3,9 +3,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import Footer from "@/app/components/Footer";
 import scct from "../../../../public/assets/scct.jpeg";
 import pace from "../../../../public/assets/pace.webp";
 import tilak from "../../../../public/assets/tilak.webp";
@@ -129,17 +129,20 @@ const EducationsWrapper = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 50px 0;
+  transition: all 0.5s ease-in-out;
 `;
 
 const EducationWrapper = styled.div`
   width: 100%;
   display: flex;
   gap: 30px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const LeftSide = styled.div`
   width: 20%;
   position: relative;
+  transition: all 0.5s ease-in-out;
 `;
 
 const EducationImage = styled(Image)`
@@ -147,10 +150,12 @@ const EducationImage = styled(Image)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) !important;
+  transition: all 0.5s ease-in-out;
 `;
 
 const RightSide = styled.div`
   width: 80%;
+  transition: all 0.5s ease-in-out;
 `;
 
 const EducationName = styled.p`
@@ -160,7 +165,7 @@ const EducationName = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
-
+  transition: all 0.5s ease-in-out;
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
@@ -176,7 +181,7 @@ const College = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
-
+  transition: all 0.5s ease-in-out;
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
@@ -193,6 +198,7 @@ const Content = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
 `;
 
 const Divider = styled.div`
@@ -202,4 +208,5 @@ const Divider = styled.div`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor201
       : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
 `;

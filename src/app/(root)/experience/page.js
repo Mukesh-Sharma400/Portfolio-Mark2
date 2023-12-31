@@ -3,12 +3,12 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import Footer from "@/app/components/Footer";
-import appavengers from "../../../../public/assets/app-avengers.jpg";
 import nullclass from "../../../../public/assets/nullclass.png";
 import hasbasoft from "../../../../public/assets/hasbasoft.png";
+import appavengers from "../../../../public/assets/app-avengers.jpg";
 
 export default function Experience() {
   const { theme } = useSelector(uiState);
@@ -128,17 +128,20 @@ const ExperiencesWrapper = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 50px 0;
+  transition: all 0.5s ease-in-out;
 `;
 
 const ExperienceWrapper = styled.div`
   width: 100%;
   display: flex;
   gap: 30px;
+  transition: all 0.5s ease-in-out;
 `;
 
 const LeftSide = styled.div`
   width: 20%;
   position: relative;
+  transition: all 0.5s ease-in-out;
 `;
 
 const CompanyImage = styled(Image)`
@@ -146,10 +149,12 @@ const CompanyImage = styled(Image)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) !important;
+  transition: all 0.5s ease-in-out;
 `;
 
 const RightSide = styled.div`
   width: 80%;
+  transition: all 0.5s ease-in-out;
 `;
 
 const CompanyName = styled.p`
@@ -159,7 +164,7 @@ const CompanyName = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
-
+  transition: all 0.5s ease-in-out;
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
@@ -175,7 +180,7 @@ const Role = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
-
+  transition: all 0.5s ease-in-out;
   span {
     color: ${({ theme }) =>
       theme.currentTheme === "light"
@@ -192,6 +197,7 @@ const Content = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
 `;
 
 const Divider = styled.div`
@@ -201,4 +207,5 @@ const Divider = styled.div`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor201
       : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
 `;

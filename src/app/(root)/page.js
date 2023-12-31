@@ -1,10 +1,10 @@
 "use client";
 
 import styled from "styled-components";
+import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import Footer from "../components/Footer";
 
 export default function Home() {
   const { theme } = useSelector(uiState);

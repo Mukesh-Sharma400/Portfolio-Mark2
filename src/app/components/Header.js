@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import profilePic from "../../../public/assets/profile-picture-blue.png";
 

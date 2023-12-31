@@ -183,6 +183,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   gap: 20px;
   text-align: center;
+  transition: all 0.5s ease-in-out;
 `;
 
 const PicNameWrapper = styled.div`
