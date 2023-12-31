@@ -69,6 +69,14 @@ export default function Header() {
           </Route>
           <Route
             className={`px-2 py-1 rounded-3 w-100 ${
+              pathname === "/skills" ? "active" : ""
+            }`}
+            href="/skills"
+          >
+            Skills
+          </Route>
+          <Route
+            className={`px-2 py-1 rounded-3 w-100 ${
               pathname === "/projects" ? "active" : ""
             }`}
             href="/projects"

@@ -4,15 +4,15 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const { theme } = useSelector(uiState);
 
   return (
     <BaseLayout>
-      <div>
-        <Heading>Home</Heading>
-      </div>
+      <Heading>Home</Heading>
+      <Footer />
     </BaseLayout>
   );
 }

@@ -6,14 +6,14 @@ import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import Footer from "@/app/components/Footer";
 
-export default function Testimonials() {
+export default function Skills() {
   const { theme } = useSelector(uiState);
 
   return (
     <BaseLayout>
-      <Heading>Testimonials</Heading>
+      <Heading>Skills</Heading>
       <Description>
-        Read what others have to say about experiences and collaborations
+        Discover a diverse set of expertise and capabilities
       </Description>
       <Footer />
     </BaseLayout>
