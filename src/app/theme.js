@@ -16,6 +16,7 @@ const lightMode = {
   greyColor200: "#999999",
 
   greenColor100: "rgba(8, 128, 70, 0.7)",
+  greenColor150: "#09e37d29",
   greenColor200: "#088046",
 };
 
@@ -29,6 +30,7 @@ const darkMode = {
   greyColor100: "#ffffff99",
 
   greenColor100: "rgba(28, 201, 113, 0.7)",
+  greenColor150: "#0f8a5136",
   greenColor200: "#1cc971",
 };
 
