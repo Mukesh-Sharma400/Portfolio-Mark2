@@ -231,8 +231,8 @@ const SocialLink = styled(Link)`
   border-radius: 50%;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
   background-color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor201

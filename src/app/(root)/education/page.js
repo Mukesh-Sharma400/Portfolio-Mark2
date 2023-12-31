@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import scct from "../../../../public/assets/scct.jpeg";
-import pace from "../../../../public/assets/pace.webp";
-import tilak from "../../../../public/assets/tilak.webp";
+import scct from "../../../../public/assets/scct-logo.jpeg";
+import pace from "../../../../public/assets/pace-logo.webp";
+import tilak from "../../../../public/assets/tilak-logo.webp";
+import certificateofbrainstorm from "../../../../public/assets/certificate-of-brainstorm.png";
+import certificateofaptitudetest from "../../../../public/assets/certificate-of-aptitudetest.png";
 
 export default function Education() {
   const { theme } = useSelector(uiState);
@@ -102,6 +104,23 @@ export default function Education() {
           </RightSide>
         </EducationWrapper>
       </EducationsWrapper>
+      <HeadingTwo>Certificates</HeadingTwo>
+      <CertificatesWrapper>
+        <CertificateWrapper>
+          <CertificateTitle>Certificate of Brain Storm</CertificateTitle>
+          <CertificateImage
+            src={certificateofbrainstorm}
+            alt="Certificate of Brain Storm"
+          />
+        </CertificateWrapper>
+        <CertificateWrapper>
+          <CertificateTitle>Certificate of Aptitude Test</CertificateTitle>
+          <CertificateImage
+            src={certificateofaptitudetest}
+            alt="Certificate of Aptitude Test"
+          />
+        </CertificateWrapper>
+      </CertificatesWrapper>
       <Footer />
     </BaseLayout>
   );
@@ -208,5 +227,54 @@ const Divider = styled.div`
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor201
       : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
+`;
+
+const HeadingTwo = styled.h2`
+  font-weight: 400;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  margin-bottom: 15px !important;
+  transition: all 0.5s ease-in-out;
+`;
+
+const CertificatesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 50px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const CertificateWrapper = styled.div`
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0px;
+  border-radius: 10px;
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor202
+      : theme.darkMode.blackColor202};
+  transition: all 0.5s ease-in-out;
+`;
+
+const CertificateTitle = styled.p`
+  font-size: 14px;
+  text-align: center;
+  padding: 0px 10px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
+
+const CertificateImage = styled(Image)`
+  width: 300px;
+  height: auto;
   transition: all 0.5s ease-in-out;
 `;
