@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
@@ -13,7 +14,7 @@ export default function Home() {
     <BaseLayout>
       <IntroWrapper>
         <AvailableBadge>
-          <i class="bi bi-dot"></i> Available for work
+          <AvailableDot /> Available for work
         </AvailableBadge>
         <MyName>Hello! I’m Mukesh</MyName>
         <MyDesc>Code. Create. Conquer.</MyDesc>
@@ -27,7 +28,7 @@ export default function Home() {
           integrations, and databases.
         </MyStory>
         <ButtonsWrapper>
-          <PrimaryBtn>About</PrimaryBtn>
+          <PrimaryBtn href="/about">About me</PrimaryBtn>
           <SecondaryBtn>
             <i class="bi bi-copy"></i> Copy email
           </SecondaryBtn>
@@ -51,6 +52,7 @@ const AvailableBadge = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   font-size: 12px;
   border-radius: 15px;
   color: ${({ theme }) =>
@@ -61,6 +63,17 @@ const AvailableBadge = styled.p`
     theme.currentTheme === "light"
       ? theme.lightMode.greenColor150
       : theme.darkMode.greenColor150};
+  transition: all 0.5s ease-in-out;
+`;
+
+const AvailableDot = styled.div`
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greenColor200
+      : theme.darkMode.greenColor200};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -138,7 +151,7 @@ const ButtonsWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const PrimaryBtn = styled.button`
+const PrimaryBtn = styled(Link)`
   width: 150px;
   height: 40px;
   font-size: 16px;
@@ -146,6 +159,7 @@ const PrimaryBtn = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  text-decoration: none;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.globalColors.whiteColor

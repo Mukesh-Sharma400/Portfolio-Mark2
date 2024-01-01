@@ -190,6 +190,7 @@ const DisplayWrapper = styled.div`
     position: fixed;
     flex-direction: column;
     padding: 20px;
+    z-index: 1;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor200
