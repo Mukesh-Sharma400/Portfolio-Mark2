@@ -7,6 +7,19 @@ import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import profilePic from "../../../../public/assets/profile-picture-blue.png";
+import html from "../../../../public/assets/html.png";
+import css from "../../../../public/assets/css.png";
+import js from "../../../../public/assets/js.png";
+import mongo from "../../../../public/assets/mongo.png";
+import express from "../../../../public/assets/express.jpg";
+import react from "../../../../public/assets/react.webp";
+import node from "../../../../public/assets/node.jpg";
+import next from "../../../../public/assets/next.jpg";
+import angular from "../../../../public/assets/angular.jpg";
+import styledc from "../../../../public/assets/styled.png";
+import bootstrap from "../../../../public/assets/bootstrap.png";
+import tailwind from "../../../../public/assets/tailwind.png";
+import material from "../../../../public/assets/material.png";
 
 export default function About() {
   const { theme } = useSelector(uiState);
@@ -47,7 +60,73 @@ export default function About() {
       </MyStory>
       <SkillsSection>
         <HeadingTwo>Skills</HeadingTwo>
-        <SkillsWrapper></SkillsWrapper>
+        <SkillsWrapper>
+          <Skill>
+            <SkillImage src={html} alt="HTML" />
+            HTML
+          </Skill>
+          <Skill>
+            <SkillImage src={css} alt="CSS" />
+            CSS
+          </Skill>
+          <Skill>
+            <SkillImage src={js} alt="JAVASCRIPT" />
+            JAVASCRIPT
+          </Skill>
+          <Skill>
+            <SkillImage src={mongo} alt="MONGO" />
+            MONGO
+          </Skill>
+          <Skill>
+            <SkillImage src={express} alt="EXPRESS" />
+            EXPRESS
+          </Skill>
+          <Skill>
+            <SkillImage src={react} alt="REACT" />
+            REACT
+          </Skill>
+          <Skill>
+            <SkillImage src={node} alt="NODE" />
+            NODE
+          </Skill>
+          <Skill>
+            <SkillImage src={next} alt="NEXT" />
+            NEXT
+          </Skill>
+          <Skill>
+            <SkillImage src={angular} alt="ANGULAR" />
+            ANGULAR
+          </Skill>
+          <Skill>
+            <SkillImage src={styledc} alt="STYLED" />
+            STYLED
+          </Skill>
+          <Skill>
+            <SkillImage src={bootstrap} alt="BOOTSTRAP" />
+            BOOTSTRAP
+          </Skill>
+          <Skill>
+            <SkillImage src={tailwind} alt="TAILWIND" />
+            TAILWIND
+          </Skill>
+          <Skill>
+            <SkillImage src={material} alt="MATERIAL" />
+            MATERIAL
+          </Skill>
+
+          {/* <Skill>
+            <SkillImage src={html} alt="html" />
+            REACTJS
+          </Skill>
+          <Skill>
+            <SkillImage src={html} alt="html" />
+            REACTJS
+          </Skill>
+          <Skill>
+            <SkillImage src={html} alt="html" />
+            REACTJS
+          </Skill> */}
+        </SkillsWrapper>
       </SkillsSection>
       <InterestsSection>
         <HeadingTwo>Interests</HeadingTwo>
@@ -134,6 +213,38 @@ const SkillsSection = styled.div`
 `;
 
 const SkillsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Skill = styled.div`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor202
+      : theme.darkMode.blackColor202};
+  transition: all 0.5s ease-in-out;
+`;
+
+const SkillImage = styled(Image)`
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   transition: all 0.5s ease-in-out;
 `;
 
