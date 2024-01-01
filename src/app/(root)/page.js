@@ -46,7 +46,7 @@ export default function Home() {
           </SecondaryBtn>
         </ButtonsWrapper>
       </IntroWrapper>
-      <HeadingTwo>Top Projects</HeadingTwo>
+      <HeadingTwo>Hall of Fame: My Best Work</HeadingTwo>
       <ProjectsWrapper>
         <Project href="/projects/socialnetwork">
           <ImageWrapper>
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <HeadingTwo>Top Skills</HeadingTwo>
+      <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
       <SkillsWrapper>
         <Skill>
           <SkillImage src={mongo} alt="MONGO" />
@@ -112,7 +112,7 @@ export default function Home() {
           ANGULAR
         </Skill>
       </SkillsWrapper>
-      <HeadingTwo>Top Testimonials</HeadingTwo>
+      <HeadingTwo>Voices of Appreciation</HeadingTwo>
       <TestimonialsWrapper>
         <Testimonial>
           <Message>
