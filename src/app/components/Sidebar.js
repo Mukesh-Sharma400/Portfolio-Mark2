@@ -112,7 +112,9 @@ export default function Sidebar() {
           </Route>
           <Route
             className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/projects" ? "active" : ""
+              pathname === "/projects" || pathname.startsWith("/projects")
+                ? "active"
+                : ""
             }`}
             href="/projects"
           >

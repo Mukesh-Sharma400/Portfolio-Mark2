@@ -136,6 +136,7 @@ const PrimaryBtn = styled.button`
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
         : theme.darkMode.blackColor202};
+  }
 `;
 
 const SecondaryBtn = styled.button`
@@ -161,10 +162,11 @@ const SecondaryBtn = styled.button`
 
   &:hover {
     border: 1.5px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greyColor100
-        : theme.darkMode.greyColor100} !important;
+      ${({ theme }) =>
+        theme.currentTheme === "light"
+          ? theme.lightMode.greyColor100
+          : theme.darkMode.greyColor100} !important;
+  }
 `;
 
 const MessageWrapper = styled.div`

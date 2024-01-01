@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
+import { BackHeader } from "@/app/components/BackHeader";
 
 export default function PrimeVideo() {
   const { theme } = useSelector(uiState);
 
   return (
     <BaseLayout>
+      <BackHeader />
       <Heading>PrimeVideo</Heading>
       <Footer />
     </BaseLayout>
