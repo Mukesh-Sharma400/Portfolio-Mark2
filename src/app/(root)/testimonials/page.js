@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
@@ -11,7 +10,6 @@ import profilePic from "../../../../public/assets/no-image.jpg";
 
 export default function Testimonials() {
   const { theme } = useSelector(uiState);
-  const [showMore, setShowMore] = useState(false);
 
   return (
     <BaseLayout>
@@ -90,120 +88,103 @@ export default function Testimonials() {
             </div>
           </PicNameWrapper>
         </Testimonial>
-        {!showMore && (
-          <>
-            <ShowMoreBtn
-              onClick={() => {
-                setShowMore(true);
-              }}
-            >
-              Load More
-            </ShowMoreBtn>
-          </>
-        )}
-        {showMore && (
-          <>
-            <Testimonial>
-              <Message>
-                "Mukesh is an exceptional web developer who possesses all the
-                skills one would want in an excellent software developer."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Shweta Jadhav</Name>
-                  <Desc>Data Analyst</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Working with Mukesh was so friendly as well as professional at
-                the same time. Looking forward to work with you again."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Rituraj Roj</Name>
-                  <Desc>Web Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Having worked with Mukesh for three years, I have to say he is
-                an excellent professional. He helped me understand the project
-                management process and introduced me to useful tools. I am
-                impressed with his work ethic and communication skills."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Reshma Yadav</Name>
-                  <Desc>Student</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is a very hardworking person and can easily tackle web
-                problems. We have worked together on several projects, and he is
-                a very skilled and dedicated professional. His expertise in the
-                web development field has helped us a lot! I highly recommend
-                him to anyone."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Anjumaara Ansari</Name>
-                  <Desc>Web Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is best in Front-End design and clean UI."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Aman Sharma</Name>
-                  <Desc>Dot Net Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-          </>
-        )}
+        <Testimonial>
+          <Message>
+            "Mukesh is an exceptional web developer who possesses all the skills
+            one would want in an excellent software developer."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Shweta Jadhav</Name>
+              <Desc>Data Analyst</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>
+            "Working with Mukesh was so friendly as well as professional at the
+            same time. Looking forward to work with you again."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Rituraj Roj</Name>
+              <Desc>Web Developer</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>
+            "Having worked with Mukesh for three years, I have to say he is an
+            excellent professional. He helped me understand the project
+            management process and introduced me to useful tools. I am impressed
+            with his work ethic and communication skills."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Reshma Yadav</Name>
+              <Desc>Student</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>
+            "Mukesh is a very hardworking person and can easily tackle web
+            problems. We have worked together on several projects, and he is a
+            very skilled and dedicated professional. His expertise in the web
+            development field has helped us a lot! I highly recommend him to
+            anyone."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Anjumaara Ansari</Name>
+              <Desc>Web Developer</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>"Mukesh is best in Front-End design and clean UI."</Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Aman Sharma</Name>
+              <Desc>Dot Net Developer</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
       </TestimonialsWrapper>
       <Footer />
     </BaseLayout>

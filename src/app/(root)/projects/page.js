@@ -7,14 +7,14 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import socialnetwork from "../../../../public/assets/socialnetwork-thumbnail.jpg";
-import memories from "../../../../public/assets/memories-thumbnail.jpg";
-import stackoverflow from "../../../../public/assets/stack-overflow-thumbnail.jpg";
 import youtube from "../../../../public/assets/youtube-thumbnail.png";
-import dashboard from "../../../../public/assets/dashboard-thumbnail.webp";
-import ecommerce from "../../../../public/assets/ecommerce-thumbnail.jpg";
-import primevideo from "../../../../public/assets/primevideo-thumbnail.jpg";
 import netflix from "../../../../public/assets/netflix-thumbnail.jpg";
+import memories from "../../../../public/assets/memories-thumbnail.jpg";
+import ecommerce from "../../../../public/assets/ecommerce-thumbnail.jpg";
+import dashboard from "../../../../public/assets/dashboard-thumbnail.webp";
+import primevideo from "../../../../public/assets/primevideo-thumbnail.jpg";
+import socialnetwork from "../../../../public/assets/socialnetwork-thumbnail.jpg";
+import stackoverflow from "../../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function Projects() {
   const { theme } = useSelector(uiState);

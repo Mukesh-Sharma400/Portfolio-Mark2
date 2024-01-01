@@ -19,7 +19,7 @@ export default function Footer() {
 
 const DisplayWrapper = styled.div`
   font-size: 14px;
-  margin-top: 30px;
+  margin-top: 100px;
   padding-top: 30px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"

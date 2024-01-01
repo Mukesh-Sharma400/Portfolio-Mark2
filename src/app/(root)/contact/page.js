@@ -170,7 +170,7 @@ const SecondaryBtn = styled.button`
 `;
 
 const MessageWrapper = styled.div`
-  margin: 100px 0px;
+  margin: 50px 0px;
   transition: all 0.5s ease-in-out;
 `;
 

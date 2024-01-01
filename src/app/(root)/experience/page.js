@@ -306,7 +306,6 @@ const CertificatesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 50px;
   transition: all 0.5s ease-in-out;
 `;
 

@@ -1,11 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
+import node from "../../../public/assets/node.jpg";
+import next from "../../../public/assets/next.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
+import mongo from "../../../public/assets/mongo.png";
+import react from "../../../public/assets/react.webp";
+import express from "../../../public/assets/express.jpg";
+import angular from "../../../public/assets/angular.jpg";
+import profilePic from "../../../public/assets/no-image.jpg";
+import youtube from "../../../public/assets/youtube-thumbnail.png";
+import memories from "../../../public/assets/memories-thumbnail.jpg";
+import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
+import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function Home() {
   const { theme } = useSelector(uiState);
@@ -34,6 +46,145 @@ export default function Home() {
           </SecondaryBtn>
         </ButtonsWrapper>
       </IntroWrapper>
+      <HeadingTwo>Top Projects</HeadingTwo>
+      <ProjectsWrapper>
+        <Project href="/projects/socialnetwork">
+          <ImageWrapper>
+            <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>SocialNetwork Web App</ProjectName>
+            <ProjectDesc>Social Media Web Application</ProjectDesc>
+          </div>
+        </Project>
+        <Project href="/projects/memories">
+          <ImageWrapper>
+            <ProjectImage src={memories} alt="Memories Web App" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>Memories Web App</ProjectName>
+            <ProjectDesc>Social Blog Web Application</ProjectDesc>
+          </div>
+        </Project>
+        <Project href="/projects/stackoverflow">
+          <ImageWrapper>
+            <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>Stack Overflow Clone</ProjectName>
+            <ProjectDesc>Copy of Stack Overflow Application</ProjectDesc>
+          </div>
+        </Project>
+        <Project href="/projects/youtube">
+          <ImageWrapper>
+            <ProjectImage src={youtube} alt="YouTube Clone" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>YouTube Clone</ProjectName>
+            <ProjectDesc>Copy of YouTube Application</ProjectDesc>
+          </div>
+        </Project>
+      </ProjectsWrapper>
+      <HeadingTwo>Top Skills</HeadingTwo>
+      <SkillsWrapper>
+        <Skill>
+          <SkillImage src={mongo} alt="MONGO" />
+          MONGO
+        </Skill>
+        <Skill>
+          <SkillImage src={express} alt="EXPRESS" />
+          EXPRESS
+        </Skill>
+        <Skill>
+          <SkillImage src={react} alt="REACT" />
+          REACT
+        </Skill>
+        <Skill>
+          <SkillImage src={node} alt="NODE" />
+          NODE
+        </Skill>
+        <Skill>
+          <SkillImage src={next} alt="NEXT" />
+          NEXT
+        </Skill>
+        <Skill>
+          <SkillImage src={angular} alt="ANGULAR" />
+          ANGULAR
+        </Skill>
+      </SkillsWrapper>
+      <HeadingTwo>Top Testimonials</HeadingTwo>
+      <TestimonialsWrapper>
+        <Testimonial>
+          <Message>
+            "Mukesh Sharma consistently demonstrated exceptional aptitude and
+            enthusiasm for learning the ins and outs of the MERN Stack. He
+            exhibited a strong grasp of the core concepts and principles,
+            showcasing their ability to apply them effectively in real-world
+            scenarios. He has exhibited a remarkable work ethic and commitment
+            to excellence throughout the training period. He consistently showed
+            a thirst for knowledge, actively seeking additional resources and
+            going above and beyond to expand their understanding of the MERN
+            Stack. His dedication and passion for learning were evident in their
+            consistent progress and the quality of their work."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <TestimonialName>Ali Karim Sayed</TestimonialName>
+              <TestimonialDesc>Corporate Trainer</TestimonialDesc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>
+            "I highly recommend Mukesh as a MERN Stack Developer and would love
+            to work together. Mukesh is amazing at his job! He knows his way
+            around people, he is good with the clients, does whatever it takes
+            to help colleagues and gets things done. He makes sure that everyone
+            is on the same page and focused on the main goal."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <TestimonialName>Nitin Prajapati</TestimonialName>
+              <TestimonialDesc>Full Stack Developer</TestimonialDesc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+        <Testimonial>
+          <Message>
+            "Mukesh is Very friendly in nature. He can work very nicely in a
+            team. He helps to understand concept while working in a team. He
+            helps others in team to grow with his own growth. He inspires other
+            people to work better."
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <TestimonialName>Diksha Dubey</TestimonialName>
+              <TestimonialDesc>Data Scientist</TestimonialDesc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
+      </TestimonialsWrapper>
       <Footer />
     </BaseLayout>
   );
@@ -77,8 +228,9 @@ const AvailableDot = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const MyName = styled.h2`
+const MyName = styled.h1`
   width: fit-content;
+  line-height: 40px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
@@ -118,7 +270,8 @@ const MyName = styled.h2`
   }
 `;
 
-const MyDesc = styled.h2`
+const MyDesc = styled.h1`
+  line-height: 40px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
@@ -206,4 +359,162 @@ const SecondaryBtn = styled.button`
           ? theme.lightMode.greyColor100
           : theme.darkMode.greyColor100} !important;
   }
+`;
+
+const HeadingTwo = styled.h2`
+  font-weight: 400;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  margin-top: 50px !important;
+  margin-bottom: 15px !important;
+  transition: all 0.5s ease-in-out;
+`;
+
+const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Project = styled(Link)`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+`;
+
+const ImageWrapper = styled.div`
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+`;
+
+const ProjectImage = styled(Image)`
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const ProjectName = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
+
+const ProjectDesc = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
+`;
+
+const SkillsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Skill = styled.div`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor202
+      : theme.darkMode.blackColor202};
+  transition: all 0.5s ease-in-out;
+`;
+
+const SkillImage = styled(Image)`
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const TestimonialsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Testimonial = styled.div`
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor202
+      : theme.darkMode.blackColor202};
+  transition: all 0.5s ease-in-out;
+`;
+
+const Message = styled.div`
+  font-size: 14px;
+  line-height: 20px;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
+
+const PicNameWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px !important;
+  transition: all 0.5s ease-in-out;
+`;
+
+const TestimonialName = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
+
+const TestimonialDesc = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
 `;

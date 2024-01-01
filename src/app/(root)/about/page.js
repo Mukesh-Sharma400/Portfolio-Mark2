@@ -5,21 +5,21 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
-import BaseLayout from "@/app/components/BaseLayout";
-import profilePic from "../../../../public/assets/profile-picture-blue.png";
-import html from "../../../../public/assets/html.png";
-import css from "../../../../public/assets/css.png";
 import js from "../../../../public/assets/js.png";
-import mongo from "../../../../public/assets/mongo.png";
-import express from "../../../../public/assets/express.jpg";
-import react from "../../../../public/assets/react.webp";
+import css from "../../../../public/assets/css.png";
+import BaseLayout from "@/app/components/BaseLayout";
+import html from "../../../../public/assets/html.png";
 import node from "../../../../public/assets/node.jpg";
 import next from "../../../../public/assets/next.jpg";
-import angular from "../../../../public/assets/angular.jpg";
+import mongo from "../../../../public/assets/mongo.png";
+import react from "../../../../public/assets/react.webp";
 import styledc from "../../../../public/assets/styled.png";
-import bootstrap from "../../../../public/assets/bootstrap.png";
+import express from "../../../../public/assets/express.jpg";
+import angular from "../../../../public/assets/angular.jpg";
 import tailwind from "../../../../public/assets/tailwind.png";
 import material from "../../../../public/assets/material.png";
+import bootstrap from "../../../../public/assets/bootstrap.png";
+import profilePic from "../../../../public/assets/profile-picture-blue.png";
 
 export default function About() {
   const { theme } = useSelector(uiState);
@@ -113,19 +113,6 @@ export default function About() {
             <SkillImage src={material} alt="MATERIAL" />
             MATERIAL
           </Skill>
-
-          {/* <Skill>
-            <SkillImage src={html} alt="html" />
-            REACTJS
-          </Skill>
-          <Skill>
-            <SkillImage src={html} alt="html" />
-            REACTJS
-          </Skill>
-          <Skill>
-            <SkillImage src={html} alt="html" />
-            REACTJS
-          </Skill> */}
         </SkillsWrapper>
       </SkillsSection>
       <InterestsSection>
@@ -165,7 +152,8 @@ const DetailsWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const MyName = styled.h2`
+const MyName = styled.h1`
+  line-height: 40px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
@@ -173,7 +161,8 @@ const MyName = styled.h2`
   transition: all 0.5s ease-in-out;
 `;
 
-const MyDesc = styled.h2`
+const MyDesc = styled.h1`
+  line-height: 40px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
