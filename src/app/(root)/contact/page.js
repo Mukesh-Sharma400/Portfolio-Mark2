@@ -55,10 +55,17 @@ const Heading = styled.h1`
 `;
 
 const Description = styled.p`
+  margin-bottom: 50px !important;
+  padding-bottom: 30px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
+  border-bottom: 2px solid
+    ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor201
+        : theme.darkMode.blackColor201};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -68,12 +75,6 @@ const EmailNumberWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 30px 0px;
-  padding-top: 30px;
-  border-top: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
   transition: all 0.5s ease-in-out;
 `;
 
