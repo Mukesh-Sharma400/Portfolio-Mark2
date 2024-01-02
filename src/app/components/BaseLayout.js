@@ -2,6 +2,7 @@
 
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import { Resume } from "./Resume";
 import styled from "styled-components";
 
 export default function BaseLayout({ children }) {
@@ -10,6 +11,7 @@ export default function BaseLayout({ children }) {
       <Header />
       <Sidebar />
       <MainContent className="rounded-3 shadow-sm">{children}</MainContent>
+      <Resume />
     </DisplayWrapper>
   );
 }

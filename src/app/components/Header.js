@@ -399,6 +399,17 @@ const SocialLink = styled(Link)`
       : theme.darkMode.blackColor201};
   transition: all 0.5s ease-in-out;
 
+  &:hover {
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
+    background-color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor202
+        : theme.darkMode.blackColor202};
+  }
+
   @media (max-width: 321px) {
     width: 30px;
     height: 30px;
