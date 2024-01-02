@@ -1,16 +1,30 @@
 "use client";
 
+import { useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
+import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
 
 export default function Contact() {
   const { theme } = useSelector(uiState);
+  const [showToast, setShowToast] = useState(false);
+
+  const showToastMethod = () => {
+    setShowToast(true);
+    const timeoutId = setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+    return () => clearTimeout(timeoutId);
+  };
 
   return (
     <BaseLayout>
+      <ToastWrapper showToast={showToast}>
+        <Toast message="Email copied to clipboard" />
+      </ToastWrapper>
       <Heading>Contact</Heading>
       <Description>Get in touch for collaborations</Description>
       <EmailNumberWrapper>
@@ -25,8 +39,8 @@ export default function Contact() {
       </EmailNumberWrapper>
       <ButtonsWrapper>
         <PrimaryBtn>Schedule a call</PrimaryBtn>
-        <SecondaryBtn>
-          <i class="bi bi-copy"></i> Copy email
+        <SecondaryBtn onClick={showToastMethod}>
+          <i className="bi bi-copy"></i> Copy email
         </SecondaryBtn>
       </ButtonsWrapper>
       <MessageWrapper>
@@ -44,6 +58,15 @@ export default function Contact() {
     </BaseLayout>
   );
 }
+
+const ToastWrapper = styled.div`
+  position: absolute;
+  top: ${(props) => (props.showToast ? "7%" : "-10%")};
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+`;
 
 const Heading = styled.h1`
   color: ${({ theme }) =>

@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
+import { Toast } from "../components/Toast";
 import node from "../../../public/assets/node.jpg";
 import next from "../../../public/assets/next.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
@@ -21,9 +23,21 @@ import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function Home() {
   const { theme } = useSelector(uiState);
+  const [showToast, setShowToast] = useState(false);
+
+  const showToastMethod = () => {
+    setShowToast(true);
+    const timeoutId = setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+    return () => clearTimeout(timeoutId);
+  };
 
   return (
     <BaseLayout>
+      <ToastWrapper showToast={showToast}>
+        <Toast message="Email copied to clipboard" />
+      </ToastWrapper>
       <IntroWrapper>
         <AvailableBadge>
           <AvailableDot /> Available for work
@@ -31,7 +45,7 @@ export default function Home() {
         <MyName>Hello! I’m Mukesh</MyName>
         <MyDesc>Code. Create. Conquer.</MyDesc>
         <Location>
-          <i class="bi bi-geo-alt-fill"></i> Navi Mumbai, India
+          <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
         <MyStory>
           Solution driven MERN Stack Developer with over a year of work
@@ -41,8 +55,8 @@ export default function Home() {
         </MyStory>
         <ButtonsWrapper>
           <PrimaryBtn href="/about">About me</PrimaryBtn>
-          <SecondaryBtn>
-            <i class="bi bi-copy"></i> Copy email
+          <SecondaryBtn onClick={showToastMethod}>
+            <i className="bi bi-copy"></i> Copy email
           </SecondaryBtn>
         </ButtonsWrapper>
       </IntroWrapper>
@@ -189,6 +203,15 @@ export default function Home() {
     </BaseLayout>
   );
 }
+
+const ToastWrapper = styled.div`
+  position: absolute;
+  top: ${(props) => (props.showToast ? "7%" : "-10%")};
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+`;
 
 const IntroWrapper = styled.div`
   display: flex;

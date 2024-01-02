@@ -11,7 +11,8 @@ export const BackHeader = () => {
   return (
     <BackHeaderWrapper>
       <BackBtn href="/projects">
-        <i class="bi bi-arrow-left-circle-fill"></i> <span>Back to list</span>
+        <i className="bi bi-arrow-left-circle-fill"></i>{" "}
+        <span>Back to list</span>
       </BackBtn>
     </BackHeaderWrapper>
   );
