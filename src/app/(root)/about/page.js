@@ -58,7 +58,7 @@ export default function About() {
         IT fresher passionate about web development, feel free to reach out for
         potential collaborations.
       </MyStory>
-      <SkillsSection>
+      <SkillsSection id="skills">
         <HeadingTwo>Skills</HeadingTwo>
         <SkillsWrapper>
           <Skill>

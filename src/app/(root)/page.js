@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import { Toast } from "../components/Toast";
+import { useRouter } from "next/navigation";
 import node from "../../../public/assets/node.jpg";
 import next from "../../../public/assets/next.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
@@ -23,6 +24,7 @@ import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function Home() {
+  const router = new useRouter();
   const { theme } = useSelector(uiState);
   const [showToast, setShowToast] = useState(false);
 
@@ -32,6 +34,18 @@ export default function Home() {
       setShowToast(false);
     }, 3000);
     return () => clearTimeout(timeoutId);
+  };
+
+  const showMoreMethod = (page) => {
+    if (page === "projects") {
+      router.push("/projects");
+    }
+    if (page === "about") {
+      router.push("/about#skills");
+    }
+    if (page === "testimonials") {
+      router.push("/testimonials");
+    }
   };
 
   return (
@@ -100,6 +114,15 @@ export default function Home() {
           </div>
         </Project>
       </ProjectsWrapper>
+      <ShowMoreWrapper>
+        <SecondaryBtn
+          onClick={() => {
+            showMoreMethod("projects");
+          }}
+        >
+          Show More
+        </SecondaryBtn>
+      </ShowMoreWrapper>
       <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
       <SkillsWrapper>
         <Skill>
@@ -126,6 +149,13 @@ export default function Home() {
           <SkillImage src={angular} alt="ANGULAR" />
           ANGULAR
         </Skill>
+        <SecondaryBtn
+          onClick={() => {
+            showMoreMethod("about");
+          }}
+        >
+          Show More
+        </SecondaryBtn>
       </SkillsWrapper>
       <HeadingTwo>Voices of Appreciation</HeadingTwo>
       <TestimonialsWrapper>
@@ -225,6 +255,15 @@ export default function Home() {
           </Masonry>
         </ResponsiveMasonry>
       </TestimonialsWrapper>
+      <ShowMoreWrapper>
+        <SecondaryBtn
+          onClick={() => {
+            showMoreMethod("testimonials");
+          }}
+        >
+          Show More
+        </SecondaryBtn>
+      </ShowMoreWrapper>
       <Footer />
     </BaseLayout>
   );
@@ -480,6 +519,13 @@ const SkillsWrapper = styled.div`
   align-items: center;
   gap: 10px;
   transition: all 0.5s ease-in-out;
+
+  & > button {
+    margin: auto;
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+  }
 `;
 
 const Skill = styled.div`
@@ -566,4 +612,17 @@ const TestimonialDesc = styled.p`
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
+`;
+
+const ShowMoreWrapper = styled.div`
+  width: 100%;
+  margin: 30px 0px 50px;
+  transition: all 0.5s ease-in-out;
+
+  & > button {
+    margin: auto;
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+  }
 `;
