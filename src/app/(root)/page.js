@@ -18,6 +18,7 @@ import angular from "../../../public/assets/angular.jpg";
 import profilePic from "../../../public/assets/no-image.jpg";
 import youtube from "../../../public/assets/youtube-thumbnail.png";
 import memories from "../../../public/assets/memories-thumbnail.jpg";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
@@ -128,76 +129,101 @@ export default function Home() {
       </SkillsWrapper>
       <HeadingTwo>Voices of Appreciation</HeadingTwo>
       <TestimonialsWrapper>
-        <Testimonial>
-          <Message>
-            "Mukesh Sharma consistently demonstrated exceptional aptitude and
-            enthusiasm for learning the ins and outs of the MERN Stack. He
-            exhibited a strong grasp of the core concepts and principles,
-            showcasing their ability to apply them effectively in real-world
-            scenarios. He has exhibited a remarkable work ethic and commitment
-            to excellence throughout the training period. He consistently showed
-            a thirst for knowledge, actively seeking additional resources and
-            going above and beyond to expand their understanding of the MERN
-            Stack. His dedication and passion for learning were evident in their
-            consistent progress and the quality of their work."
-          </Message>
-          <PicNameWrapper>
-            <Image
-              className="rounded-3"
-              src={profilePic}
-              alt="Profile Picture"
-              width={50}
-              height={50}
-            />
-            <div>
-              <TestimonialName>Ali Karim Sayed</TestimonialName>
-              <TestimonialDesc>Corporate Trainer</TestimonialDesc>
-            </div>
-          </PicNameWrapper>
-        </Testimonial>
-        <Testimonial>
-          <Message>
-            "I highly recommend Mukesh as a MERN Stack Developer and would love
-            to work together. Mukesh is amazing at his job! He knows his way
-            around people, he is good with the clients, does whatever it takes
-            to help colleagues and gets things done. He makes sure that everyone
-            is on the same page and focused on the main goal."
-          </Message>
-          <PicNameWrapper>
-            <Image
-              className="rounded-3"
-              src={profilePic}
-              alt="Profile Picture"
-              width={50}
-              height={50}
-            />
-            <div>
-              <TestimonialName>Nitin Prajapati</TestimonialName>
-              <TestimonialDesc>Full Stack Developer</TestimonialDesc>
-            </div>
-          </PicNameWrapper>
-        </Testimonial>
-        <Testimonial>
-          <Message>
-            "Mukesh is Very friendly in nature. He can work very nicely in a
-            team. He helps to understand concept while working in a team. He
-            helps others in team to grow with his own growth. He inspires other
-            people to work better."
-          </Message>
-          <PicNameWrapper>
-            <Image
-              className="rounded-3"
-              src={profilePic}
-              alt="Profile Picture"
-              width={50}
-              height={50}
-            />
-            <div>
-              <TestimonialName>Diksha Dubey</TestimonialName>
-              <TestimonialDesc>Data Scientist</TestimonialDesc>
-            </div>
-          </PicNameWrapper>
-        </Testimonial>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
+          <Masonry gutter="16px">
+            <Testimonial>
+              <Message>
+                "Mukesh Sharma consistently demonstrated exceptional aptitude
+                and enthusiasm for learning the ins and outs of the MERN Stack.
+                He exhibited a strong grasp of the core concepts and principles,
+                showcasing their ability to apply them effectively in real-world
+                scenarios. He has exhibited a remarkable work ethic and
+                commitment to excellence throughout the training period. He
+                consistently showed a thirst for knowledge, actively seeking
+                additional resources and going above and beyond to expand their
+                understanding of the MERN Stack. His dedication and passion for
+                learning were evident in their consistent progress and the
+                quality of their work."
+              </Message>
+              <PicNameWrapper>
+                <Image
+                  className="rounded-3"
+                  src={profilePic}
+                  alt="Profile Picture"
+                  width={50}
+                  height={50}
+                />
+                <div>
+                  <TestimonialName>Ali Karim Sayed</TestimonialName>
+                  <TestimonialDesc>Corporate Trainer</TestimonialDesc>
+                </div>
+              </PicNameWrapper>
+            </Testimonial>
+            <Testimonial>
+              <Message>
+                "I highly recommend Mukesh as a MERN Stack Developer and would
+                love to work together. Mukesh is amazing at his job! He knows
+                his way around people, he is good with the clients, does
+                whatever it takes to help colleagues and gets things done. He
+                makes sure that everyone is on the same page and focused on the
+                main goal."
+              </Message>
+              <PicNameWrapper>
+                <Image
+                  className="rounded-3"
+                  src={profilePic}
+                  alt="Profile Picture"
+                  width={50}
+                  height={50}
+                />
+                <div>
+                  <TestimonialName>Nitin Prajapati</TestimonialName>
+                  <TestimonialDesc>Full Stack Developer</TestimonialDesc>
+                </div>
+              </PicNameWrapper>
+            </Testimonial>
+            <Testimonial>
+              <Message>
+                "Mukesh is an exceptional web developer who possesses all the
+                skills one would want in an excellent software developer."
+              </Message>
+              <PicNameWrapper>
+                <Image
+                  className="rounded-3"
+                  src={profilePic}
+                  alt="Profile Picture"
+                  width={50}
+                  height={50}
+                />
+                <div>
+                  <TestimonialName>Shweta Jadhav</TestimonialName>
+                  <TestimonialDesc>Data Analyst</TestimonialDesc>
+                </div>
+              </PicNameWrapper>
+            </Testimonial>
+            <Testimonial>
+              <Message>
+                "Mukesh is Very friendly in nature. He can work very nicely in a
+                team. He helps to understand concept while working in a team. He
+                helps others in team to grow with his own growth. He inspires
+                other people to work better."
+              </Message>
+              <PicNameWrapper>
+                <Image
+                  className="rounded-3"
+                  src={profilePic}
+                  alt="Profile Picture"
+                  width={50}
+                  height={50}
+                />
+                <div>
+                  <TestimonialName>Diksha Dubey</TestimonialName>
+                  <TestimonialDesc>Data Scientist</TestimonialDesc>
+                </div>
+              </PicNameWrapper>
+            </Testimonial>
+          </Masonry>
+        </ResponsiveMasonry>
       </TestimonialsWrapper>
       <Footer />
     </BaseLayout>
