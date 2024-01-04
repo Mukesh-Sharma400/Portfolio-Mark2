@@ -120,7 +120,7 @@ export default function Home() {
             showMoreMethod("projects");
           }}
         >
-          Show More
+          Browse Complete Collection
         </SecondaryBtn>
       </ShowMoreWrapper>
       <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
@@ -154,7 +154,7 @@ export default function Home() {
             showMoreMethod("about");
           }}
         >
-          Show More
+          Explore Further Abilities
         </SecondaryBtn>
       </SkillsWrapper>
       <HeadingTwo>Voices of Appreciation</HeadingTwo>
@@ -261,7 +261,7 @@ export default function Home() {
             showMoreMethod("testimonials");
           }}
         >
-          Show More
+          Read More Testimonials
         </SecondaryBtn>
       </ShowMoreWrapper>
       <Footer />
@@ -522,8 +522,9 @@ const SkillsWrapper = styled.div`
 
   & > button {
     margin: auto;
-    width: 120px;
+    width: max-content;
     height: 35px;
+    padding: 0 20px;
     font-size: 14px;
   }
 `;
@@ -621,7 +622,8 @@ const ShowMoreWrapper = styled.div`
 
   & > button {
     margin: auto;
-    width: 120px;
+    width: max-content;
+    padding: 0 20px;
     height: 35px;
     font-size: 14px;
   }

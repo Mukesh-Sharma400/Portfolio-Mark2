@@ -52,6 +52,7 @@ const BackBtn = styled(Link)`
       theme.currentTheme === "light"
         ? theme.lightMode.whiteColor150
         : theme.globalColors.whiteColor};
+    transition: all 0.5s ease-in-out;
   }
 
   &:hover {
