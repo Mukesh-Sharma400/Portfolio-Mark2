@@ -10,6 +10,7 @@ import BaseLayout from "@/app/components/BaseLayout";
 import { BackHeader } from "@/app/components/BackHeader";
 import memories from "../../../../../public/assets/memories-thumbnail.jpg";
 import socialnetwork from "../../../../../public/assets/socialnetwork-thumbnail.jpg";
+import stackoverflow from "../../../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function SocialNetwork() {
   const { theme } = useSelector(uiState);
@@ -32,7 +33,10 @@ export default function SocialNetwork() {
         and a plethora of other cutting-edge technologies, this app redefines
         the social networking landscape.
       </Description>
-      <PrimaryBtn href="/">Live Preview</PrimaryBtn>
+      <ButtonsWrapper>
+        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
+        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+      </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
         <TimeLine>
@@ -47,15 +51,6 @@ export default function SocialNetwork() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/socialnetwork">
-          <ImageWrapper>
-            <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>SocialNetwork Web App</ProjectName>
-            <ProjectDesc>Social Media Web Application</ProjectDesc>
-          </div>
-        </Project>
         <Project href="/projects/memories">
           <ImageWrapper>
             <ProjectImage src={memories} alt="Memories Web App" />
@@ -65,8 +60,19 @@ export default function SocialNetwork() {
             <ProjectDesc>Social Blog Web Application</ProjectDesc>
           </div>
         </Project>
+        <Project href="/projects/stackoverflow">
+          <ImageWrapper>
+            <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>Stack Overflow Clone</ProjectName>
+            <ProjectDesc>Copy of Stack Overflow Application</ProjectDesc>
+          </div>
+        </Project>
       </ProjectsWrapper>
-      <SecondaryBtn href="/projects">Uncover All Work</SecondaryBtn>
+      <SecondaryBtn className="all-work" href="/projects">
+        Uncover All Work
+      </SecondaryBtn>
       <Footer />
     </BaseLayout>
   );
@@ -173,6 +179,13 @@ const Description = styled.p`
   transition: all 0.5s ease-in-out;
 `;
 
+const ButtonsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 25px 0;
+`;
+
 const PrimaryBtn = styled(Link)`
   width: 150px;
   height: 40px;
@@ -181,7 +194,6 @@ const PrimaryBtn = styled(Link)`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  margin: 25px 0;
   text-decoration: none;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
@@ -198,6 +210,41 @@ const PrimaryBtn = styled(Link)`
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
         : theme.darkMode.blackColor202};
+  }
+`;
+
+const SecondaryBtn = styled(Link)`
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  background-color: transparent;
+  border: 1.5px solid
+    ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor201
+        : theme.darkMode.blackColor201} !important;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    border: 1.5px solid
+      ${({ theme }) =>
+        theme.currentTheme === "light"
+          ? theme.lightMode.greyColor100
+          : theme.darkMode.greyColor100} !important;
+  }
+
+  &.all-work {
+    width: 100%;
+    margin-top: 50px;
   }
 `;
 
@@ -338,36 +385,4 @@ const ProjectDesc = styled.p`
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
-`;
-
-const SecondaryBtn = styled(Link)`
-  width: 100%;
-  height: 40px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 50px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: transparent;
-  border: 1.5px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201} !important;
-  transition: all 0.5s ease-in-out;
-
-  &:hover {
-    border: 1.5px solid
-      ${({ theme }) =>
-        theme.currentTheme === "light"
-          ? theme.lightMode.greyColor100
-          : theme.darkMode.greyColor100} !important;
-  }
 `;
