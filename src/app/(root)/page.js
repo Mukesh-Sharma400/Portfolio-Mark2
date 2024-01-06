@@ -27,6 +27,7 @@ import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 export default function Home() {
   const router = new useRouter();
   const { theme } = useSelector(uiState);
+  const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
   const showToastMethod = () => {
@@ -38,7 +39,7 @@ export default function Home() {
   };
 
   const handleCopyEmail = () => {
-    const emailToCopy = "mksh400@gmail.com";
+    const emailToCopy = `${emailAddress}`;
     copy(emailToCopy);
     showToastMethod();
   };

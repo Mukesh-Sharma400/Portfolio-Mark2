@@ -10,7 +10,9 @@ import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
 
 export default function Contact() {
+  const phoneNumber = "+917021739604";
   const { theme } = useSelector(uiState);
+  const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
   const showToastMethod = () => {
@@ -21,8 +23,13 @@ export default function Contact() {
     return () => clearTimeout(timeoutId);
   };
 
+  const handleOpenDialer = () => {
+    const telUrl = `tel:${phoneNumber}`;
+    window.location.href = telUrl;
+  };
+
   const handleCopyEmail = () => {
-    const emailToCopy = "mksh400@gmail.com";
+    const emailToCopy = `${emailAddress}`;
     copy(emailToCopy);
     showToastMethod();
   };
@@ -45,7 +52,7 @@ export default function Contact() {
         </NumberWrapper>
       </EmailNumberWrapper>
       <ButtonsWrapper>
-        <PrimaryBtn>Schedule a call</PrimaryBtn>
+        <PrimaryBtn onClick={handleOpenDialer}>Schedule a call</PrimaryBtn>
         <SecondaryBtn onClick={handleCopyEmail}>
           <i className="bi bi-copy"></i> Copy email
         </SecondaryBtn>
