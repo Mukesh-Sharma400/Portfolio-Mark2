@@ -2,6 +2,7 @@
 
 import copy from "clipboard-copy";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
@@ -10,6 +11,7 @@ import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
 
 export default function Contact() {
+  const form = useRef();
   const timeoutRef = useRef(null);
   const phoneNumber = "+917021739604";
   const { theme } = useSelector(uiState);
@@ -37,9 +39,24 @@ export default function Contact() {
     showToastMethod("Email copied to clipboard");
   };
 
-  const handleSendMessage = () => {
-    // send message functionality code
-    showToastMethod("Your message has been sent");
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_e4fjwoz",
+        "template_1d6gvu8",
+        form.current,
+        "a185DCLwfO5fjx4m0"
+      )
+      .then(
+        (result) => {
+          showToastMethod("Your message has been sent");
+          e.target.reset();
+        },
+        (error) => {
+          showToastMethod("Oops something went wrong");
+        }
+      );
   };
 
   return (
@@ -67,13 +84,13 @@ export default function Contact() {
       </ButtonsWrapper>
       <MessageWrapper>
         <HeadingTwo>Send a message</HeadingTwo>
-        <FormWrapper>
+        <FormWrapper ref={form} onSubmit={handleSendMessage}>
           <NameEmailWrapper>
-            <TextBox placeholder="Name" />
-            <TextBox placeholder="Email" />
+            <TextBox placeholder="Name" name="from_name" required />
+            <TextBox placeholder="Email" name="from_email" required />
           </NameEmailWrapper>
-          <TextArea placeholder="Message" />
-          <SendBtn onClick={handleSendMessage}>Send Message</SendBtn>
+          <TextArea placeholder="Message" name="message" required />
+          <SendBtn type="submit">Send Message</SendBtn>
         </FormWrapper>
       </MessageWrapper>
       <Footer />
@@ -230,7 +247,7 @@ const HeadingTwo = styled.h2`
   transition: all 0.5s ease-in-out;
 `;
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
