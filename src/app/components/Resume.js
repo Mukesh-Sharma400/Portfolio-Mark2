@@ -17,6 +17,9 @@ export const Resume = () => {
 
   return (
     <DisplayWrapper
+      href="https://drive.google.com/file/d/1yKokZQbxHmdZbPTSa6SynBzG4jVXnhKK/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
       data-bs-toggle="tooltip"
       data-bs-title="Resume"
       data-bs-custom-class="custom-tooltip"
@@ -27,11 +30,11 @@ export const Resume = () => {
   );
 };
 
-const DisplayWrapper = styled.button`
+const DisplayWrapper = styled.a`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   right: 30px;
   font-size: 25px;
