@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import copy from "clipboard-copy";
 import styled from "styled-components";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
@@ -10,17 +10,20 @@ import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
 
 export default function Contact() {
+  const timeoutRef = useRef(null);
   const phoneNumber = "+917021739604";
   const { theme } = useSelector(uiState);
   const emailAddress = "mksh400@gmail.com";
-  const [showToast, setShowToast] = useState(false);
+  const [toast, setToast] = useState({ visible: false, message: "" });
 
-  const showToastMethod = () => {
-    setShowToast(true);
-    const timeoutId = setTimeout(() => {
-      setShowToast(false);
+  const showToastMethod = (message) => {
+    setToast({ visible: true, message });
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setToast({ visible: false, message: "" });
     }, 3000);
-    return () => clearTimeout(timeoutId);
   };
 
   const handleOpenDialer = () => {
@@ -31,13 +34,18 @@ export default function Contact() {
   const handleCopyEmail = () => {
     const emailToCopy = `${emailAddress}`;
     copy(emailToCopy);
-    showToastMethod();
+    showToastMethod("Email copied to clipboard");
+  };
+
+  const handleSendMessage = () => {
+    // send message functionality code
+    showToastMethod("Your message has been sent");
   };
 
   return (
     <BaseLayout>
-      <ToastWrapper showToast={showToast}>
-        <Toast message="Email copied to clipboard" />
+      <ToastWrapper showToast={toast.visible}>
+        <Toast message={toast.message} />
       </ToastWrapper>
       <Heading>Contact</Heading>
       <Description>Get in touch for collaborations</Description>
@@ -65,7 +73,7 @@ export default function Contact() {
             <TextBox placeholder="Email" />
           </NameEmailWrapper>
           <TextArea placeholder="Message" />
-          <SendBtn>Send Message</SendBtn>
+          <SendBtn onClick={handleSendMessage}>Send Message</SendBtn>
         </FormWrapper>
       </MessageWrapper>
       <Footer />
