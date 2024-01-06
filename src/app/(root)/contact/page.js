@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import copy from "clipboard-copy";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
@@ -18,6 +19,12 @@ export default function Contact() {
       setShowToast(false);
     }, 3000);
     return () => clearTimeout(timeoutId);
+  };
+
+  const handleCopyEmail = () => {
+    const emailToCopy = "mksh400@gmail.com";
+    copy(emailToCopy);
+    showToastMethod();
   };
 
   return (
@@ -39,7 +46,7 @@ export default function Contact() {
       </EmailNumberWrapper>
       <ButtonsWrapper>
         <PrimaryBtn>Schedule a call</PrimaryBtn>
-        <SecondaryBtn onClick={showToastMethod}>
+        <SecondaryBtn onClick={handleCopyEmail}>
           <i className="bi bi-copy"></i> Copy email
         </SecondaryBtn>
       </ButtonsWrapper>

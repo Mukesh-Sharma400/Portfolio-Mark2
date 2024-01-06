@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import copy from "clipboard-copy";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
@@ -34,6 +35,12 @@ export default function Home() {
       setShowToast(false);
     }, 3000);
     return () => clearTimeout(timeoutId);
+  };
+
+  const handleCopyEmail = () => {
+    const emailToCopy = "mksh400@gmail.com";
+    copy(emailToCopy);
+    showToastMethod();
   };
 
   const showMoreMethod = (page) => {
@@ -70,7 +77,7 @@ export default function Home() {
         </MyStory>
         <ButtonsWrapper>
           <PrimaryBtn href="/about">About me</PrimaryBtn>
-          <SecondaryBtn onClick={showToastMethod}>
+          <SecondaryBtn onClick={handleCopyEmail}>
             <i className="bi bi-copy"></i> Copy email
           </SecondaryBtn>
         </ButtonsWrapper>
