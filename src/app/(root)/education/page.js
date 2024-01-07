@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -15,6 +16,52 @@ import certificateofaptitudetest from "../../../../public/assets/certificate-of-
 export default function Education() {
   const { theme } = useSelector(uiState);
 
+  const educationsData = [
+    {
+      degree: "Bachelors in Information Technology",
+      imageSrc: scct,
+      alt: "Sanpada College of Commerce & Technology",
+      period: "September 2020 - May 2023",
+      college: "Sanpada College of Commerce & Technology",
+      location: "Sanpada, Navi Mumbai",
+      content:
+        "I always had a passion for web development and acquired skills in various web technologies. I have created many websites, which impressed all my colleagues and professors. I became a sought-after web developer, proving that hard work and dedication can lead to success.",
+    },
+    {
+      degree: "Higher School Certification",
+      imageSrc: pace,
+      alt: "Pace Education Society",
+      period: "June 2016 - May 2018",
+      college: "Pace Education Society",
+      location: "Nerul, Navi Mumbai",
+      content:
+        "I was always fascinated by the mysteries of the universe. Despite not being the smartest student in my class, I spend every free moment delving into books and videos on cosmology and astrophysics.",
+    },
+    {
+      degree: "Secondary School Certification",
+      imageSrc: tilak,
+      alt: "Tilak International School",
+      period: "June 2015 - March 2016",
+      college: "Tilak International School",
+      location: "Ghansoli, Navi Mumbai",
+      content:
+        "I always had a keen interest in computers and technology. I used to participate in a school computer science competition despite my lack of confidence. I studied hard, boosting my confidence and setting me on a path towards a successful career in technology.",
+    },
+  ];
+
+  const certificatesData = [
+    {
+      title: "Certificate of Brain Storm",
+      imageSrc: certificateofbrainstorm,
+      alt: "Certificate of Brain Storm",
+    },
+    {
+      title: "Certificate of Aptitude Test",
+      imageSrc: certificateofaptitudetest,
+      alt: "Certificate of Aptitude Test",
+    },
+  ];
+
   return (
     <BaseLayout>
       <Heading>Education</Heading>
@@ -22,104 +69,43 @@ export default function Education() {
         Explore academic achievements and qualifications
       </Description>
       <EducationsWrapper>
-        <EducationWrapper>
-          <LeftSide>
-            <EducationImage
-              className="rounded-3"
-              src={scct}
-              alt="Sanpada College of Commerce & Technology"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <EducationName>
-              Bachelors in Information Technology{" "}
-              <span>(September 2020 - May 2023)</span>
-            </EducationName>
-            <College>
-              Sanpada College of Commerce & Technology{" "}
-              <span>(Sanpada, Navi Mumbai)</span>
-            </College>
-            <Content>
-              I always had a passion for web development and acquired skills in
-              various web technologies. I have created many websites, which
-              impressed all my colleagues and professors. I became a
-              sought-after web developer, proving that hard work and dedication
-              can lead to success.
-            </Content>
-          </RightSide>
-        </EducationWrapper>
-        <Divider />
-        <EducationWrapper>
-          <LeftSide>
-            <EducationImage
-              className="rounded-3"
-              src={pace}
-              alt="Pace Education Society"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <EducationName>
-              Higher School Certification <span>(June 2016 - May 2018)</span>{" "}
-            </EducationName>
-            <College>
-              Pace Education Society <span>(Nerul, Navi Mumbai)</span>
-            </College>
-            <Content>
-              I was always fascinated by the mysteries of the universe. Despite
-              not being the smartest student in my class, I spends every free
-              moment delving into books and videos on cosmology and
-              astrophysics.
-            </Content>
-          </RightSide>
-        </EducationWrapper>
-        <Divider />
-        <EducationWrapper>
-          <LeftSide>
-            <EducationImage
-              className="rounded-3"
-              src={tilak}
-              alt="Tilak International School"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <EducationName>
-              Secondary School Certification{" "}
-              <span>(June 2015 - March 2016)</span>
-            </EducationName>
-            <College>
-              Tilak International School <span>(Ghansoli, Navi Mumbai)</span>
-            </College>
-            <Content>
-              I always had a keen interest in computers and technology, I used
-              to participate in a school computer science competition despite my
-              lack of confidence. I studied hard, boosting my confidence and
-              setting me on a path towards a successful career in technology.
-            </Content>
-          </RightSide>
-        </EducationWrapper>
+        {educationsData.map((education, index) => (
+          <React.Fragment key={index}>
+            <EducationWrapper>
+              <LeftSide>
+                <EducationImage
+                  className="rounded-3"
+                  src={education.imageSrc}
+                  alt={education.alt}
+                  width={100}
+                  height={100}
+                />
+              </LeftSide>
+              <RightSide>
+                <EducationName>
+                  {education.degree} <span>({education.period})</span>
+                </EducationName>
+                <College>
+                  {education.college} <span>({education.location})</span>
+                </College>
+                <Content>{education.content}</Content>
+              </RightSide>
+            </EducationWrapper>
+            {index < educationsData.length - 1 && <Divider />}
+          </React.Fragment>
+        ))}
       </EducationsWrapper>
       <HeadingTwo>Certificates</HeadingTwo>
       <CertificatesWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Certificate of Brain Storm</CertificateTitle>
-          <CertificateImage
-            src={certificateofbrainstorm}
-            alt="Certificate of Brain Storm"
-          />
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Certificate of Aptitude Test</CertificateTitle>
-          <CertificateImage
-            src={certificateofaptitudetest}
-            alt="Certificate of Aptitude Test"
-          />
-        </CertificateWrapper>
+        {certificatesData.map((certificate, index) => (
+          <CertificateWrapper key={index}>
+            <CertificateTitle>{certificate.title}</CertificateTitle>
+            <CertificateImage
+              src={certificate.imageSrc}
+              alt={certificate.alt}
+            />
+          </CertificateWrapper>
+        ))}
       </CertificatesWrapper>
       <Footer />
     </BaseLayout>

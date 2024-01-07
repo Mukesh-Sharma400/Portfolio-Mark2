@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -19,6 +20,84 @@ import certificateofmusicwithjs from "../../../../public/assets/certificate-of-m
 export default function Experience() {
   const { theme } = useSelector(uiState);
 
+  const experiencesData = [
+    {
+      company: "App Avengers Technologies",
+      imageSrc: appavengers,
+      alt: "App Avengers",
+      period: "July 2023 - Present",
+      role: "Web Developer Intern",
+      location: "Remote",
+      content:
+        "As a Web Developer Intern at App Avengers Technologies, I'm contributing to web app development with React.js, Next.js, and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+    },
+    {
+      company: "NullClass",
+      imageSrc: nullclass,
+      alt: "NullClass",
+      period: "December 2022 - January 2023",
+      role: "Project Intern",
+      location: "Remote",
+      content:
+        "As a NullClass Project Intern, I created a responsive MERN Stack app (Stack Overflow Clone) and added features like a chat bot and community section. I gained valuable experience in React, Node.js, Express.js, and MongoDB, improving my skills in building scalable and user-centric web applications.",
+    },
+    {
+      company: "Hasbasoft Technology Pvt Ltd",
+      imageSrc: hasbasoft,
+      alt: "Hasbasoft Technology",
+      period: "August 2021 - October 2022",
+      role: "MERN Stack Software Trainee",
+      location: "Remote",
+      content:
+        "As a Software Trainee at Hasbasoft Technology Pvt Ltd, I built several MERN Stack applications, including an Ecommerce platform. Through hands-on experience, I gained expertise in React, Node.js, Express.js, and MongoDB, developing dynamic and user-friendly web solutions in a professional software development environment.",
+    },
+  ];
+
+  const certificatesData = [
+    {
+      title: "Certificate of Internship",
+      imageSrc: certificateofinternship,
+      alt: "Certificate of Internship",
+      description:
+        "I successfully completed a MERN stack web development internship, earning a certification that demonstrates my proficiency in building dynamic web applications using MongoDB, Express.js, React.js, and Node.js.",
+    },
+    {
+      title: "Certificate of Training",
+      imageSrc: certificateoftraining,
+      alt: "Certificate of Training",
+      description:
+        "I have successfully completed a comprehensive MERN stack web development training program, acquiring in-depth knowledge and skills in MongoDB, Express.js, React, and Node.js.",
+    },
+    {
+      title: "E-Commerce Portal",
+      imageSrc: certificateofecommerce,
+      alt: "E-Commerce Portal",
+      description:
+        "I have received a certification in MERN stack web development, specializing in creating and maintaining e-commerce portal web applications with expertise in MongoDB, Express.js, React.js, and Node.js.",
+    },
+    {
+      title: "Dice Game",
+      imageSrc: certificateofdicegame,
+      alt: "Dice Game",
+      description:
+        "Certification obtained for advanced JavaScript-based dice game web application. Demonstrating proficiency in developing interactive and engaging gaming experiences using JavaScript and related technologies.",
+    },
+    {
+      title: "Music in JavaScript",
+      imageSrc: certificateofmusicwithjs,
+      alt: "Music in JavaScript",
+      description:
+        "Certification of music player web application in advance JavaScript. Verified proficiency in developing interactive and seamless music players, utilizing advanced JavaScript techniques for enhanced user experience.",
+    },
+    {
+      title: "Netflix Like Frontend",
+      imageSrc: certificateofnetflix,
+      alt: "Netflix Like Frontend",
+      description:
+        "Certification received for creating a Netflix clone web application using HTML and CSS, demonstrating proficiency in frontend development and UI design.",
+    },
+  ];
+
   return (
     <BaseLayout>
       <Heading>Experience</Heading>
@@ -26,162 +105,44 @@ export default function Experience() {
         Navigate through professional milestones and achievements
       </Description>
       <ExperiencesWrapper>
-        <ExperienceWrapper>
-          <LeftSide>
-            <CompanyImage
-              className="rounded-3"
-              src={appavengers}
-              alt="App Avengers"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <CompanyName>
-              App Avengers Technologies <span>(July 2023 - Present)</span>
-            </CompanyName>
-            <Role>
-              Web Developer Intern <span>(Remote)</span>
-            </Role>
-            <Content>
-              As a Web Developer Intern at App Avengers Technologies, I'm
-              contributing to web app development with React.js, Next.js, and
-              Web3 Technologies I'm designing interfaces, implementing features,
-              and engaging in code reviews for continuous learning.
-            </Content>
-          </RightSide>
-        </ExperienceWrapper>
-        <Divider />
-        <ExperienceWrapper>
-          <LeftSide>
-            <CompanyImage
-              className="rounded-3"
-              src={nullclass}
-              alt="NullClass"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <CompanyName>
-              NullClass <span>(December 2022 - January 2023)</span>{" "}
-            </CompanyName>
-            <Role>
-              Project Intern <span>(Remote)</span>
-            </Role>
-            <Content>
-              As a NullClass Project Intern, I created a responsive MERN Stack
-              app (Stack Overflow Clone) and added features like a chat bot and
-              community section. I gained valuable experience in React, Node.js,
-              Express.js, and MongoDB, improving my skills in building scalable
-              and user-centric web applications.
-            </Content>
-          </RightSide>
-        </ExperienceWrapper>
-        <Divider />
-        <ExperienceWrapper>
-          <LeftSide>
-            <CompanyImage
-              className="rounded-3"
-              src={hasbasoft}
-              alt="Hasbasoft Technology"
-              width={100}
-              height={100}
-            />
-          </LeftSide>
-          <RightSide>
-            <CompanyName>
-              Hasbasoft Technology Pvt Ltd{" "}
-              <span>(August 2021 - October 2022)</span>
-            </CompanyName>
-            <Role>
-              MERN Stack Software Trainee <span>(Remote)</span>
-            </Role>
-            <Content>
-              As a Software Trainee at Hasbasoft Technology Pvt Ltd, I built
-              several MERN Stack applications, including an Ecommerce platform.
-              Through hands-on experience, I gained expertise in React, Node.js,
-              Express.js, and MongoDB, developing dynamic and user-friendly web
-              solutions in a professional software development environment.
-            </Content>
-          </RightSide>
-        </ExperienceWrapper>
+        {experiencesData.map((experience, index) => (
+          <React.Fragment key={index}>
+            <ExperienceWrapper>
+              <LeftSide>
+                <CompanyImage
+                  className="rounded-3"
+                  src={experience.imageSrc}
+                  alt={experience.alt}
+                  width={100}
+                  height={100}
+                />
+              </LeftSide>
+              <RightSide>
+                <CompanyName>
+                  {experience.company} <span>({experience.period})</span>
+                </CompanyName>
+                <Role>
+                  {experience.role} <span>({experience.location})</span>
+                </Role>
+                <Content>{experience.content}</Content>
+              </RightSide>
+            </ExperienceWrapper>
+            {index < experiencesData.length - 1 && <Divider />}
+          </React.Fragment>
+        ))}
       </ExperiencesWrapper>
       <HeadingTwo>Certificates</HeadingTwo>
       <CertificatesWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Certificate of Internship</CertificateTitle>
-          <CertificateImage
-            src={certificateofinternship}
-            alt="Certificate of Internship"
-          />
-          <CertificateDesc>
-            I successfully completed a MERN stack web development internship,
-            earning a certification that demonstrates my proficiency in building
-            dynamic web applications using MongoDB, Express.js, React.js, and
-            Node.js.
-          </CertificateDesc>
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Certificate of Training</CertificateTitle>
-          <CertificateImage
-            src={certificateoftraining}
-            alt="Certificate of Training"
-          />
-          <CertificateDesc>
-            I have successfully completed a comprehensive MERN stack web
-            development training program, acquiring in-depth knowledge and
-            skills in MongoDB, Express.js, React, and Node.js.
-          </CertificateDesc>
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>E-Commerce Portal</CertificateTitle>
-          <CertificateImage
-            src={certificateofecommerce}
-            alt="E-Commerce Portal"
-          />
-          <CertificateDesc>
-            I have received a certification in MERN stack web development,
-            specializing in creating and maintaining e-commerce portal web
-            applications with expertise in MongoDB, Express.js, React.js, and
-            Node.js.
-          </CertificateDesc>
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Dice Game</CertificateTitle>
-          <CertificateImage src={certificateofdicegame} alt="Dice Game" />
-          <CertificateDesc>
-            Certification obtained for advanced JavaScript-based dice game web
-            application. Demonstrating proficiency in developing interactive and
-            engaging gaming experiences using JavaScript and related
-            technologies.
-          </CertificateDesc>
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Music in JavaScript</CertificateTitle>
-          <CertificateImage
-            src={certificateofmusicwithjs}
-            alt="Music in JavaScript"
-          />
-          <CertificateDesc>
-            Certification of music player web application in advance JavaScript.
-            Verified proficiency in developing interactive and seamless music
-            players, utilizing advanced JavaScript techniques for enhanced user
-            experience.
-          </CertificateDesc>
-        </CertificateWrapper>
-        <CertificateWrapper>
-          <CertificateTitle>Netflix Like Frontend</CertificateTitle>
-          <CertificateImage
-            src={certificateofnetflix}
-            alt="Netflix Like Frontend"
-          />
-          <CertificateDesc>
-            Certification received for creating a Netflix clone web application
-            using HTML and CSS, demonstrating proficiency in frontend
-            development and UI design.
-          </CertificateDesc>
-        </CertificateWrapper>
+        {certificatesData.map((certificate, index) => (
+          <CertificateWrapper key={index}>
+            <CertificateTitle>{certificate.title}</CertificateTitle>
+            <CertificateImage
+              src={certificate.imageSrc}
+              alt={certificate.alt}
+            />
+            <CertificateDesc>{certificate.description}</CertificateDesc>
+          </CertificateWrapper>
+        ))}
       </CertificatesWrapper>
       <Footer />
     </BaseLayout>

@@ -6,11 +6,73 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
-import profilePic from "../../../../public/assets/no-image.jpg";
+import amanSharma from "../../../../public/assets/aman-sharma.jpg";
+import aliKarim from "../../../../public/assets/ali-karim-sayed.png";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import nitinPrajapati from "../../../../public/assets/nitin-prajapati.jpg";
+import malePlaceholder from "../../../../public/assets/male-placeholder.jpg";
+import femalePlaceholder from "../../../../public/assets/female-placeholder.jpg";
 
 export default function Testimonials() {
   const { theme } = useSelector(uiState);
+
+  const testimonialsData = [
+    {
+      message:
+        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
+      image: aliKarim,
+      name: "Ali Karim Sayed",
+      role: "Corporate Trainer",
+    },
+    {
+      message:
+        "I highly recommend Mukesh as a MERN Stack Developer and would love to work together. Mukesh is amazing at his job! He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. He makes sure that everyone is on the same page and focused on the main goal.",
+      image: nitinPrajapati,
+      name: "Nitin Prajapati",
+      role: "Full Stack Developer",
+    },
+    {
+      message:
+        "Mukesh is Very friendly in nature. He can work very nicely in a team. He helps to understand concept while working in a team. He helps others in the team to grow with his own growth. He inspires other people to work better.",
+      image: femalePlaceholder,
+      name: "Diksha Dubey",
+      role: "Data Scientist",
+    },
+    {
+      message:
+        "Mukesh is an exceptional web developer who possesses all the skills one would want in an excellent software developer.",
+      image: femalePlaceholder,
+      name: "Shweta Jadhav",
+      role: "Data Analyst",
+    },
+    {
+      message:
+        "Working with Mukesh was so friendly as well as professional at the same time. Looking forward to work with you again.",
+      image: malePlaceholder,
+      name: "Rituraj Roj",
+      role: "Web Developer",
+    },
+    {
+      message:
+        "Having worked with Mukesh for three years, I have to say he is an excellent professional. He helped me understand the project management process and introduced me to useful tools. I am impressed with his work ethic and communication skills.",
+      image: femalePlaceholder,
+      name: "Reshma Yadav",
+      role: "Student",
+    },
+    {
+      message: "Mukesh is best in Front-End design and clean UI.",
+      image: amanSharma,
+      name: "Aman Sharma",
+      role: "Dot Net Developer",
+    },
+    {
+      message:
+        "Mukesh is a very hardworking person and can easily tackle web problems. We have worked together on several projects, and he is a very skilled and dedicated professional. His expertise in the web development field has helped us a lot! I highly recommend him to anyone.",
+      image: femalePlaceholder,
+      name: "Anjumaara Ansari",
+      role: "Web Developer",
+    },
+  ];
 
   return (
     <BaseLayout>
@@ -21,177 +83,24 @@ export default function Testimonials() {
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
-            <Testimonial>
-              <Message>
-                "Mukesh Sharma consistently demonstrated exceptional aptitude
-                and enthusiasm for learning the ins and outs of the MERN Stack.
-                He exhibited a strong grasp of the core concepts and principles,
-                showcasing their ability to apply them effectively in real-world
-                scenarios. He has exhibited a remarkable work ethic and
-                commitment to excellence throughout the training period. He
-                consistently showed a thirst for knowledge, actively seeking
-                additional resources and going above and beyond to expand their
-                understanding of the MERN Stack. His dedication and passion for
-                learning were evident in their consistent progress and the
-                quality of their work."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Ali Karim Sayed</Name>
-                  <Desc>Corporate Trainer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "I highly recommend Mukesh as a MERN Stack Developer and would
-                love to work together. Mukesh is amazing at his job! He knows
-                his way around people, he is good with the clients, does
-                whatever it takes to help colleagues and gets things done. He
-                makes sure that everyone is on the same page and focused on the
-                main goal."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Nitin Prajapati</Name>
-                  <Desc>Full Stack Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is Very friendly in nature. He can work very nicely in a
-                team. He helps to understand concept while working in a team. He
-                helps others in team to grow with his own growth. He inspires
-                other people to work better."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Diksha Dubey</Name>
-                  <Desc>Data Scientist</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is an exceptional web developer who possesses all the
-                skills one would want in an excellent software developer."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Shweta Jadhav</Name>
-                  <Desc>Data Analyst</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Working with Mukesh was so friendly as well as professional at
-                the same time. Looking forward to work with you again."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Rituraj Roj</Name>
-                  <Desc>Web Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Having worked with Mukesh for three years, I have to say he is
-                an excellent professional. He helped me understand the project
-                management process and introduced me to useful tools. I am
-                impressed with his work ethic and communication skills."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Reshma Yadav</Name>
-                  <Desc>Student</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is best in Front-End design and clean UI."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Aman Sharma</Name>
-                  <Desc>Dot Net Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is a very hardworking person and can easily tackle web
-                problems. We have worked together on several projects, and he is
-                a very skilled and dedicated professional. His expertise in the
-                web development field has helped us a lot! I highly recommend
-                him to anyone."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <Name>Anjumaara Ansari</Name>
-                  <Desc>Web Developer</Desc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
+            {testimonialsData.map((testimonial, index) => (
+              <Testimonial key={index}>
+                <Message>{testimonial.message}</Message>
+                <PicNameWrapper>
+                  <Image
+                    className="rounded-3"
+                    src={testimonial.image}
+                    alt="Profile Picture"
+                    width={50}
+                    height={50}
+                  />
+                  <div>
+                    <Name>{testimonial.name}</Name>
+                    <Desc>{testimonial.role}</Desc>
+                  </div>
+                </PicNameWrapper>
+              </Testimonial>
+            ))}
           </Masonry>
         </ResponsiveMasonry>
       </TestimonialsWrapper>

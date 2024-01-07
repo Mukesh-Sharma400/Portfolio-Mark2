@@ -17,12 +17,14 @@ import mongo from "../../../public/assets/mongo.png";
 import react from "../../../public/assets/react.webp";
 import express from "../../../public/assets/express.jpg";
 import angular from "../../../public/assets/angular.jpg";
-import profilePic from "../../../public/assets/no-image.jpg";
 import youtube from "../../../public/assets/youtube-thumbnail.png";
+import aliKarim from "../../../public/assets/ali-karim-sayed.png";
 import memories from "../../../public/assets/memories-thumbnail.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
+import femalePlaceholder from "../../../public/assets/female-placeholder.jpg";
 
 export default function Home() {
   const router = new useRouter();
@@ -56,6 +58,73 @@ export default function Home() {
     }
   };
 
+  const projectsData = [
+    {
+      name: "SocialNetwork Web App",
+      imageSrc: socialnetwork,
+      href: "/projects/socialnetwork",
+      description: "Social Media Web Application",
+    },
+    {
+      name: "Memories Web App",
+      imageSrc: memories,
+      href: "/projects/memories",
+      description: "Social Blog Web Application",
+    },
+    {
+      name: "Stack Overflow Clone",
+      imageSrc: stackoverflow,
+      href: "/projects/stackoverflow",
+      description: "Copy of Stack Overflow Application",
+    },
+    {
+      name: "YouTube Clone",
+      imageSrc: youtube,
+      href: "/projects/youtube",
+      description: "Copy of YouTube Application",
+    },
+  ];
+
+  const skillsData = [
+    { name: "MongoDB", imageSrc: mongo },
+    { name: "Express", imageSrc: express },
+    { name: "React", imageSrc: react },
+    { name: "Node", imageSrc: node },
+    { name: "Next", imageSrc: next },
+    { name: "Angular", imageSrc: angular },
+  ];
+
+  const testimonialsData = [
+    {
+      message:
+        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
+      image: aliKarim,
+      name: "Ali Karim Sayed",
+      role: "Corporate Trainer",
+    },
+    {
+      message:
+        "I highly recommend Mukesh as a MERN Stack Developer and would love to work together. Mukesh is amazing at his job! He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. He makes sure that everyone is on the same page and focused on the main goal.",
+      image: nitinPrajapati,
+      name: "Nitin Prajapati",
+      role: "Full Stack Developer",
+    },
+    {
+      message:
+        "Mukesh is an exceptional web developer who possesses all the skills one would want in an excellent software developer.",
+      image: femalePlaceholder,
+      name: "Shweta Jadhav",
+      role: "Data Analyst",
+    },
+    {
+      message:
+        "Mukesh is Very friendly in nature. He can work very nicely in a team. He helps to understand concept while working in a team. He helps others in the team to grow with his own growth. He inspires other people to work better.",
+      image: femalePlaceholder,
+      name: "Diksha Dubey",
+      role: "Data Scientist",
+    },
+  ];
+
   return (
     <BaseLayout>
       <ToastWrapper showToast={showToast}>
@@ -85,42 +154,17 @@ export default function Home() {
       </IntroWrapper>
       <HeadingTwo>Hall of Fame: My Best Work</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/socialnetwork">
-          <ImageWrapper>
-            <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>SocialNetwork Web App</ProjectName>
-            <ProjectDesc>Social Media Web Application</ProjectDesc>
-          </div>
-        </Project>
-        <Project href="/projects/memories">
-          <ImageWrapper>
-            <ProjectImage src={memories} alt="Memories Web App" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>Memories Web App</ProjectName>
-            <ProjectDesc>Social Blog Web Application</ProjectDesc>
-          </div>
-        </Project>
-        <Project href="/projects/stackoverflow">
-          <ImageWrapper>
-            <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>Stack Overflow Clone</ProjectName>
-            <ProjectDesc>Copy of Stack Overflow Application</ProjectDesc>
-          </div>
-        </Project>
-        <Project href="/projects/youtube">
-          <ImageWrapper>
-            <ProjectImage src={youtube} alt="YouTube Clone" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>YouTube Clone</ProjectName>
-            <ProjectDesc>Copy of YouTube Application</ProjectDesc>
-          </div>
-        </Project>
+        {projectsData.map((project, index) => (
+          <Project key={index} href={project.href}>
+            <ImageWrapper>
+              <ProjectImage src={project.imageSrc} alt={project.name} />
+            </ImageWrapper>
+            <div>
+              <ProjectName>{project.name}</ProjectName>
+              <ProjectDesc>{project.description}</ProjectDesc>
+            </div>
+          </Project>
+        ))}
       </ProjectsWrapper>
       <ShowMoreWrapper>
         <SecondaryBtn
@@ -133,35 +177,13 @@ export default function Home() {
       </ShowMoreWrapper>
       <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
       <SkillsWrapper>
-        <Skill>
-          <SkillImage src={mongo} alt="MONGO" />
-          MONGO
-        </Skill>
-        <Skill>
-          <SkillImage src={express} alt="EXPRESS" />
-          EXPRESS
-        </Skill>
-        <Skill>
-          <SkillImage src={react} alt="REACT" />
-          REACT
-        </Skill>
-        <Skill>
-          <SkillImage src={node} alt="NODE" />
-          NODE
-        </Skill>
-        <Skill>
-          <SkillImage src={next} alt="NEXT" />
-          NEXT
-        </Skill>
-        <Skill>
-          <SkillImage src={angular} alt="ANGULAR" />
-          ANGULAR
-        </Skill>
-        <SecondaryBtn
-          onClick={() => {
-            showMoreMethod("about");
-          }}
-        >
+        {skillsData.map((skill, index) => (
+          <Skill key={index}>
+            <SkillImage src={skill.imageSrc} alt={skill.name} />
+            {skill.name}
+          </Skill>
+        ))}
+        <SecondaryBtn onClick={() => showMoreMethod("about")}>
           Explore Further Abilities
         </SecondaryBtn>
       </SkillsWrapper>
@@ -169,97 +191,24 @@ export default function Home() {
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
-            <Testimonial>
-              <Message>
-                "Mukesh Sharma consistently demonstrated exceptional aptitude
-                and enthusiasm for learning the ins and outs of the MERN Stack.
-                He exhibited a strong grasp of the core concepts and principles,
-                showcasing their ability to apply them effectively in real-world
-                scenarios. He has exhibited a remarkable work ethic and
-                commitment to excellence throughout the training period. He
-                consistently showed a thirst for knowledge, actively seeking
-                additional resources and going above and beyond to expand their
-                understanding of the MERN Stack. His dedication and passion for
-                learning were evident in their consistent progress and the
-                quality of their work."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <TestimonialName>Ali Karim Sayed</TestimonialName>
-                  <TestimonialDesc>Corporate Trainer</TestimonialDesc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "I highly recommend Mukesh as a MERN Stack Developer and would
-                love to work together. Mukesh is amazing at his job! He knows
-                his way around people, he is good with the clients, does
-                whatever it takes to help colleagues and gets things done. He
-                makes sure that everyone is on the same page and focused on the
-                main goal."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <TestimonialName>Nitin Prajapati</TestimonialName>
-                  <TestimonialDesc>Full Stack Developer</TestimonialDesc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is an exceptional web developer who possesses all the
-                skills one would want in an excellent software developer."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <TestimonialName>Shweta Jadhav</TestimonialName>
-                  <TestimonialDesc>Data Analyst</TestimonialDesc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
-            <Testimonial>
-              <Message>
-                "Mukesh is Very friendly in nature. He can work very nicely in a
-                team. He helps to understand concept while working in a team. He
-                helps others in team to grow with his own growth. He inspires
-                other people to work better."
-              </Message>
-              <PicNameWrapper>
-                <Image
-                  className="rounded-3"
-                  src={profilePic}
-                  alt="Profile Picture"
-                  width={50}
-                  height={50}
-                />
-                <div>
-                  <TestimonialName>Diksha Dubey</TestimonialName>
-                  <TestimonialDesc>Data Scientist</TestimonialDesc>
-                </div>
-              </PicNameWrapper>
-            </Testimonial>
+            {testimonialsData.map((testimonial, index) => (
+              <Testimonial key={index}>
+                <Message>{testimonial.message}</Message>
+                <PicNameWrapper>
+                  <Image
+                    className="rounded-3"
+                    src={testimonial.image}
+                    alt="Profile Picture"
+                    width={50}
+                    height={50}
+                  />
+                  <div>
+                    <TestimonialName>{testimonial.name}</TestimonialName>
+                    <TestimonialDesc>{testimonial.role}</TestimonialDesc>
+                  </div>
+                </PicNameWrapper>
+              </Testimonial>
+            ))}
           </Masonry>
         </ResponsiveMasonry>
       </TestimonialsWrapper>
@@ -559,6 +508,7 @@ const Skill = styled.div`
   flex-direction: column;
   font-size: 12px;
   text-align: center;
+  text-transform: uppercase;
   border-radius: 5px;
   padding-bottom: 10px;
   color: ${({ theme }) =>

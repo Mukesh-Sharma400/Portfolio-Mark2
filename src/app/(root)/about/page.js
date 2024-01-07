@@ -24,6 +24,22 @@ import profilePic from "../../../../public/assets/profile-picture-blue.png";
 export default function About() {
   const { theme } = useSelector(uiState);
 
+  const skillsData = [
+    { name: "HTML", imageSrc: html },
+    { name: "CSS", imageSrc: css },
+    { name: "JavaScript", imageSrc: js },
+    { name: "MongoDB", imageSrc: mongo },
+    { name: "Express", imageSrc: express },
+    { name: "React", imageSrc: react },
+    { name: "Node", imageSrc: node },
+    { name: "Next", imageSrc: next },
+    { name: "Angular", imageSrc: angular },
+    { name: "Styled", imageSrc: styledc },
+    { name: "Bootstrap", imageSrc: bootstrap },
+    { name: "Tailwind", imageSrc: tailwind },
+    { name: "Material", imageSrc: material },
+  ];
+
   return (
     <BaseLayout>
       <IntroWrapper>
@@ -61,58 +77,12 @@ export default function About() {
       <SkillsSection id="skills">
         <HeadingTwo>Skills</HeadingTwo>
         <SkillsWrapper>
-          <Skill>
-            <SkillImage src={html} alt="HTML" />
-            HTML
-          </Skill>
-          <Skill>
-            <SkillImage src={css} alt="CSS" />
-            CSS
-          </Skill>
-          <Skill>
-            <SkillImage src={js} alt="JAVASCRIPT" />
-            JAVASCRIPT
-          </Skill>
-          <Skill>
-            <SkillImage src={mongo} alt="MONGO" />
-            MONGO
-          </Skill>
-          <Skill>
-            <SkillImage src={express} alt="EXPRESS" />
-            EXPRESS
-          </Skill>
-          <Skill>
-            <SkillImage src={react} alt="REACT" />
-            REACT
-          </Skill>
-          <Skill>
-            <SkillImage src={node} alt="NODE" />
-            NODE
-          </Skill>
-          <Skill>
-            <SkillImage src={next} alt="NEXT" />
-            NEXT
-          </Skill>
-          <Skill>
-            <SkillImage src={angular} alt="ANGULAR" />
-            ANGULAR
-          </Skill>
-          <Skill>
-            <SkillImage src={styledc} alt="STYLED" />
-            STYLED
-          </Skill>
-          <Skill>
-            <SkillImage src={bootstrap} alt="BOOTSTRAP" />
-            BOOTSTRAP
-          </Skill>
-          <Skill>
-            <SkillImage src={tailwind} alt="TAILWIND" />
-            TAILWIND
-          </Skill>
-          <Skill>
-            <SkillImage src={material} alt="MATERIAL" />
-            MATERIAL
-          </Skill>
+          {skillsData.map((skill, index) => (
+            <Skill key={index}>
+              <SkillImage src={skill.imageSrc} alt={skill.name} />
+              {skill.name}
+            </Skill>
+          ))}
         </SkillsWrapper>
       </SkillsSection>
       <InterestsSection>
@@ -219,6 +189,7 @@ const Skill = styled.div`
   flex-direction: column;
   font-size: 12px;
   text-align: center;
+  text-transform: uppercase;
   border-radius: 5px;
   padding-bottom: 10px;
   color: ${({ theme }) =>

@@ -19,6 +19,57 @@ import stackoverflow from "../../../../public/assets/stack-overflow-thumbnail.jp
 export default function Projects() {
   const { theme } = useSelector(uiState);
 
+  const projectsData = [
+    {
+      name: "SocialNetwork Web App",
+      imageSrc: socialnetwork,
+      href: "/projects/socialnetwork",
+      description: "Social Media Web Application",
+    },
+    {
+      name: "Memories Web App",
+      imageSrc: memories,
+      href: "/projects/memories",
+      description: "Social Blog Web Application",
+    },
+    {
+      name: "Stack Overflow Clone",
+      imageSrc: stackoverflow,
+      href: "/projects/stackoverflow",
+      description: "Copy of Stack Overflow Application",
+    },
+    {
+      name: "YouTube Clone",
+      imageSrc: youtube,
+      href: "/projects/youtube",
+      description: "Copy of YouTube Application",
+    },
+    {
+      name: "Dashboard Web App",
+      imageSrc: dashboard,
+      href: "/projects/dashboard",
+      description: "Data Visualization Web Application",
+    },
+    {
+      name: "E-Commerce Web App",
+      imageSrc: ecommerce,
+      href: "/projects/ecommerce",
+      description: "Shopping Web Application",
+    },
+    {
+      name: "Prime Video Clone",
+      imageSrc: primevideo,
+      href: "/projects/primevideo",
+      description: "UI of Prime Video Landing Page",
+    },
+    {
+      name: "Netflix Clone",
+      imageSrc: netflix,
+      href: "/projects/netflix",
+      description: "UI of Netflix Landing Page",
+    },
+  ];
+
   return (
     <BaseLayout>
       <Heading>Projects</Heading>
@@ -26,78 +77,17 @@ export default function Projects() {
         Explore a showcase of completed and ongoing projects
       </Description>
       <ProjectsWrapper>
-        <Project href="/projects/socialnetwork">
-          <ImageWrapper>
-            <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
-          </ImageWrapper>
-          <div>
-            <Name>SocialNetwork Web App</Name>
-            <Desc>Social Media Web Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/memories">
-          <ImageWrapper>
-            <ProjectImage src={memories} alt="Memories Web App" />
-          </ImageWrapper>
-          <div>
-            <Name>Memories Web App</Name>
-            <Desc>Social Blog Web Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/stackoverflow">
-          <ImageWrapper>
-            <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
-          </ImageWrapper>
-          <div>
-            <Name>Stack Overflow Clone</Name>
-            <Desc>Copy of Stack Overflow Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/youtube">
-          <ImageWrapper>
-            <ProjectImage src={youtube} alt="YouTube Clone" />
-          </ImageWrapper>
-          <div>
-            <Name>YouTube Clone</Name>
-            <Desc>Copy of YouTube Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/dashboard">
-          <ImageWrapper>
-            <ProjectImage src={dashboard} alt="Dashboard Web App" />
-          </ImageWrapper>
-          <div>
-            <Name>Dashboard Web App</Name>
-            <Desc>Data Visualization Web Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/ecommerce">
-          <ImageWrapper>
-            <ProjectImage src={ecommerce} alt="E-Commerce Web App" />
-          </ImageWrapper>
-          <div>
-            <Name>E-Commerce Web App</Name>
-            <Desc>Shopping Web Application</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/primevideo">
-          <ImageWrapper>
-            <ProjectImage src={primevideo} alt="Prime Video Clone" />
-          </ImageWrapper>
-          <div>
-            <Name>Prime Video Clone</Name>
-            <Desc>UI of Prime Video Landing Page</Desc>
-          </div>
-        </Project>
-        <Project href="/projects/netflix">
-          <ImageWrapper>
-            <ProjectImage src={netflix} alt="Netflix Clone" />
-          </ImageWrapper>
-          <div>
-            <Name>Netflix Clone</Name>
-            <Desc>UI of Netflix Landing Page</Desc>
-          </div>
-        </Project>
+        {projectsData.map((project, index) => (
+          <Project key={index} href={project.href}>
+            <ImageWrapper>
+              <ProjectImage src={project.imageSrc} alt={project.name} />
+            </ImageWrapper>
+            <div>
+              <Name>{project.name}</Name>
+              <Desc>{project.description}</Desc>
+            </div>
+          </Project>
+        ))}
       </ProjectsWrapper>
       <Footer />
     </BaseLayout>
