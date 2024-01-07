@@ -41,22 +41,43 @@ export default function Contact() {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_e4fjwoz",
-        "template_1d6gvu8",
-        form.current,
-        "a185DCLwfO5fjx4m0"
-      )
-      .then(
-        (result) => {
-          showToastMethod("Your message has been sent");
-          e.target.reset();
-        },
-        (error) => {
-          showToastMethod("Oops something went wrong");
-        }
-      );
+    const isValid = form.current.reportValidity();
+    if (isValid) {
+      const nameInput = form.current.elements.from_name;
+      const emailInput = form.current.elements.from_email;
+      const messageInput = form.current.elements.message;
+      if (nameInput.value.length <= 5) {
+        showToastMethod("Please enter your full name");
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        showToastMethod("Please enter a valid email address");
+        return;
+      }
+      if (messageInput.value.trim().length <= 20) {
+        showToastMethod("Message should be more than 20 characters");
+        return;
+      }
+      emailjs
+        .sendForm(
+          "service_e4fjwoz",
+          "template_1d6gvu8",
+          form.current,
+          "a185DCLwfO5fjx4m0"
+        )
+        .then(
+          (result) => {
+            showToastMethod("Your message has been sent");
+            e.target.reset();
+          },
+          (error) => {
+            showToastMethod("Oops something went wrong");
+          }
+        );
+    } else {
+      showToastMethod("Please fill out all required fields correctly");
+    }
   };
 
   return (
@@ -86,10 +107,15 @@ export default function Contact() {
         <HeadingTwo>Send a message</HeadingTwo>
         <FormWrapper ref={form} onSubmit={handleSendMessage}>
           <NameEmailWrapper>
-            <TextBox placeholder="Name" name="from_name" required />
-            <TextBox placeholder="Email" name="from_email" required />
+            <TextBox type="text" placeholder="Name" name="from_name" required />
+            <TextBox
+              type="email"
+              placeholder="Email"
+              name="from_email"
+              required
+            />
           </NameEmailWrapper>
-          <TextArea placeholder="Message" name="message" required />
+          <TextArea type="text" placeholder="Message" name="message" required />
           <SendBtn type="submit">Send Message</SendBtn>
         </FormWrapper>
       </MessageWrapper>
