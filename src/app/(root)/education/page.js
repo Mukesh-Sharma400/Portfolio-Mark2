@@ -163,6 +163,10 @@ const EducationWrapper = styled.div`
   display: flex;
   gap: 30px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftSide = styled.div`
@@ -177,6 +181,11 @@ const EducationImage = styled(Image)`
   left: 50%;
   transform: translate(-50%, -50%) !important;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    position: initial;
+    transform: initial !important;
+  }
 `;
 
 const RightSide = styled.div`
@@ -266,6 +275,10 @@ const CertificateWrapper = styled.div`
       ? theme.lightMode.whiteColor202
       : theme.darkMode.blackColor202};
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const CertificateTitle = styled.p`
@@ -280,7 +293,7 @@ const CertificateTitle = styled.p`
 `;
 
 const CertificateImage = styled(Image)`
-  width: 300px;
+  width: 100%;
   height: auto;
   transition: all 0.5s ease-in-out;
 `;

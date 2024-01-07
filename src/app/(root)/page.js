@@ -279,7 +279,7 @@ export default function Home() {
 
 const ToastWrapper = styled.div`
   position: absolute;
-  top: ${(props) => (props.showToast ? "7%" : "-10%")};
+  top: ${(props) => (props.showToast ? "7%" : "-20%")};
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -486,20 +486,36 @@ const Project = styled(Link)`
 
 const ImageWrapper = styled.div`
   width: 350px;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    width: 295px;
+  }
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const ProjectImage = styled(Image)`
   width: 350px;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 1024px) {
+    width: 295px;
+  }
+
+  @media (max-width: 426px) {
+    width: 100%;
   }
 `;
 

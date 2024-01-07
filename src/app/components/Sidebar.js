@@ -170,7 +170,7 @@ const DisplayWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1024px) {
-    width: 26%;
+    width: 27%;
   }
 
   @media (max-width: 768px) {
@@ -186,6 +186,10 @@ const ContentWrapper = styled.div`
   gap: 20px;
   text-align: center;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
 `;
 
 const PicNameWrapper = styled.div`

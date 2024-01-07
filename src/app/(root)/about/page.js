@@ -143,6 +143,10 @@ const IntroWrapper = styled.div`
   display: flex;
   gap: 20px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const DetailsWrapper = styled.div`
@@ -249,6 +253,10 @@ const InterestsWrapper = styled.div`
   align-items: center;
   gap: 5px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const Interest = styled.div`
@@ -283,6 +291,10 @@ const Interest = styled.div`
   &.last {
     border-bottom-right-radius: 10px;
   }
+
+  @media (max-width: 426px) {
+    flex: 1;
+  }
 `;
 
 const LanguagesSection = styled.div`
@@ -297,6 +309,10 @@ const LanguagesWrapper = styled.div`
   align-items: center;
   gap: 5px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const Language = styled.div`
@@ -324,5 +340,9 @@ const Language = styled.div`
   &.last {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+  }
+
+  @media (max-width: 426px) {
+    flex: 1;
   }
 `;

@@ -126,7 +126,7 @@ export default function Contact() {
 
 const ToastWrapper = styled.div`
   position: absolute;
-  top: ${(props) => (props.showToast ? "7%" : "-10%")};
+  top: ${(props) => (props.showToast ? "7%" : "-20%")};
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -287,6 +287,10 @@ const NameEmailWrapper = styled.div`
   align-items: center;
   gap: 16px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    flex-direction: column;
+  }
 `;
 
 const TextBox = styled.input`
