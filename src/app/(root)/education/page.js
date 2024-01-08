@@ -177,6 +177,10 @@ const EducationImage = styled(Image)`
 const RightSide = styled.div`
   width: 80%;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const EducationName = styled.p`
