@@ -371,7 +371,7 @@ const SocialLinksWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 20px 0px;
+  padding: 20px 0px 50px;
   border-top: 2px solid
     ${({ theme }) =>
       theme.currentTheme === "light"
