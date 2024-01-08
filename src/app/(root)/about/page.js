@@ -201,6 +201,10 @@ const Skill = styled.div`
       ? theme.lightMode.whiteColor202
       : theme.darkMode.blackColor202};
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    margin: 0 auto;
+  }
 `;
 
 const SkillImage = styled(Image)`

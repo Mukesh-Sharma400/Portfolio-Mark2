@@ -499,6 +499,10 @@ const SkillsWrapper = styled.div`
     height: 35px;
     padding: 0 20px;
     font-size: 14px;
+
+    @media (max-width: 1024px) {
+      margin: 30px auto 0px;
+    }
   }
 `;
 
@@ -520,6 +524,10 @@ const Skill = styled.div`
       ? theme.lightMode.whiteColor202
       : theme.darkMode.blackColor202};
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    margin: 0 auto;
+  }
 `;
 
 const SkillImage = styled(Image)`

@@ -21,6 +21,10 @@ textarea {
   border: none !important;
 }
 
+.container {
+  padding: 0 !important;
+}
+
 .custom-tooltip {
   --bs-tooltip-bg: royalblue !important;
   --bs-tooltip-color: white !important;

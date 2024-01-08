@@ -10,7 +10,9 @@ export default function BaseLayout({ children }) {
     <DisplayWrapper>
       <Header />
       <Sidebar />
-      <MainContent className="rounded-3 shadow-sm">{children}</MainContent>
+      <MainContent className="rounded-3 shadow-sm">
+        <div className="container">{children}</div>
+      </MainContent>
       <Resume />
     </DisplayWrapper>
   );
