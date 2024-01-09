@@ -132,7 +132,7 @@ export default function Home() {
       </ToastWrapper>
       <IntroWrapper>
         <AvailableBadge>
-          <AvailableDot /> Available for work
+          <AvailableDot /> Available for Work
         </AvailableBadge>
         <MyName>Hello! I’m Mukesh</MyName>
         <MyDesc>Code. Create. Conquer.</MyDesc>
