@@ -83,6 +83,10 @@ const TagsWrapper = styled.div`
   gap: 10px;
   margin: 30px 0;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 376px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const Tag = styled.div`
@@ -265,6 +269,10 @@ const ImageTimelineWrapper = styled.div`
   justify-content: center;
   gap: 20px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    flex-direction: column;
+  }
 `;
 
 const CurrentProjectImage = styled(Image)`
@@ -272,6 +280,10 @@ const CurrentProjectImage = styled(Image)`
   height: auto;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const TimeLine = styled.div`
@@ -351,20 +363,36 @@ const Project = styled(Link)`
 
 const ImageWrapper = styled.div`
   width: 350px;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    width: 295px;
+  }
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 
 const ProjectImage = styled(Image)`
   width: 350px;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 1024px) {
+    width: 295px;
+  }
+
+  @media (max-width: 426px) {
+    width: 100%;
   }
 `;
 
