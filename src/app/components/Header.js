@@ -13,6 +13,55 @@ export default function Header() {
   const { theme } = useSelector(uiState);
   const [contentVisible, setContentVisible] = useState(false);
 
+  const socialLinks = [
+    {
+      className: "bi bi-github",
+      href: "https://github.com/Mukesh-Sharma400",
+      tooltip: "GitHub",
+      ariaLabel: "GitHub",
+    },
+    {
+      className: "bi bi-linkedin",
+      href: "https://www.linkedin.com/in/mukesh-sharma-dev",
+      tooltip: "LinkedIn",
+      ariaLabel: "LinkedIn",
+    },
+    {
+      className: "bi bi-twitter-x",
+      href: "https://twitter.com/mukesh_sharma36",
+      tooltip: "Twitter / X",
+      ariaLabel: "Twitter / X",
+    },
+    {
+      className: "bi bi-facebook",
+      href: "https://www.facebook.com/MukeshSharma400",
+      tooltip: "Facebook",
+      ariaLabel: "Facebook",
+    },
+    {
+      className: "bi bi-instagram",
+      href: "https://www.instagram.com/mukesh_sharma400",
+      tooltip: "Instagram",
+      ariaLabel: "Instagram",
+    },
+    {
+      className: "bi bi-threads",
+      href: "https://www.threads.net/mukesh_sharma400",
+      tooltip: "Threads",
+      ariaLabel: "Threads",
+    },
+  ];
+
+  const routes = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/projects", label: "Projects" },
+    { path: "/education", label: "Education" },
+    { path: "/experience", label: "Experience" },
+    { path: "/testimonials", label: "Testimonials" },
+    { path: "/contact", label: "Contact" },
+  ];
+
   const toggleContentVisibility = () => {
     setContentVisible((prev) => !prev);
   };
@@ -59,120 +108,33 @@ export default function Header() {
       </HeaderWrapper>
       <ContentWrapper isVisible={contentVisible}>
         <RoutesWrapper className="gap-1">
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/" ? "active" : ""
-            }`}
-            href="/"
-          >
-            Home
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/about" ? "active" : ""
-            }`}
-            href="/about"
-          >
-            About
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/projects" || pathname.startsWith("/projects")
-                ? "active"
-                : ""
-            }`}
-            href="/projects"
-          >
-            Projects
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/education" ? "active" : ""
-            }`}
-            href="/education"
-          >
-            Education
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/experience" ? "active" : ""
-            }`}
-            href="/experience"
-          >
-            Experience
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/testimonials" ? "active" : ""
-            }`}
-            href="/testimonials"
-          >
-            Testimonials
-          </Route>
-          <Route
-            className={`px-2 py-1 rounded-3 w-100 ${
-              pathname === "/contact" ? "active" : ""
-            }`}
-            href="/contact"
-          >
-            Contact
-          </Route>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              className={`px-2 py-1 rounded-3 w-100 ${
+                pathname === route.path || pathname.startsWith(route.path + "/")
+                  ? "active"
+                  : ""
+              }`}
+              href={route.path}
+            >
+              {route.label}
+            </Route>
+          ))}
         </RoutesWrapper>
         <SocialLinksWrapper>
-          <SocialLink
-            className="bi bi-github"
-            href="https://github.com/Mukesh-Sharma400"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="GitHub"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="GitHub"
-          ></SocialLink>
-          <SocialLink
-            className="bi bi-linkedin"
-            href="https://www.linkedin.com/in/mukesh-sharma-dev"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="LinkedIn"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="LinkedIn"
-          ></SocialLink>
-          <SocialLink
-            className="bi bi-twitter-x"
-            href="https://twitter.com/mukesh_sharma36"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="Twitter / X"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="Twitter / X"
-          ></SocialLink>
-          <SocialLink
-            className="bi bi-facebook"
-            href="https://www.facebook.com/Mukesh400f"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="Facebook"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="Facebook"
-          ></SocialLink>
-          <SocialLink
-            className="bi bi-instagram"
-            href="https://www.instagram.com/mukesh_sharma400"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="Instagram"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="Instagram"
-          ></SocialLink>
-          <SocialLink
-            className="bi bi-threads"
-            href="https://www.threads.net/mukesh_sharma400"
-            target="_blank"
-            data-bs-toggle="tooltip"
-            data-bs-title="Threads"
-            data-bs-custom-class="custom-tooltip"
-            aria-label="Threads"
-          ></SocialLink>
+          {socialLinks.map((link, index) => (
+            <SocialLink
+              key={index}
+              className={link.className}
+              href={link.href}
+              target="_blank"
+              data-bs-toggle="tooltip"
+              data-bs-title={link.tooltip}
+              data-bs-custom-class="custom-tooltip"
+              aria-label={link.ariaLabel}
+            ></SocialLink>
+          ))}
         </SocialLinksWrapper>
       </ContentWrapper>
     </DisplayWrapper>
