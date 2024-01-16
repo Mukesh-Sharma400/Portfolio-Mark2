@@ -29,7 +29,7 @@ export default function Experience() {
       role: "Web Developer Intern",
       location: "Remote",
       content:
-        "As a Web Developer Intern at App Avengers Technologies, I'm contributing to web app development with React.js, Next.js, and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+        "As a Web Developer Intern at App Avengers Technologies, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
     },
     {
       company: "NullClass",

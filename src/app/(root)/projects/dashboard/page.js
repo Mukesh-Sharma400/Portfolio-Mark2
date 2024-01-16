@@ -34,8 +34,18 @@ export default function Dashboard() {
         productivity today!
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn
+          href="https://dashboard-smoky-three.vercel.app"
+          target="_blank"
+        >
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn
+          href="https://github.com/Mukesh-Sharma400/Dashboard"
+          target="_blank"
+        >
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={dashboard} alt="Dashboard Web App" />
@@ -43,7 +53,7 @@ export default function Dashboard() {
           <CalendarIcon>
             <i class="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
-          <TimelineHeading>07/2023 - Present</TimelineHeading>
+          <TimelineHeading>07/2023 - 09/2023</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>
         </TimeLine>
       </ImageTimelineWrapper>

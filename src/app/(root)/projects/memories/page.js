@@ -36,8 +36,15 @@ export default function Memories() {
         today!
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn href="https://memories-wheat.vercel.app" target="_blank">
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn
+          href="https://github.com/Mukesh-Sharma400/Memories"
+          target="_blank"
+        >
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={memories} alt="Memories Web App" />

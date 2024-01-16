@@ -33,8 +33,18 @@ export default function YouTube() {
         videos.
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn
+          href="https://you-tube-clone-orcin.vercel.app"
+          target="_blank"
+        >
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn
+          href="https://github.com/Mukesh-Sharma400/YouTube-Clone"
+          target="_blank"
+        >
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={youtube} alt="YouTube Clone" />
