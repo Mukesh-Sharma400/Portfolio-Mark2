@@ -28,7 +28,7 @@ export default function About() {
     { name: "HTML", imageSrc: html },
     { name: "CSS", imageSrc: css },
     { name: "JavaScript", imageSrc: js },
-    { name: "MongoDB", imageSrc: mongo },
+    { name: "Mongo", imageSrc: mongo },
     { name: "Express", imageSrc: express },
     { name: "React", imageSrc: react },
     { name: "Node", imageSrc: node },
