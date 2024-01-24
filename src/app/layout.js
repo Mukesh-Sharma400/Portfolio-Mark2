@@ -12,17 +12,17 @@ export const metadata = {
   keywords:
     "MERN stack, web development, MongoDB, Express.js, React, Node.js, full-stack developer",
   author: "Mukesh Sharma",
-  image: "../../public/assets/profile-picture-blue.png",
+  image: "./icon.png",
   url: "https://mukesh-sharma.vercel.app",
   type: "website",
   ogTitle: "Mukesh Sharma - MERN Stack Developer",
   ogDescription:
     "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
-  ogImage: "../../public/assets/profile-picture-blue.png",
+  ogImage: "./icon.png",
   twitterTitle: "Mukesh Sharma - MERN Stack Developer",
   twitterDescription:
     "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
-  twitterImage: "../../public/assets/profile-picture-blue.png",
+  twitterImage: "./icon.png",
 };
 
 export default function Layout({ children }) {
