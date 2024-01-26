@@ -131,7 +131,7 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </ExperiencesWrapper>
-      <HeadingTwo id="certificates">Certificates</HeadingTwo>
+      <HeadingTwo>Certificates</HeadingTwo>
       <CertificatesWrapper>
         {certificatesData.map((certificate, index) => (
           <CertificateWrapper key={index}>
