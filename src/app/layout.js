@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./global.css";
 import Head from "next/head";
 import { Providers } from "./providers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Mukesh Sharma - MERN Stack Developer",
@@ -33,6 +34,7 @@ export default function Layout({ children }) {
       </Head>
       <body>
         <Providers>{children}</Providers>
+        <SpeedInsights />
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
