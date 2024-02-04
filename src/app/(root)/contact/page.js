@@ -119,6 +119,12 @@ export default function Contact() {
           <SendBtn type="submit">Send Message</SendBtn>
         </FormWrapper>
       </MessageWrapper>
+      <HeadingTwo>View on Map</HeadingTwo>
+      <GoogleMaps
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24866.562752799404!2d72.98647896047301!3d19.126320510200138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0ae08fd4fcb%3A0xeb29360c730e957f!2sGhansoli%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707053510196!5m2!1sen!2sin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></GoogleMaps>
       <Footer />
     </BaseLayout>
   );
@@ -352,4 +358,10 @@ const SendBtn = styled.button`
         ? theme.lightMode.greenColor100
         : theme.darkMode.greenColor100};
   }
+`;
+
+const GoogleMaps = styled.iframe`
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
 `;
