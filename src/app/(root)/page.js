@@ -276,10 +276,16 @@ const AvailableDot = styled.div`
 const MyName = styled.h1`
   width: fit-content;
   line-height: 40px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  width: fit-content;
+  background-color: #4181d0;
+  background-image: linear-gradient(
+    90deg,
+    #4181d0 0%,
+    #c850c0 50%,
+    #ff7072 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: all 0.5s ease-in-out;
   position: relative;
 
@@ -289,6 +295,7 @@ const MyName = styled.h1`
 
   &::after {
     content: "👋";
+    -webkit-text-fill-color: initial;
     position: absolute;
   }
 
