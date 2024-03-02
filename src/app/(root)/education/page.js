@@ -72,7 +72,7 @@ export default function Education() {
         {educationsData.map((education, index) => (
           <React.Fragment key={index}>
             <EducationWrapper>
-              <LeftSide>
+              <LeftSide data-aos="fade-left">
                 <EducationImage
                   className="rounded-3"
                   src={education.imageSrc}
@@ -98,7 +98,7 @@ export default function Education() {
       <HeadingTwo>Certificates</HeadingTwo>
       <CertificatesWrapper>
         {certificatesData.map((certificate, index) => (
-          <CertificateWrapper key={index}>
+          <CertificateWrapper key={index} data-aos="zoom-in-up">
             <CertificateTitle>{certificate.title}</CertificateTitle>
             <CertificateImage
               src={certificate.imageSrc}

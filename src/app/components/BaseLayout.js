@@ -20,7 +20,6 @@ export default function BaseLayout({ children }) {
 
 const DisplayWrapper = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   background-color: ${({ theme }) =>
     theme.currentTheme === "light"
@@ -35,22 +34,18 @@ const DisplayWrapper = styled.div`
 `;
 
 const MainContent = styled.div`
-  width: 100%;
-  margin: 20px;
+  width: calc(80% - 20px);
+  margin: 20px 20px 20px auto;
   padding: 100px;
   background-color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.globalColors.whiteColor
       : theme.darkMode.blackColor100};
-  overflow-y: scroll;
   transition: all 0.5s ease-in-out;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
   @media (max-width: 1024px) {
     padding: 70px;
+    width: calc(77% - 20px);
   }
 
   @media (max-width: 768px) {

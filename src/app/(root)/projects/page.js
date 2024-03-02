@@ -78,7 +78,7 @@ export default function Projects() {
       </Description>
       <ProjectsWrapper>
         {projectsData.map((project, index) => (
-          <Project key={index} href={project.href}>
+          <Project key={index} href={project.href} data-aos="zoom-in-up">
             <ImageWrapper>
               <ProjectImage src={project.imageSrc} alt={project.name} />
             </ImageWrapper>

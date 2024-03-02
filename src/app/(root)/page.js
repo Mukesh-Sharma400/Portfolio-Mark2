@@ -130,12 +130,32 @@ export default function Home() {
       <ToastWrapper showToast={showToast}>
         <Toast message="Email copied to clipboard" />
       </ToastWrapper>
-      <IntroWrapper data-aos="fade-right">
+      <IntroWrapper>
         <AvailableBadge>
           <AvailableDot /> Available for Work
         </AvailableBadge>
-        <MyName>Hello! I’m Mukesh</MyName>
-        <MyDesc>Code. Create. Conquer.</MyDesc>
+        <MyName>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="100">
+            Hello!
+          </span>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="200">
+            I’m
+          </span>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="300">
+            Mukesh
+          </span>
+        </MyName>
+        <MyDesc>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="400">
+            Code.
+          </span>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="500">
+            Create.
+          </span>
+          <span className="me-2" data-aos="fade-right" data-aos-delay="600">
+            Conquer.
+          </span>
+        </MyDesc>
         <Location>
           <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
@@ -146,8 +166,10 @@ export default function Home() {
           integrations, and databases.
         </MyStory>
         <ButtonsWrapper>
-          <PrimaryBtn href="/about">About me</PrimaryBtn>
-          <SecondaryBtn onClick={handleCopyEmail}>
+          <PrimaryBtn href="/about" data-aos="zoom-in-up">
+            About me
+          </PrimaryBtn>
+          <SecondaryBtn onClick={handleCopyEmail} data-aos="zoom-in-up">
             <i className="bi bi-copy"></i> Copy email
           </SecondaryBtn>
         </ButtonsWrapper>
@@ -155,7 +177,7 @@ export default function Home() {
       <HeadingTwo>Hall of Fame: My Best Work</HeadingTwo>
       <ProjectsWrapper>
         {projectsData.map((project, index) => (
-          <Project key={index} href={project.href}>
+          <Project key={index} href={project.href} data-aos="zoom-in-up">
             <ImageWrapper>
               <ProjectImage src={project.imageSrc} alt={project.name} />
             </ImageWrapper>
@@ -171,6 +193,7 @@ export default function Home() {
           onClick={() => {
             showMoreMethod("projects");
           }}
+          data-aos="zoom-in-up"
         >
           Browse Complete Collection
         </SecondaryBtn>
@@ -178,12 +201,20 @@ export default function Home() {
       <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
       <SkillsWrapper>
         {skillsData.map((skill, index) => (
-          <Skill key={index}>
+          <Skill
+            key={index}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
             <SkillImage src={skill.imageSrc} alt={skill.name} />
             {skill.name}
           </Skill>
         ))}
-        <SecondaryBtn onClick={() => showMoreMethod("about")}>
+        <SecondaryBtn
+          onClick={() => showMoreMethod("about")}
+          data-aos="zoom-in-right"
+          data-aos-delay="700"
+        >
           Explore Further Abilities
         </SecondaryBtn>
       </SkillsWrapper>
@@ -192,7 +223,7 @@ export default function Home() {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index}>
+              <Testimonial key={index} data-aos="zoom-in-up">
                 <Message>{testimonial.message}</Message>
                 <PicNameWrapper>
                   <Image
@@ -217,6 +248,7 @@ export default function Home() {
           onClick={() => {
             showMoreMethod("testimonials");
           }}
+          data-aos="zoom-in-up"
         >
           Read More Testimonials
         </SecondaryBtn>

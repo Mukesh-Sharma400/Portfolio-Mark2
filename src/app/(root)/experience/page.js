@@ -108,7 +108,7 @@ export default function Experience() {
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>
             <ExperienceWrapper>
-              <LeftSide>
+              <LeftSide data-aos="fade-left">
                 <CompanyImage
                   className="rounded-3"
                   src={experience.imageSrc}
@@ -134,7 +134,7 @@ export default function Experience() {
       <HeadingTwo>Certificates</HeadingTwo>
       <CertificatesWrapper>
         {certificatesData.map((certificate, index) => (
-          <CertificateWrapper key={index}>
+          <CertificateWrapper key={index} data-aos="zoom-in-up">
             <CertificateTitle>{certificate.title}</CertificateTitle>
             <CertificateImage
               src={certificate.imageSrc}

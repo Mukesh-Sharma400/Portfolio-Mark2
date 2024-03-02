@@ -45,8 +45,10 @@ export default function About() {
       <IntroWrapper>
         <DetailsWrapper>
           <MyName data-aos="fade-right">Mukesh Sharma</MyName>
-          <MyDesc data-aos="fade-right">MERN STACK DEVELOPER</MyDesc>
-          <MyStory data-aos="fade-right">
+          <MyDesc data-aos="fade-right" data-aos-delay="100">
+            MERN STACK DEVELOPER
+          </MyDesc>
+          <MyStory>
             Hi, I'm Mukesh Sharma, an aspiring IT professional currently working
             as a Web Developer Intern at App Avengers Technologies. Previously,
             I interned at NullClass and dedicated time to mastering the MERN
@@ -55,7 +57,7 @@ export default function About() {
             I'm adept at using tools like Redux, Sass, and Bootstrap.
           </MyStory>
         </DetailsWrapper>
-        <PicWrapper data-aos="fade-right">
+        <PicWrapper data-aos="fade-right" data-aos-delay="300">
           <Image
             className="rounded-3"
             src={profilePic}
@@ -65,7 +67,7 @@ export default function About() {
           />
         </PicWrapper>
       </IntroWrapper>
-      <MyStory data-aos="fade-right">
+      <MyStory>
         Despite being early in my career, I've collaborated with diverse clients
         and industries, adapting to varying project requirements. As a
         self-motivated individual, I continuously seek opportunities to enhance
@@ -78,7 +80,11 @@ export default function About() {
         <HeadingTwo>Skills</HeadingTwo>
         <SkillsWrapper>
           {skillsData.map((skill, index) => (
-            <Skill key={index}>
+            <Skill
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
               <SkillImage src={skill.imageSrc} alt={skill.name} />
               {skill.name}
             </Skill>
@@ -88,20 +94,32 @@ export default function About() {
       <InterestsSection>
         <HeadingTwo>Interests</HeadingTwo>
         <InterestsWrapper>
-          <Interest className="first">Coding</Interest>
-          <Interest>Music</Interest>
-          <Interest className="third">Chess</Interest>
-          <Interest className="forth">Cricket</Interest>
-          <Interest>Football</Interest>
-          <Interest className="last">Carrom</Interest>
+          <Interest className="first" data-aos="fade-down-right">
+            Coding
+          </Interest>
+          <Interest data-aos="fade-down">Music</Interest>
+          <Interest className="third" data-aos="fade-down-left">
+            Chess
+          </Interest>
+          <Interest className="forth" data-aos="fade-up-right">
+            Cricket
+          </Interest>
+          <Interest data-aos="fade-up">Football</Interest>
+          <Interest className="last" data-aos="fade-up-left">
+            Carrom
+          </Interest>
         </InterestsWrapper>
       </InterestsSection>
       <LanguagesSection>
         <HeadingTwo>Languages</HeadingTwo>
         <LanguagesWrapper>
-          <Language className="first">English</Language>
-          <Language>Hindi</Language>
-          <Language className="last">Marathi</Language>
+          <Language className="first" data-aos="fade-right">
+            English
+          </Language>
+          <Language data-aos="fade-up">Hindi</Language>
+          <Language className="last" data-aos="fade-left">
+            Marathi
+          </Language>
         </LanguagesWrapper>
       </LanguagesSection>
       <Footer />

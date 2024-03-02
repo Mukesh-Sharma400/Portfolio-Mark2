@@ -76,15 +76,15 @@ export default function Testimonials() {
 
   return (
     <BaseLayout>
-      <Heading>Testimonials</Heading>
-      <Description>
+      <Heading data-aos="fade-right">Testimonials</Heading>
+      <Description data-aos="fade-right">
         Read what others have to say about experiences and collaborations
       </Description>
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index}>
+              <Testimonial key={index} data-aos="zoom-in-up">
                 <Message>{testimonial.message}</Message>
                 <PicNameWrapper>
                   <Image

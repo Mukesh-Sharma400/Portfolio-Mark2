@@ -29,3 +29,7 @@ textarea {
   --bs-tooltip-bg: royalblue !important;
   --bs-tooltip-color: white !important;
 }
+
+&::-webkit-scrollbar {
+  display: none;
+}

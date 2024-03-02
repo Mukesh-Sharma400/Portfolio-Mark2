@@ -122,7 +122,9 @@ export default function Sidebar() {
 }
 
 const DisplayWrapper = styled.div`
+  position: fixed;
   width: 20%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,7 +134,7 @@ const DisplayWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1024px) {
-    width: 27%;
+    width: 23%;
   }
 
   @media (max-width: 768px) {
@@ -189,13 +191,13 @@ const SocialLinksWrapper = styled.div`
 `;
 
 const SocialLink = styled(Link)`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
   border-radius: 50%;
   color: ${({ theme }) =>
     theme.currentTheme === "light"

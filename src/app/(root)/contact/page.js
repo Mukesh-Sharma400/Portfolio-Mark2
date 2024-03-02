@@ -100,14 +100,20 @@ export default function Contact() {
         </NumberWrapper>
       </EmailNumberWrapper>
       <ButtonsWrapper>
-        <PrimaryBtn onClick={handleOpenDialer}>Schedule a call</PrimaryBtn>
-        <SecondaryBtn onClick={handleCopyEmail}>
+        <PrimaryBtn onClick={handleOpenDialer} data-aos="zoom-in-up">
+          Schedule a call
+        </PrimaryBtn>
+        <SecondaryBtn onClick={handleCopyEmail} data-aos="zoom-in-up">
           <i className="bi bi-copy"></i> Copy email
         </SecondaryBtn>
       </ButtonsWrapper>
       <MessageWrapper>
         <HeadingTwo>Send a message</HeadingTwo>
-        <FormWrapper ref={form} onSubmit={handleSendMessage}>
+        <FormWrapper
+          ref={form}
+          onSubmit={handleSendMessage}
+          data-aos="zoom-in-up"
+        >
           <NameEmailWrapper>
             <TextBox type="text" placeholder="Name" name="from_name" required />
             <TextBox
@@ -126,6 +132,7 @@ export default function Contact() {
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24866.562752799404!2d72.98647896047301!3d19.126320510200138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0ae08fd4fcb%3A0xeb29360c730e957f!2sGhansoli%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707053510196!5m2!1sen!2sin"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
+        data-aos="zoom-in-up"
       ></GoogleMaps>
       <Footer />
     </BaseLayout>
