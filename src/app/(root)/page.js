@@ -192,7 +192,7 @@ export default function Home() {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index} data-aos="fade-up">
+              <Testimonial key={index}>
                 <Message>{testimonial.message}</Message>
                 <PicNameWrapper>
                   <Image
