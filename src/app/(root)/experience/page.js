@@ -100,8 +100,8 @@ export default function Experience() {
 
   return (
     <BaseLayout>
-      <Heading>Experience</Heading>
-      <Description>
+      <Heading data-aos="fade-right">Experience</Heading>
+      <Description data-aos="fade-right">
         Navigate through professional milestones and achievements
       </Description>
       <ExperiencesWrapper>

@@ -64,8 +64,8 @@ export default function Education() {
 
   return (
     <BaseLayout>
-      <Heading>Education</Heading>
-      <Description>
+      <Heading data-aos="fade-right">Education</Heading>
+      <Description data-aos="fade-right">
         Explore academic achievements and qualifications
       </Description>
       <EducationsWrapper>

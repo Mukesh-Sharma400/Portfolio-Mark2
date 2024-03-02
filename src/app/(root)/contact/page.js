@@ -85,8 +85,10 @@ export default function Contact() {
       <ToastWrapper showToast={toast.visible}>
         <Toast message={toast.message} />
       </ToastWrapper>
-      <Heading>Contact</Heading>
-      <Description>Get in touch for collaborations</Description>
+      <Heading data-aos="fade-right">Contact</Heading>
+      <Description data-aos="fade-right">
+        Get in touch for collaborations
+      </Description>
       <EmailNumberWrapper>
         <EmailWrapper>
           <Title>mksh400@gmail.com</Title>

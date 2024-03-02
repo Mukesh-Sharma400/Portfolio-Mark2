@@ -130,7 +130,7 @@ export default function Home() {
       <ToastWrapper showToast={showToast}>
         <Toast message="Email copied to clipboard" />
       </ToastWrapper>
-      <IntroWrapper>
+      <IntroWrapper data-aos="fade-right">
         <AvailableBadge>
           <AvailableDot /> Available for Work
         </AvailableBadge>
@@ -192,7 +192,7 @@ export default function Home() {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index}>
+              <Testimonial key={index} data-aos="fade-up">
                 <Message>{testimonial.message}</Message>
                 <PicNameWrapper>
                   <Image

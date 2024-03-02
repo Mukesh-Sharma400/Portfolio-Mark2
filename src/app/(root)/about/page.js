@@ -44,9 +44,9 @@ export default function About() {
     <BaseLayout>
       <IntroWrapper>
         <DetailsWrapper>
-          <MyName>Mukesh Sharma</MyName>
-          <MyDesc>MERN STACK DEVELOPER</MyDesc>
-          <MyStory>
+          <MyName data-aos="fade-right">Mukesh Sharma</MyName>
+          <MyDesc data-aos="fade-right">MERN STACK DEVELOPER</MyDesc>
+          <MyStory data-aos="fade-right">
             Hi, I'm Mukesh Sharma, an aspiring IT professional currently working
             as a Web Developer Intern at App Avengers Technologies. Previously,
             I interned at NullClass and dedicated time to mastering the MERN
@@ -55,7 +55,7 @@ export default function About() {
             I'm adept at using tools like Redux, Sass, and Bootstrap.
           </MyStory>
         </DetailsWrapper>
-        <PicWrapper>
+        <PicWrapper data-aos="fade-right">
           <Image
             className="rounded-3"
             src={profilePic}
@@ -65,7 +65,7 @@ export default function About() {
           />
         </PicWrapper>
       </IntroWrapper>
-      <MyStory>
+      <MyStory data-aos="fade-right">
         Despite being early in my career, I've collaborated with diverse clients
         and industries, adapting to varying project requirements. As a
         self-motivated individual, I continuously seek opportunities to enhance

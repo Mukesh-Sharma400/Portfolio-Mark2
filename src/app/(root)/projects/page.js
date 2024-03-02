@@ -72,8 +72,8 @@ export default function Projects() {
 
   return (
     <BaseLayout>
-      <Heading>Projects</Heading>
-      <Description>
+      <Heading data-aos="fade-right">Projects</Heading>
+      <Description data-aos="fade-right">
         Explore a showcase of completed and ongoing projects
       </Description>
       <ProjectsWrapper>
