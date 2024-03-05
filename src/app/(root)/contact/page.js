@@ -90,14 +90,14 @@ export default function Contact() {
         Get in touch for collaborations
       </Description>
       <EmailNumberWrapper>
-        <EmailWrapper>
-          <Title>mksh400@gmail.com</Title>
-          <SubTitle>Email</SubTitle>
-        </EmailWrapper>
         <NumberWrapper>
           <Title>+91 7021739604</Title>
           <SubTitle>Phone</SubTitle>
         </NumberWrapper>
+        <EmailWrapper>
+          <Title>mksh400@gmail.com</Title>
+          <SubTitle>Email</SubTitle>
+        </EmailWrapper>
       </EmailNumberWrapper>
       <ButtonsWrapper>
         <PrimaryBtn onClick={handleOpenDialer} data-aos="zoom-in-up">
