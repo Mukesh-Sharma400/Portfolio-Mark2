@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import js from "../../../../public/assets/js.png";
@@ -23,6 +24,19 @@ import profilePic from "../../../../public/assets/profile-picture-blue.png";
 
 export default function About() {
   const { theme } = useSelector(uiState);
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const skillsData = [
     { name: "HTML", imageSrc: html },
@@ -94,18 +108,32 @@ export default function About() {
       <InterestsSection>
         <HeadingTwo>Interests</HeadingTwo>
         <InterestsWrapper>
-          <Interest className="first" data-aos="fade-down-right">
+          <Interest
+            className="first"
+            data-aos={screenWidth > 600 ? "fade-down-right" : "fade-up"}
+          >
             Coding
           </Interest>
-          <Interest data-aos="fade-down">Music</Interest>
-          <Interest className="third" data-aos="fade-down-left">
+          <Interest data-aos={screenWidth > 600 ? "fade-down" : "fade-up"}>
+            Music
+          </Interest>
+          <Interest
+            className="third"
+            data-aos={screenWidth > 600 ? "fade-down-left" : "fade-up"}
+          >
             Chess
           </Interest>
-          <Interest className="forth" data-aos="fade-up-right">
+          <Interest
+            className="forth"
+            data-aos={screenWidth > 600 ? "fade-up-right" : "fade-up"}
+          >
             Cricket
           </Interest>
           <Interest data-aos="fade-up">Football</Interest>
-          <Interest className="last" data-aos="fade-up-left">
+          <Interest
+            className="last"
+            data-aos={screenWidth > 600 ? "fade-up-left" : "fade-up"}
+          >
             Carrom
           </Interest>
         </InterestsWrapper>
@@ -113,11 +141,17 @@ export default function About() {
       <LanguagesSection>
         <HeadingTwo>Languages</HeadingTwo>
         <LanguagesWrapper>
-          <Language className="first" data-aos="fade-right">
+          <Language
+            className="first"
+            data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
+          >
             English
           </Language>
           <Language data-aos="fade-up">Hindi</Language>
-          <Language className="last" data-aos="fade-left">
+          <Language
+            className="last"
+            data-aos={screenWidth > 600 ? "fade-left" : "fade-up"}
+          >
             Marathi
           </Language>
         </LanguagesWrapper>
