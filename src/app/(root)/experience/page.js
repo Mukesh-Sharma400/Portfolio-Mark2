@@ -26,10 +26,10 @@ export default function Experience() {
       imageSrc: appavengers,
       alt: "App Avengers",
       period: "July 2023 - Present",
-      role: "Web Developer Intern",
+      role: "Web Developer",
       location: "Remote",
       content:
-        "As a Web Developer Intern at App Avengers Technologies, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+        "As a Web Developer at App Avengers Technologies, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
     },
     {
       company: "NullClass",

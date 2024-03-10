@@ -64,8 +64,8 @@ export default function About() {
           </MyDesc>
           <MyStory>
             Hi, I'm Mukesh Sharma, an aspiring IT professional currently working
-            as a Web Developer Intern at App Avengers Technologies. Previously,
-            I interned at NullClass and dedicated time to mastering the MERN
+            as a Web Developer at App Avengers Technologies. Previously, I
+            interned at NullClass and dedicated time to mastering the MERN
             Stack. My focus is on building efficient and user-friendly web
             applications, specializing in MongoDB, Express, React, and Node.js.
             I'm adept at using tools like Redux, Sass, and Bootstrap.
