@@ -17,14 +17,14 @@ import mongo from "../../../public/assets/mongo.png";
 import react from "../../../public/assets/react.webp";
 import express from "../../../public/assets/express.jpg";
 import angular from "../../../public/assets/angular.jpg";
-import youtube from "../../../public/assets/youtube-thumbnail.png";
 import aliKarim from "../../../public/assets/ali-karim-sayed.png";
+import youtube from "../../../public/assets/youtube-thumbnail.png";
 import memories from "../../../public/assets/memories-thumbnail.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
+import femalePlaceholder from "../../../public/assets/female-placeholder.jpg";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
-import femalePlaceholder from "../../../public/assets/female-placeholder.jpg";
 
 export default function Home() {
   const router = new useRouter();
