@@ -27,9 +27,9 @@ export default function YouTube() {
       <Heading>YouTube Clone</Heading>
       <Description>
         The fully responsive YouTube Clone application built with React.js, the
-        YouTube API, Axios, and Bootstrap aimsto replicate the core
+        YouTube API, Axios, and Bootstrap aims to replicate the core
         functionality and user experience of YouTube while providing a seamless
-        and intuitiveinterface for users to discover, watch, and engage with
+        and intuitive interface for users to discover, watch, and engage with
         videos.
       </Description>
       <ButtonsWrapper>
