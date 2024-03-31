@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
+import mjinterior from "../../../../public/assets/mjinterior.png";
 import amanSharma from "../../../../public/assets/aman-sharma.jpg";
 import aliKarim from "../../../../public/assets/ali-karim-sayed.png";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -23,6 +24,19 @@ export default function Testimonials() {
       image: aliKarim,
       name: "Ali Karim Sayed",
       role: "Corporate Trainer",
+    },
+    {
+      message:
+        "Mukesh Sharma's website design for our interior decoration company exceeded our expectations. His creativity, professionalism, and attention to detail are remarkable. The website perfectly captures our brand's essence and offers a seamless browsing experience. Mukesh was responsive and dedicated throughout the process. Highly recommend his services!",
+      image: mjinterior,
+      name: "MJ Interior",
+      role: "Interior Decoration Company",
+    },
+    {
+      message: "Mukesh is best in Front-End design and clean UI.",
+      image: amanSharma,
+      name: "Aman Sharma",
+      role: "Dot Net Developer",
     },
     {
       message:
@@ -58,12 +72,6 @@ export default function Testimonials() {
       image: femalePlaceholder,
       name: "Reshma Yadav",
       role: "Student",
-    },
-    {
-      message: "Mukesh is best in Front-End design and clean UI.",
-      image: amanSharma,
-      name: "Aman Sharma",
-      role: "Dot Net Developer",
     },
     {
       message:

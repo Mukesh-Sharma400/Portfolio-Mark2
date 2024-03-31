@@ -12,6 +12,7 @@ import netflix from "../../../../public/assets/netflix-thumbnail.jpg";
 import memories from "../../../../public/assets/memories-thumbnail.jpg";
 import ecommerce from "../../../../public/assets/ecommerce-thumbnail.jpg";
 import dashboard from "../../../../public/assets/dashboard-thumbnail.webp";
+import mjinterior from "../../../../public/assets/mjinterior-thumbnail.png";
 import primevideo from "../../../../public/assets/primevideo-thumbnail.jpg";
 import socialnetwork from "../../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../../public/assets/stack-overflow-thumbnail.jpg";
@@ -67,6 +68,12 @@ export default function Projects() {
       imageSrc: netflix,
       href: "/projects/netflix",
       description: "UI of Netflix Landing Page",
+    },
+    {
+      name: "MJ Interior",
+      imageSrc: mjinterior,
+      href: "/projects/mjinterior",
+      description: "MJ Interior Company Website",
     },
   ];
 

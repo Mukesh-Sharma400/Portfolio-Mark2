@@ -18,11 +18,12 @@ import react from "../../../public/assets/react.webp";
 import express from "../../../public/assets/express.jpg";
 import angular from "../../../public/assets/angular.jpg";
 import aliKarim from "../../../public/assets/ali-karim-sayed.png";
+import mjinterior from "../../../public/assets/mjinterior.png";
+import amanSharma from "../../../public/assets/aman-sharma.jpg";
 import youtube from "../../../public/assets/youtube-thumbnail.png";
 import memories from "../../../public/assets/memories-thumbnail.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
-import femalePlaceholder from "../../../public/assets/female-placeholder.jpg";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
@@ -104,24 +105,23 @@ export default function Home() {
     },
     {
       message:
+        "Mukesh Sharma's website design for our interior decoration company exceeded our expectations. His creativity, professionalism, and attention to detail are remarkable. The website perfectly captures our brand's essence and offers a seamless browsing experience. Mukesh was responsive and dedicated throughout the process. Highly recommend his services!",
+      image: mjinterior,
+      name: "MJ Interior",
+      role: "Interior Decoration Company",
+    },
+    {
+      message: "Mukesh is best in Front-End design and clean UI.",
+      image: amanSharma,
+      name: "Aman Sharma",
+      role: "Dot Net Developer",
+    },
+    {
+      message:
         "I highly recommend Mukesh as a MERN Stack Developer and would love to work together. Mukesh is amazing at his job! He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. He makes sure that everyone is on the same page and focused on the main goal.",
       image: nitinPrajapati,
       name: "Nitin Prajapati",
       role: "Full Stack Developer",
-    },
-    {
-      message:
-        "Mukesh is an exceptional web developer who possesses all the skills one would want in an excellent software developer.",
-      image: femalePlaceholder,
-      name: "Shweta Jadhav",
-      role: "Data Analyst",
-    },
-    {
-      message:
-        "Mukesh is Very friendly in nature. He can work very nicely in a team. He helps to understand concept while working in a team. He helps others in the team to grow with his own growth. He inspires other people to work better.",
-      image: femalePlaceholder,
-      name: "Diksha Dubey",
-      role: "Data Scientist",
     },
   ];
 

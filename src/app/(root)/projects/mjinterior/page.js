@@ -8,40 +8,46 @@ import Footer from "@/app/components/Footer";
 import { uiState } from "../../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import { BackHeader } from "@/app/components/BackHeader";
-import netflix from "../../../../../public/assets/netflix-thumbnail.jpg";
+import memories from "../../../../../public/assets/memories-thumbnail.jpg";
 import mjinterior from "../../../../../public/assets/mjinterior-thumbnail.png";
 import socialnetwork from "../../../../../public/assets/socialnetwork-thumbnail.jpg";
 
-export default function Netflix() {
+export default function MJInterior() {
   const { theme } = useSelector(uiState);
 
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#html</Tag>
-        <Tag className="my-danger">#css</Tag>
+        <Tag className="my-success">#nextjs</Tag>
+        <Tag className="my-danger">#styled-components</Tag>
         <Tag className="my-warning">#javascript</Tag>
       </TagsWrapper>
-      <Heading>Netflix Clone</Heading>
+      <Heading>MJ Interior</Heading>
       <Description>
-        Introducing our Netflix clone website! Built using HTML, CSS, and
-        Javascript, this platform offers a seamless streaming experience. Enjoy
-        a vast library of movies and TV shows, personalized recommendations, and
-        user-friendly interface. Dive into the world of entertainment and
-        binge-watch your favorite content at your convenience.
+        MJ Interior is a company of creative interior designers who have the
+        ability to see the world through an aesthetic filter and transitioning
+        the domain into the versions of their perspective, filled with
+        captivating sights.
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn href="https://mjinterior.co.in" target="_blank">
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn
+          href="https://github.com/Mukesh-Sharma400/mj-interior"
+          target="_blank"
+        >
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
-        <CurrentProjectImage src={netflix} alt="Netflix Clone" />
+        <CurrentProjectImage src={mjinterior} alt="MJ Interior" />
         <TimeLine>
           <CalendarIcon>
             <i class="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
-          <TimelineHeading>10/2021 - 11/2021</TimelineHeading>
+          <TimelineHeading>02/2024 - 03/2024</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>
         </TimeLine>
       </ImageTimelineWrapper>
@@ -49,15 +55,6 @@ export default function Netflix() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/mjinterior">
-          <ImageWrapper>
-            <ProjectImage src={mjinterior} alt="MJ Interior" />
-          </ImageWrapper>
-          <div>
-            <ProjectName>MJ Interior</ProjectName>
-            <ProjectDesc>MJ Interior Company Website</ProjectDesc>
-          </div>
-        </Project>
         <Project href="/projects/socialnetwork">
           <ImageWrapper>
             <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
@@ -65,6 +62,15 @@ export default function Netflix() {
           <div>
             <ProjectName>SocialNetwork Web App</ProjectName>
             <ProjectDesc>Social Media Web Application</ProjectDesc>
+          </div>
+        </Project>
+        <Project href="/projects/memories">
+          <ImageWrapper>
+            <ProjectImage src={memories} alt="Memories Web App" />
+          </ImageWrapper>
+          <div>
+            <ProjectName>Memories Web App</ProjectName>
+            <ProjectDesc>Social Blog Web Application</ProjectDesc>
           </div>
         </Project>
       </ProjectsWrapper>
