@@ -21,7 +21,7 @@ export default function Testimonials() {
   const testimonialsData = [
     {
       message:
-        "We thanks Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
+        "We thank Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
       image: appavengers,
       name: "AppAvengers Labs Pvt. Ltd.",
       role: "Gujarat, India",
