@@ -22,14 +22,14 @@ export default function Experience() {
 
   const experiencesData = [
     {
-      company: "AppAvengers Labs Pvt. Ltd.",
+      company: "AppAvengers Labs Pvt Ltd",
       imageSrc: appavengers,
       alt: "App Avengers",
       period: "July 2023 - April 2024",
       role: "Junior Web Developer",
       location: "Remote",
       content:
-        "As a Junior Web Developer at AppAvengers Labs Pvt. Ltd., I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+        "As a Junior Web Developer at AppAvengers Labs Pvt Ltd, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
     },
     {
       company: "NullClass",
@@ -47,7 +47,7 @@ export default function Experience() {
       alt: "Hasbasoft Technology",
       period: "August 2021 - October 2022",
       role: "MERN Stack Software Trainee",
-      location: "Remote",
+      location: "Online",
       content:
         "As a Software Trainee at Hasbasoft Technology Pvt Ltd, I built several MERN Stack applications, including an Ecommerce platform. Through hands-on experience, I gained expertise in React, Node.js, Express.js, and MongoDB, developing dynamic and user-friendly web solutions in a professional software development environment.",
     },
