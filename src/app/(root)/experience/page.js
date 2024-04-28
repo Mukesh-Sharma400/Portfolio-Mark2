@@ -22,14 +22,14 @@ export default function Experience() {
 
   const experiencesData = [
     {
-      company: "App Avengers Technologies",
+      company: "AppAvengers Labs Pvt. Ltd.",
       imageSrc: appavengers,
       alt: "App Avengers",
-      period: "July 2023 - Present",
-      role: "Web Developer",
+      period: "July 2023 - April 2024",
+      role: "Junior Web Developer",
       location: "Remote",
       content:
-        "As a Web Developer at App Avengers Technologies, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+        "As a Junior Web Developer at AppAvengers Labs Pvt. Ltd., I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
     },
     {
       company: "NullClass",

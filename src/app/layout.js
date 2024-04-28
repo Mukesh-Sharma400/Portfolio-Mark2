@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import "./global.css";
-import Head from "next/head";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -30,9 +29,9 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="icon" href="./icon.png" type="image/png" />
-      </Head>
+      </head>
       <body>
         <Providers>{children}</Providers>
         <SpeedInsights />

@@ -21,7 +21,8 @@ export default function MJInterior() {
       <TagsWrapper>
         <Tag className="my-success">#nextjs</Tag>
         <Tag className="my-danger">#styled-components</Tag>
-        <Tag className="my-warning">#javascript</Tag>
+        <Tag className="my-warning">#react-hooks</Tag>
+        <Tag className="my-info">#aos</Tag>
       </TagsWrapper>
       <Heading>MJ Interior</Heading>
       <Description>

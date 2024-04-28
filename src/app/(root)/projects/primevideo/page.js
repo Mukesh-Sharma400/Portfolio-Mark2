@@ -10,7 +10,7 @@ import BaseLayout from "@/app/components/BaseLayout";
 import { BackHeader } from "@/app/components/BackHeader";
 import netflix from "../../../../../public/assets/netflix-thumbnail.jpg";
 import primevideo from "../../../../../public/assets/primevideo-thumbnail.jpg";
-import socialnetwork from "../../../../../public/assets/socialnetwork-thumbnail.jpg";
+import mjinterior from "../../../../../public/assets/mjinterior-thumbnail.png";
 
 export default function PrimeVideo() {
   const { theme } = useSelector(uiState);
@@ -59,13 +59,13 @@ export default function PrimeVideo() {
             <ProjectDesc>UI of Netflix Landing Page</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/socialnetwork">
+        <Project href="/projects/mjinterior">
           <ImageWrapper>
-            <ProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
+            <ProjectImage src={mjinterior} alt="MJ Interior" />
           </ImageWrapper>
           <div>
-            <ProjectName>SocialNetwork Web App</ProjectName>
-            <ProjectDesc>Social Media Web Application</ProjectDesc>
+            <ProjectName>MJ Interior</ProjectName>
+            <ProjectDesc>MJ Interior Company Website</ProjectDesc>
           </div>
         </Project>
       </ProjectsWrapper>

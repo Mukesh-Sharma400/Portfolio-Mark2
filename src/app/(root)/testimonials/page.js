@@ -10,6 +10,7 @@ import mjinterior from "../../../../public/assets/mjinterior.png";
 import amanSharma from "../../../../public/assets/aman-sharma.jpg";
 import aliKarim from "../../../../public/assets/ali-karim-sayed.png";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import appavengers from "../../../../public/assets/app-avengers-logo.jpg";
 import nitinPrajapati from "../../../../public/assets/nitin-prajapati.jpg";
 import malePlaceholder from "../../../../public/assets/male-placeholder.jpg";
 import femalePlaceholder from "../../../../public/assets/female-placeholder.jpg";
@@ -18,6 +19,13 @@ export default function Testimonials() {
   const { theme } = useSelector(uiState);
 
   const testimonialsData = [
+    {
+      message:
+        "We thanks Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
+      image: appavengers,
+      name: "AppAvengers Labs Pvt. Ltd.",
+      role: "Gujarat, India",
+    },
     {
       message:
         "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",

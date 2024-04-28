@@ -17,12 +17,12 @@ import mongo from "../../../public/assets/mongo.png";
 import react from "../../../public/assets/react.webp";
 import express from "../../../public/assets/express.jpg";
 import angular from "../../../public/assets/angular.jpg";
-import aliKarim from "../../../public/assets/ali-karim-sayed.png";
 import mjinterior from "../../../public/assets/mjinterior.png";
-import amanSharma from "../../../public/assets/aman-sharma.jpg";
+import aliKarim from "../../../public/assets/ali-karim-sayed.png";
 import youtube from "../../../public/assets/youtube-thumbnail.png";
 import memories from "../../../public/assets/memories-thumbnail.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import appavengers from "../../../public/assets/app-avengers-logo.jpg";
 import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
@@ -98,10 +98,10 @@ export default function Home() {
   const testimonialsData = [
     {
       message:
-        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
-      image: aliKarim,
-      name: "Ali Karim Sayed",
-      role: "Corporate Trainer",
+        "We thanks Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
+      image: appavengers,
+      name: "AppAvengers Labs Pvt. Ltd.",
+      role: "Gujarat, India",
     },
     {
       message:
@@ -111,10 +111,11 @@ export default function Home() {
       role: "Interior Decoration Company",
     },
     {
-      message: "Mukesh is best in Front-End design and clean UI.",
-      image: amanSharma,
-      name: "Aman Sharma",
-      role: "Dot Net Developer",
+      message:
+        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
+      image: aliKarim,
+      name: "Ali Karim Sayed",
+      role: "Corporate Trainer",
     },
     {
       message:
@@ -275,13 +276,13 @@ const IntroWrapper = styled.div`
 `;
 
 const AvailableBadge = styled.p`
-  width: 140px;
-  height: 20px;
+  width: 180px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  font-size: 12px;
+  gap: 10px;
+  font-size: 14px;
   border-radius: 15px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
@@ -295,14 +296,33 @@ const AvailableBadge = styled.p`
 `;
 
 const AvailableDot = styled.div`
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.greenColor200
       : theme.darkMode.greenColor200};
   transition: all 0.5s ease-in-out;
+
+  animation: pulse-animation 2s infinite;
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px
+        ${({ theme }) =>
+          theme.currentTheme === "light"
+            ? theme.lightMode.greenColor150
+            : theme.darkMode.greenColor150};
+    }
+    100% {
+      box-shadow: 0 0 0 8px
+        ${({ theme }) =>
+          theme.currentTheme === "light"
+            ? theme.lightMode.greenColor150
+            : theme.darkMode.greenColor150};
+    }
+  }
 `;
 
 const MyName = styled.h1`
@@ -408,6 +428,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -437,6 +458,8 @@ const SecondaryBtn = styled.button`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

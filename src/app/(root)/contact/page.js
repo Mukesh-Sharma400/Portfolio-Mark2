@@ -236,6 +236,7 @@ const PrimaryBtn = styled.button`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -265,6 +266,7 @@ const SecondaryBtn = styled.button`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"
