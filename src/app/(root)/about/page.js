@@ -63,12 +63,13 @@ export default function About() {
             MERN STACK DEVELOPER
           </MyDesc>
           <MyStory>
-            Hi, I'm Mukesh Sharma, an aspiring IT professional currently working
-            as a Web Developer at App Avengers Technologies. Previously, I
-            interned at NullClass and dedicated time to mastering the MERN
-            Stack. My focus is on building efficient and user-friendly web
-            applications, specializing in MongoDB, Express, React, and Node.js.
-            I'm adept at using tools like Redux, Sass, and Bootstrap.
+            Hi, I'm Mukesh Sharma, a passionate IT professional currently
+            working as an SDE 1 - Node.js at Playerzpot Media Pvt Ltd. In my
+            role, I focus on backend development, designing and implementing
+            robust APIs, and optimizing server performance. Prior to this, I
+            gained valuable experience as a Junior Web Developer at AppAvengers
+            Labs Pvt Ltd, and honed my skills in the MERN Stack during an
+            internship at NullClass.
           </MyStory>
         </DetailsWrapper>
         <PicWrapper data-aos="fade-right" data-aos-delay="300">
@@ -82,13 +83,17 @@ export default function About() {
         </PicWrapper>
       </IntroWrapper>
       <MyStory>
-        Despite being early in my career, I've collaborated with diverse clients
-        and industries, adapting to varying project requirements. As a
-        self-motivated individual, I continuously seek opportunities to enhance
-        my skills and tackle challenges, emphasizing the importance of clean,
-        maintainable, and reusable code. If you're looking for an enthusiastic
-        IT fresher passionate about web development, feel free to reach out for
-        potential collaborations.
+        I specialize in MongoDB, Express, React, and Node.js, and I'm proficient
+        with tools like Redux, Sass, and Bootstrap. My experience spans
+        collaborating with diverse clients and industries, where I've adapted to
+        various project requirements and emphasized clean, maintainable, and
+        reusable code.
+      </MyStory>
+      <MyStory>
+        As a self-motivated individual, I continuously seek opportunities to
+        enhance my skills and tackle new challenges. If you're looking for a
+        dedicated professional passionate about backend development and web
+        technologies, feel free to reach out for potential collaborations.
       </MyStory>
       <SkillsSection id="skills">
         <HeadingTwo>Skills</HeadingTwo>

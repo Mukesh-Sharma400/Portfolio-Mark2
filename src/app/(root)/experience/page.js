@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
+import playerzpot from "../../../../public/assets/playerzpot.jpg";
 import nullclass from "../../../../public/assets/nullclass-logo.png";
 import hasbasoft from "../../../../public/assets/hasbasoft-logo.png";
 import appavengers from "../../../../public/assets/app-avengers-logo.jpg";
@@ -22,9 +23,19 @@ export default function Experience() {
 
   const experiencesData = [
     {
+      company: "Playerzpot Media Pvt Ltd",
+      imageSrc: playerzpot,
+      alt: "Playerzpot Media Pvt Ltd",
+      period: "May 2024 - Present",
+      role: "SDE 1 - Nodejs",
+      location: "Vashi",
+      content:
+        "As an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, I am involved in backend development using Node.js. My responsibilities include designing and implementing APIs, optimizing server performance, and ensuring the reliability of server-side applications. I engage in code reviews, and contribute to improving our development processes.",
+    },
+    {
       company: "AppAvengers Labs Pvt Ltd",
       imageSrc: appavengers,
-      alt: "App Avengers",
+      alt: "AppAvengers Labs Pvt Ltd",
       period: "July 2023 - April 2024",
       role: "Junior Web Developer",
       location: "Remote",
@@ -44,7 +55,7 @@ export default function Experience() {
     {
       company: "Hasbasoft Technology Pvt Ltd",
       imageSrc: hasbasoft,
-      alt: "Hasbasoft Technology",
+      alt: "Hasbasoft Technology Pvt Ltd",
       period: "August 2021 - October 2022",
       role: "MERN Stack Software Trainee",
       location: "Online",
