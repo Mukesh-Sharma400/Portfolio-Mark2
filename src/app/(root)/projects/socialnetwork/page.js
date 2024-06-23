@@ -80,14 +80,11 @@ export default function SocialNetwork() {
 
 const TagsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin: 30px 0;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 376px) {
-    flex-wrap: wrap;
-  }
 `;
 
 const Tag = styled.div`
