@@ -79,13 +79,19 @@ export default function Header() {
     <DisplayWrapper>
       <HeaderWrapper>
         <PicNameWrapper>
-          <Image
-            className="rounded-3"
-            src={profilePic}
-            alt="Profile Picture"
-            width={50}
-            height={50}
-          />
+          {pathname === "/" ? (
+            <Image
+              className="rounded-3"
+              src={profilePic}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+          ) : (
+            <HomeButton className="rounded-3" href="/">
+              <i class="bi bi-house-fill"></i>
+            </HomeButton>
+          )}
           <div>
             <MyName>Mukesh Sharma</MyName>
             <MyDesc>MERN STACK DEVELOPER</MyDesc>
@@ -111,7 +117,7 @@ export default function Header() {
           {routes.map((route, index) => (
             <Route
               key={index}
-              className={`px-2 py-1 rounded-3 w-100 ${
+              className={`p-2 rounded-3 w-100 ${
                 pathname === route.path || pathname.startsWith(route.path + "/")
                   ? "active"
                   : ""
@@ -176,6 +182,36 @@ const PicNameWrapper = styled.div`
 
   @media (max-width: 321px) {
     gap: 10px;
+  }
+`;
+
+const HomeButton = styled(Link)`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 30px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  background-color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor201
+      : theme.darkMode.blackColor201};
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
+    background-color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor202
+        : theme.darkMode.blackColor202};
   }
 `;
 
