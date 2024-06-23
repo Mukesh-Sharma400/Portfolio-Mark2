@@ -15,14 +15,26 @@ import stackoverflow from "../../../../../public/assets/stack-overflow-thumbnail
 export default function StackOverflow() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "mongo" },
+    { class: "my-danger", text: "express" },
+    { class: "my-warning", text: "react" },
+    { class: "my-info", text: "node" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#mongo</Tag>
-        <Tag className="my-danger">#express</Tag>
-        <Tag className="my-warning">#react</Tag>
-        <Tag className="my-info">#node</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>Stack Overflow Clone</Heading>
       <Description>
@@ -37,19 +49,21 @@ export default function StackOverflow() {
         <PrimaryBtn
           href="https://stackoverflow-mukesh.netlify.app"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Live Preview
         </PrimaryBtn>
         <SecondaryBtn
           href="https://github.com/Mukesh-Sharma400/StackOverflow-Clone"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Source Code
         </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -61,7 +75,7 @@ export default function StackOverflow() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/youtube">
+        <Project href="/projects/youtube" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={youtube} alt="YouTube Clone" />
           </ImageWrapper>
@@ -70,7 +84,7 @@ export default function StackOverflow() {
             <ProjectDesc>Copy of YouTube Application</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/dashboard">
+        <Project href="/projects/dashboard" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={dashboard} alt="Dashboard Web App" />
           </ImageWrapper>
@@ -80,7 +94,7 @@ export default function StackOverflow() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -217,6 +231,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -246,6 +261,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

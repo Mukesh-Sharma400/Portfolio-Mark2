@@ -15,14 +15,26 @@ import primevideo from "../../../../../public/assets/primevideo-thumbnail.jpg";
 export default function ECommerce() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "react" },
+    { class: "my-danger", text: "firebase" },
+    { class: "my-warning", text: "axios" },
+    { class: "my-info", text: "stripe" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#react</Tag>
-        <Tag className="my-danger">#firebase</Tag>
-        <Tag className="my-warning">#axios</Tag>
-        <Tag className="my-info">#stripe</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>E-Commerce Web App</Heading>
       <Description>
@@ -34,12 +46,16 @@ export default function ECommerce() {
         transactions.
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn href="/" data-aos="zoom-in-up">
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn href="/" data-aos="zoom-in-up">
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={ecommerce} alt="E-Commerce Web App" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -51,7 +67,7 @@ export default function ECommerce() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/primevideo">
+        <Project href="/projects/primevideo" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={primevideo} alt="Prime Video Clone" />
           </ImageWrapper>
@@ -60,7 +76,7 @@ export default function ECommerce() {
             <ProjectDesc>UI of Prime Video Landing Page</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/netflix">
+        <Project href="/projects/netflix" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={netflix} alt="Netflix Clone" />
           </ImageWrapper>
@@ -70,7 +86,7 @@ export default function ECommerce() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -207,6 +223,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -236,6 +253,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

@@ -15,14 +15,26 @@ import primevideo from "../../../../../public/assets/primevideo-thumbnail.jpg";
 export default function Dashboard() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "mongo" },
+    { class: "my-danger", text: "express" },
+    { class: "my-warning", text: "react" },
+    { class: "my-info", text: "node" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#mongo</Tag>
-        <Tag className="my-danger">#express</Tag>
-        <Tag className="my-warning">#react</Tag>
-        <Tag className="my-info">#node</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>Dashboard Web App</Heading>
       <Description>
@@ -37,19 +49,21 @@ export default function Dashboard() {
         <PrimaryBtn
           href="https://dashboard-smoky-three.vercel.app"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Live Preview
         </PrimaryBtn>
         <SecondaryBtn
           href="https://github.com/Mukesh-Sharma400/Dashboard"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Source Code
         </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={dashboard} alt="Dashboard Web App" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -61,7 +75,7 @@ export default function Dashboard() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/ecommerce">
+        <Project href="/projects/ecommerce" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={ecommerce} alt="E-Commerce Web App" />
           </ImageWrapper>
@@ -70,7 +84,7 @@ export default function Dashboard() {
             <ProjectDesc>Shopping Web Application</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/primevideo">
+        <Project href="/projects/primevideo" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={primevideo} alt="Prime Video Clone" />
           </ImageWrapper>
@@ -80,7 +94,7 @@ export default function Dashboard() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -217,6 +231,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -246,6 +261,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

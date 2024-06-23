@@ -15,14 +15,26 @@ import dashboard from "../../../../../public/assets/dashboard-thumbnail.webp";
 export default function YouTube() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "react" },
+    { class: "my-danger", text: "bootstrap" },
+    { class: "my-warning", text: "youtube-api" },
+    { class: "my-info", text: "axios" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#react</Tag>
-        <Tag className="my-danger">#bootstrap</Tag>
-        <Tag className="my-warning">#youtube-api</Tag>
-        <Tag className="my-info">#axios</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>YouTube Clone</Heading>
       <Description>
@@ -36,19 +48,21 @@ export default function YouTube() {
         <PrimaryBtn
           href="https://you-tube-clone-orcin.vercel.app"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Live Preview
         </PrimaryBtn>
         <SecondaryBtn
           href="https://github.com/Mukesh-Sharma400/YouTube-Clone"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Source Code
         </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={youtube} alt="YouTube Clone" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -60,7 +74,7 @@ export default function YouTube() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/dashboard">
+        <Project href="/projects/dashboard" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={dashboard} alt="Dashboard Web App" />
           </ImageWrapper>
@@ -69,7 +83,7 @@ export default function YouTube() {
             <ProjectDesc>Data Visualization Web Application</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/ecommerce">
+        <Project href="/projects/ecommerce" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={ecommerce} alt="E-Commerce Web App" />
           </ImageWrapper>
@@ -79,7 +93,7 @@ export default function YouTube() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -216,6 +230,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -245,6 +260,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

@@ -15,14 +15,26 @@ import stackoverflow from "../../../../../public/assets/stack-overflow-thumbnail
 export default function SocialNetwork() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "mongo" },
+    { class: "my-danger", text: "express" },
+    { class: "my-warning", text: "react" },
+    { class: "my-info", text: "node" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#mongo</Tag>
-        <Tag className="my-danger">#express</Tag>
-        <Tag className="my-warning">#react</Tag>
-        <Tag className="my-info">#node</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>SocialNetwork Web App</Heading>
       <Description>
@@ -34,12 +46,16 @@ export default function SocialNetwork() {
         the social networking landscape.
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="/">Live Preview</PrimaryBtn>
-        <SecondaryBtn href="/">Source Code</SecondaryBtn>
+        <PrimaryBtn href="/" data-aos="zoom-in-up">
+          Live Preview
+        </PrimaryBtn>
+        <SecondaryBtn href="/" data-aos="zoom-in-up">
+          Source Code
+        </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -51,7 +67,7 @@ export default function SocialNetwork() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/memories">
+        <Project href="/projects/memories" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={memories} alt="Memories Web App" />
           </ImageWrapper>
@@ -60,7 +76,7 @@ export default function SocialNetwork() {
             <ProjectDesc>Social Blog Web Application</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/stackoverflow">
+        <Project href="/projects/stackoverflow" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
           </ImageWrapper>
@@ -70,7 +86,7 @@ export default function SocialNetwork() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -207,6 +223,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -236,6 +253,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"

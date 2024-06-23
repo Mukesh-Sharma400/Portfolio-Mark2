@@ -15,14 +15,26 @@ import stackoverflow from "../../../../../public/assets/stack-overflow-thumbnail
 export default function Memories() {
   const { theme } = useSelector(uiState);
 
+  const tags = [
+    { class: "my-success", text: "mongo" },
+    { class: "my-danger", text: "express" },
+    { class: "my-warning", text: "react" },
+    { class: "my-info", text: "node" },
+  ];
+
   return (
     <BaseLayout>
       <BackHeader />
       <TagsWrapper>
-        <Tag className="my-success">#mongo</Tag>
-        <Tag className="my-danger">#express</Tag>
-        <Tag className="my-warning">#react</Tag>
-        <Tag className="my-info">#node</Tag>
+        {tags.map((tag, index) => (
+          <Tag
+            className={tag.class}
+            data-aos="fade-right"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            #{tag.text}
+          </Tag>
+        ))}
       </TagsWrapper>
       <Heading>Memories Web App</Heading>
       <Description>
@@ -36,19 +48,24 @@ export default function Memories() {
         today!
       </Description>
       <ButtonsWrapper>
-        <PrimaryBtn href="https://memories-wheat.vercel.app" target="_blank">
+        <PrimaryBtn
+          href="https://memories-wheat.vercel.app"
+          target="_blank"
+          data-aos="zoom-in-up"
+        >
           Live Preview
         </PrimaryBtn>
         <SecondaryBtn
           href="https://github.com/Mukesh-Sharma400/Memories"
           target="_blank"
+          data-aos="zoom-in-up"
         >
           Source Code
         </SecondaryBtn>
       </ButtonsWrapper>
       <ImageTimelineWrapper>
         <CurrentProjectImage src={memories} alt="Memories Web App" />
-        <TimeLine>
+        <TimeLine data-aos="fade-right">
           <CalendarIcon>
             <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
@@ -60,7 +77,7 @@ export default function Memories() {
       <Divider />
       <HeadingTwo>Check Out More</HeadingTwo>
       <ProjectsWrapper>
-        <Project href="/projects/stackoverflow">
+        <Project href="/projects/stackoverflow" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
           </ImageWrapper>
@@ -69,7 +86,7 @@ export default function Memories() {
             <ProjectDesc>Copy of Stack Overflow Application</ProjectDesc>
           </div>
         </Project>
-        <Project href="/projects/youtube">
+        <Project href="/projects/youtube" data-aos="zoom-in-up">
           <ImageWrapper>
             <ProjectImage src={youtube} alt="YouTube Clone" />
           </ImageWrapper>
@@ -79,7 +96,7 @@ export default function Memories() {
           </div>
         </Project>
       </ProjectsWrapper>
-      <SecondaryBtn className="all-work" href="/projects">
+      <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
       <Footer />
@@ -216,6 +233,7 @@ const PrimaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: background-color 0.5s ease-in-out !important;
     background-color: ${({ theme }) =>
       theme.currentTheme === "light"
         ? theme.globalColors.blackColor
@@ -245,6 +263,8 @@ const SecondaryBtn = styled(Link)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
+    transition: border 0.5s ease-in-out !important;
+    transition-delay: none !important;
     border: 1.5px solid
       ${({ theme }) =>
         theme.currentTheme === "light"
