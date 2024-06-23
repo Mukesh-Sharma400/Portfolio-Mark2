@@ -89,7 +89,7 @@ export default function Header() {
             />
           ) : (
             <HomeButton className="rounded-3" href="/">
-              <i class="bi bi-house-fill"></i>
+              <i className="bi bi-house-fill"></i>
             </HomeButton>
           )}
           <div>

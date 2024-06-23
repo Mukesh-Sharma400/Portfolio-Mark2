@@ -51,7 +51,7 @@ export default function StackOverflow() {
         <CurrentProjectImage src={stackoverflow} alt="Stack Overflow Clone" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>12/2022 - 01/2023</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

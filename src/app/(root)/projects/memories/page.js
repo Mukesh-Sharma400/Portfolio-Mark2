@@ -50,7 +50,7 @@ export default function Memories() {
         <CurrentProjectImage src={memories} alt="Memories Web App" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>11/2022 - 12/2022</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

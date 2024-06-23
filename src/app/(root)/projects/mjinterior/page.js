@@ -46,7 +46,7 @@ export default function MJInterior() {
         <CurrentProjectImage src={mjinterior} alt="MJ Interior" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>02/2024 - 03/2024</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

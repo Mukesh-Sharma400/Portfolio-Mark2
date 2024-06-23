@@ -50,7 +50,7 @@ export default function YouTube() {
         <CurrentProjectImage src={youtube} alt="YouTube Clone" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>07/2023 - 08/2023</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

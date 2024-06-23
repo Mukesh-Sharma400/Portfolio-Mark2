@@ -51,7 +51,7 @@ export default function Dashboard() {
         <CurrentProjectImage src={dashboard} alt="Dashboard Web App" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>07/2023 - 09/2023</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

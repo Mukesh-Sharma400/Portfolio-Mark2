@@ -41,7 +41,7 @@ export default function ECommerce() {
         <CurrentProjectImage src={ecommerce} alt="E-Commerce Web App" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>04/2022 - 06/2022</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

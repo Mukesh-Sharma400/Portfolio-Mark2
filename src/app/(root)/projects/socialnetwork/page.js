@@ -41,7 +41,7 @@ export default function SocialNetwork() {
         <CurrentProjectImage src={socialnetwork} alt="SocialNetwork Web App" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>07/2022 - 09/2022</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

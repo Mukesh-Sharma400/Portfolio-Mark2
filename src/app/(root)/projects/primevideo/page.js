@@ -40,7 +40,7 @@ export default function PrimeVideo() {
         <CurrentProjectImage src={primevideo} alt="Prime Video Clone" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>11/2021 - 12/2021</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>

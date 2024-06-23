@@ -39,7 +39,7 @@ export default function Netflix() {
         <CurrentProjectImage src={netflix} alt="Netflix Clone" />
         <TimeLine>
           <CalendarIcon>
-            <i class="bi bi-calendar-week-fill"></i>
+            <i className="bi bi-calendar-week-fill"></i>
           </CalendarIcon>
           <TimelineHeading>10/2021 - 11/2021</TimelineHeading>
           <TimelineDesc>Timeline</TimelineDesc>
