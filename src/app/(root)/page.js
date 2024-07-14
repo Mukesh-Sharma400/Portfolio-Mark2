@@ -87,7 +87,7 @@ export default function Home() {
   ];
 
   const skillsData = [
-    { name: "MongoDB", imageSrc: mongo },
+    { name: "Mongo", imageSrc: mongo },
     { name: "Express", imageSrc: express },
     { name: "React", imageSrc: react },
     { name: "Node", imageSrc: node },
@@ -480,10 +480,14 @@ const HeadingTwo = styled.h2`
 `;
 
 const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Project = styled(Link)`
@@ -496,37 +500,21 @@ const Project = styled(Link)`
 `;
 
 const ImageWrapper = styled.div`
-  width: 350px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 1024px) {
-    width: 295px;
-  }
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
 `;
 
 const ProjectImage = styled(Image)`
-  width: 350px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
-  }
-
-  @media (max-width: 1024px) {
-    width: 295px;
-  }
-
-  @media (max-width: 426px) {
-    width: 100%;
   }
 `;
 

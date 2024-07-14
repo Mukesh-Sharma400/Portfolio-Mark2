@@ -126,11 +126,15 @@ const Description = styled.p`
 `;
 
 const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin: 50px 0;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Project = styled(Link)`
@@ -143,37 +147,21 @@ const Project = styled(Link)`
 `;
 
 const ImageWrapper = styled.div`
-  width: 350px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 1024px) {
-    width: 295px;
-  }
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
 `;
 
 const ProjectImage = styled(Image)`
-  width: 350px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
-  }
-
-  @media (max-width: 1024px) {
-    width: 295px;
-  }
-
-  @media (max-width: 426px) {
-    width: 100%;
   }
 `;
 

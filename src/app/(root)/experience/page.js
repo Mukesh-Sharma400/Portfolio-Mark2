@@ -295,14 +295,22 @@ const HeadingTwo = styled.h2`
 `;
 
 const CertificatesWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const CertificateWrapper = styled.div`
-  width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -313,14 +321,6 @@ const CertificateWrapper = styled.div`
       ? theme.lightMode.whiteColor202
       : theme.darkMode.blackColor202};
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 768px) {
-    width: 45%;
-  }
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
 `;
 
 const CertificateTitle = styled.p`

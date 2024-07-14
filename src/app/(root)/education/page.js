@@ -54,11 +54,15 @@ export default function Education() {
       title: "Certificate of Brain Storm",
       imageSrc: certificateofbrainstorm,
       alt: "Certificate of Brain Storm",
+      description:
+        "During my second year in Bachelors, I participated in the Brain Storm event, a competitive academic challenge designed to test and enhance problem-solving and critical thinking skills. I successfully secured a Certificate of Appreciation by scoring 80%, reflecting my strong analytical abilities and dedication to continuous learning in the field of IT.",
     },
     {
       title: "Certificate of Aptitude Test",
       imageSrc: certificateofaptitudetest,
       alt: "Certificate of Aptitude Test",
+      description:
+        "During my first year in Bachelors, I took part in an Aptitude Test designed to evaluate logical reasoning, quantitative skills, and problem-solving abilities. I achieved an impressive score of 93%, earning a Certificate of Appreciation. This accomplishment underscores my strong analytical skills, quick thinking, and proficiency in handling challenging scenarios.",
     },
   ];
 
@@ -104,6 +108,7 @@ export default function Education() {
               src={certificate.imageSrc}
               alt={certificate.alt}
             />
+            <CertificateDesc>{certificate.description}</CertificateDesc>
           </CertificateWrapper>
         ))}
       </CertificatesWrapper>
@@ -248,13 +253,16 @@ const HeadingTwo = styled.h2`
 
 const CertificatesWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const CertificateWrapper = styled.div`
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -285,5 +293,15 @@ const CertificateTitle = styled.p`
 const CertificateImage = styled(Image)`
   width: 100%;
   height: auto;
+  transition: all 0.5s ease-in-out;
+`;
+
+const CertificateDesc = styled.p`
+  font-size: 14px;
+  padding: 0px 10px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
 `;

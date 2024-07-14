@@ -54,6 +54,21 @@ export default function About() {
     { name: "Material", imageSrc: material },
   ];
 
+  const interests = [
+    { class: "first", text: "Coding" },
+    { class: "", text: "Music" },
+    { class: "third", text: "Chess" },
+    { class: "forth", text: "Cricket" },
+    { class: "", text: "Football" },
+    { class: "last", text: "Carrom" },
+  ];
+
+  const languages = [
+    { class: "first", text: "English" },
+    { class: "", text: "Hindi" },
+    { class: "last", text: "Marathi" },
+  ];
+
   return (
     <BaseLayout>
       <IntroWrapper>
@@ -113,52 +128,31 @@ export default function About() {
       <InterestsSection>
         <HeadingTwo>Interests</HeadingTwo>
         <InterestsWrapper>
-          <Interest
-            className="first"
-            data-aos={screenWidth > 600 ? "fade-down-right" : "fade-up"}
-          >
-            Coding
-          </Interest>
-          <Interest data-aos={screenWidth > 600 ? "fade-down" : "fade-up"}>
-            Music
-          </Interest>
-          <Interest
-            className="third"
-            data-aos={screenWidth > 600 ? "fade-down-left" : "fade-up"}
-          >
-            Chess
-          </Interest>
-          <Interest
-            className="forth"
-            data-aos={screenWidth > 600 ? "fade-up-right" : "fade-up"}
-          >
-            Cricket
-          </Interest>
-          <Interest data-aos="fade-up">Football</Interest>
-          <Interest
-            className="last"
-            data-aos={screenWidth > 600 ? "fade-up-left" : "fade-up"}
-          >
-            Carrom
-          </Interest>
+          {interests.map((interest, index) => (
+            <Interest
+              key={index}
+              className={interest.class}
+              data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
+              {interest.text}
+            </Interest>
+          ))}
         </InterestsWrapper>
       </InterestsSection>
       <LanguagesSection>
         <HeadingTwo>Languages</HeadingTwo>
         <LanguagesWrapper>
-          <Language
-            className="first"
-            data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
-          >
-            English
-          </Language>
-          <Language data-aos="fade-up">Hindi</Language>
-          <Language
-            className="last"
-            data-aos={screenWidth > 600 ? "fade-left" : "fade-up"}
-          >
-            Marathi
-          </Language>
+          {languages.map((language, index) => (
+            <Language
+              key={index}
+              className={language.class}
+              data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
+              data-aos-delay={`${(index + 1) * 100}`}
+            >
+              {language.text}
+            </Language>
+          ))}
         </LanguagesWrapper>
       </LanguagesSection>
       <Footer />
