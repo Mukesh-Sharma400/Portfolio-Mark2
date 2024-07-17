@@ -33,6 +33,47 @@ export default function Home() {
   const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
+  const nameArray = [
+    { char: "H" },
+    { char: "e" },
+    { char: "l" },
+    { char: "l" },
+    { char: "o" },
+    { char: "!", className: "me-2" },
+    { char: "I" },
+    { char: "’" },
+    { char: "m", className: "me-2" },
+    { char: "M" },
+    { char: "u" },
+    { char: "k" },
+    { char: "e" },
+    { char: "s" },
+    { char: "h", className: "me-2" },
+  ];
+
+  const descArray = [
+    { char: "C" },
+    { char: "o" },
+    { char: "d" },
+    { char: "e" },
+    { char: ".", className: "me-2" },
+    { char: "C" },
+    { char: "r" },
+    { char: "e" },
+    { char: "a" },
+    { char: "t" },
+    { char: "e" },
+    { char: ".", className: "me-2" },
+    { char: "C" },
+    { char: "o" },
+    { char: "n" },
+    { char: "q" },
+    { char: "u" },
+    { char: "e" },
+    { char: "r" },
+    { char: "." },
+  ];
+
   const showToastMethod = () => {
     setShowToast(true);
     const timeoutId = setTimeout(() => {
@@ -136,26 +177,28 @@ export default function Home() {
           <AvailableDot /> Available for Work
         </AvailableBadge>
         <MyName>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="100">
-            Hello!
-          </span>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="200">
-            I’m
-          </span>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="300">
-            Mukesh
-          </span>
+          {nameArray.map(({ char, className }, index) => (
+            <span
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+              className={className}
+            >
+              {char}
+            </span>
+          ))}
         </MyName>
         <MyDesc>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="400">
-            Code.
-          </span>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="500">
-            Create.
-          </span>
-          <span className="me-2" data-aos="fade-right" data-aos-delay="600">
-            Conquer.
-          </span>
+          {descArray.map(({ char, className }, index) => (
+            <span
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${(index + 1) * 100}`}
+              className={className}
+            >
+              {char}
+            </span>
+          ))}
         </MyDesc>
         <Location>
           <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
@@ -328,18 +371,21 @@ const AvailableDot = styled.div`
 const MyName = styled.h1`
   width: fit-content;
   line-height: 40px;
-  width: fit-content;
   background-color: #4181d0;
   background-image: linear-gradient(
     90deg,
     #4181d0 0%,
-    #c850c0 50%,
-    #ff7072 100%
+    #c850c0 25%,
+    #ff7072 50%,
+    #c850c0 75%,
+    #4181d0 100%
   );
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease-in-out;
   position: relative;
+  animation: moveBackground 1s linear 1 2s;
 
   &:hover {
     cursor: pointer;
@@ -370,6 +416,18 @@ const MyName = styled.h1`
     }
     75% {
       transform: rotate(15deg);
+    }
+  }
+
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 `;

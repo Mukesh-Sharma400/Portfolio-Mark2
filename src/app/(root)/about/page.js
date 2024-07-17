@@ -8,6 +8,7 @@ import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import js from "../../../../public/assets/js.png";
 import css from "../../../../public/assets/css.png";
+import sql from "../../../../public/assets/sql.png";
 import BaseLayout from "@/app/components/BaseLayout";
 import html from "../../../../public/assets/html.png";
 import node from "../../../../public/assets/node.jpg";
@@ -48,6 +49,7 @@ export default function About() {
     { name: "Node", imageSrc: node },
     { name: "Next", imageSrc: next },
     { name: "Angular", imageSrc: angular },
+    { name: "SQL", imageSrc: sql },
     { name: "Styled", imageSrc: styledc },
     { name: "Bootstrap", imageSrc: bootstrap },
     { name: "Tailwind", imageSrc: tailwind },
