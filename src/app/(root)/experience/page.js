@@ -296,7 +296,7 @@ const HeadingTwo = styled.h2`
 
 const CertificatesWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   transition: all 0.5s ease-in-out;
 
