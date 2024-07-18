@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import { BackHeader } from "@/app/components/BackHeader";
@@ -89,7 +88,6 @@ export default function ECommerce() {
       <SecondaryBtn className="all-work" href="/projects" data-aos="zoom-in-up">
         Uncover All Work
       </SecondaryBtn>
-      <Footer />
     </BaseLayout>
   );
 }

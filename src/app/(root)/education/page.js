@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import scct from "../../../../public/assets/scct-logo.jpeg";
@@ -112,7 +111,6 @@ export default function Education() {
           </CertificateWrapper>
         ))}
       </CertificatesWrapper>
-      <Footer />
     </BaseLayout>
   );
 }

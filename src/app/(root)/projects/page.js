@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import youtube from "../../../../public/assets/youtube-thumbnail.png";
@@ -96,7 +95,6 @@ export default function Projects() {
           </Project>
         ))}
       </ProjectsWrapper>
-      <Footer />
     </BaseLayout>
   );
 }

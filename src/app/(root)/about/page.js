@@ -4,7 +4,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import js from "../../../../public/assets/js.png";
 import css from "../../../../public/assets/css.png";
@@ -157,7 +156,6 @@ export default function About() {
           ))}
         </LanguagesWrapper>
       </LanguagesSection>
-      <Footer />
     </BaseLayout>
   );
 }

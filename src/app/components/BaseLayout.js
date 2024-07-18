@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "./Header";
+import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import { Resume } from "./Resume";
 import styled from "styled-components";
@@ -11,7 +12,10 @@ export default function BaseLayout({ children }) {
       <Header />
       <Sidebar />
       <MainContent className="rounded-3 shadow-sm">
-        <div className="container">{children}</div>
+        <div className="container">
+          {children}
+          <Footer />
+        </div>
       </MainContent>
       <Resume />
     </DisplayWrapper>

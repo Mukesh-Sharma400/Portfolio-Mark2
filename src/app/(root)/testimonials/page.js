@@ -3,7 +3,6 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import mjinterior from "../../../../public/assets/mjinterior.png";
@@ -120,7 +119,6 @@ export default function Testimonials() {
           </Masonry>
         </ResponsiveMasonry>
       </TestimonialsWrapper>
-      <Footer />
     </BaseLayout>
   );
 }

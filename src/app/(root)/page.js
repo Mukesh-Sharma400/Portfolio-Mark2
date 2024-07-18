@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 import copy from "clipboard-copy";
 import styled from "styled-components";
-import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import { Toast } from "../components/Toast";
@@ -297,7 +296,6 @@ export default function Home() {
           Read More Testimonials
         </SecondaryBtn>
       </ShowMoreWrapper>
-      <Footer />
     </BaseLayout>
   );
 }

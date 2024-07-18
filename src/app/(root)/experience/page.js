@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Footer from "@/app/components/Footer";
 import { uiState } from "../../redux/uiSlice";
 import BaseLayout from "@/app/components/BaseLayout";
 import playerzpot from "../../../../public/assets/playerzpot.jpg";
@@ -155,7 +154,6 @@ export default function Experience() {
           </CertificateWrapper>
         ))}
       </CertificatesWrapper>
-      <Footer />
     </BaseLayout>
   );
 }
