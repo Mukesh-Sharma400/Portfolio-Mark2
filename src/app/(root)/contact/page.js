@@ -138,7 +138,7 @@ export default function Contact() {
 }
 
 const ToastWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: ${(props) => (props.showToast ? "7%" : "-20%")};
   left: 50%;
   transform: translateX(-50%);
