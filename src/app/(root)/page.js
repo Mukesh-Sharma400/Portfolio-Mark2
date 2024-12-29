@@ -264,15 +264,15 @@ export default function Home() {
             {skill.name}
           </Skill>
         ))}
-        <ShowMoreWrapper>
-          <SecondaryBtn
-            onClick={() => showMoreMethod("about")}
-            data-aos="zoom-in-up"
-          >
-            Explore Further Abilities
-          </SecondaryBtn>
-        </ShowMoreWrapper>
       </SkillsWrapper>
+      <ShowMoreWrapper>
+        <SecondaryBtn
+          onClick={() => showMoreMethod("about")}
+          data-aos="zoom-in-up"
+        >
+          Explore Further Abilities
+        </SecondaryBtn>
+      </ShowMoreWrapper>
       <HeadingTwo>Voices of Appreciation</HeadingTwo>
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
