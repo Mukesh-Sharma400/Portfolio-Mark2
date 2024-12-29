@@ -11,6 +11,7 @@ import aliKarim from "../../../../public/assets/ali-karim-sayed.png";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import appavengers from "../../../../public/assets/app-avengers-logo.jpg";
 import nitinPrajapati from "../../../../public/assets/nitin-prajapati.jpg";
+import pratimPabrekar from "../../../../public/assets/pratim-pabrekar.jpeg";
 import malePlaceholder from "../../../../public/assets/male-placeholder.jpg";
 import femalePlaceholder from "../../../../public/assets/female-placeholder.jpg";
 
@@ -96,6 +97,39 @@ export default function Testimonials() {
         Read what others have to say about experiences and collaborations
       </Description>
       <TestimonialsWrapper>
+        <Testimonial data-aos="zoom-in-up">
+          <Message>
+            I had the pleasure of working with Mukesh, a highly skilled Node.js
+            developer with remarkable enthusiasm and a great spirit for tackling
+            challenges. Mukesh consistently demonstrates exceptional
+            problem-solving abilities and a deep understanding of backend
+            development, creating efficient, scalable, and maintainable
+            solutions. What truly sets Mukesh apart is his strong sense of
+            responsibility and proactive approach to his work. He takes
+            ownership of tasks with unwavering dedication and ensures every
+            detail is handled with precision. His eagerness to explore new tools
+            and technologies, coupled with his collaborative mindset and clear
+            communication, makes him an invaluable team player. Mukesh's passion
+            for continuous learning, combined with his great spirit and sense of
+            responsibility, reflects in his work, where he not only meets
+            expectations but often exceeds them. I strongly recommend Mukesh for
+            any role that requires technical expertise, creativity, and a
+            positive attitude.
+          </Message>
+          <PicNameWrapper>
+            <Image
+              className="rounded-3"
+              src={pratimPabrekar}
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+            <div>
+              <Name>Pratim Pabrekar</Name>
+              <Desc>Team Lead</Desc>
+            </div>
+          </PicNameWrapper>
+        </Testimonial>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (

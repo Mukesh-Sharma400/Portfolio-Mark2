@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { uiState } from "../redux/uiSlice";
 import { Toast } from "../components/Toast";
 import { useRouter } from "next/navigation";
+import sql from "../../../public/assets/sql.png";
 import node from "../../../public/assets/node.jpg";
 import next from "../../../public/assets/next.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
@@ -23,6 +24,7 @@ import memories from "../../../public/assets/memories-thumbnail.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import appavengers from "../../../public/assets/app-avengers-logo.jpg";
 import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
+import pratimPabrekar from "../../../public/assets/pratim-pabrekar.jpeg";
 import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
 import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
@@ -133,9 +135,24 @@ export default function Home() {
     { name: "Node", imageSrc: node },
     { name: "Next", imageSrc: next },
     { name: "Angular", imageSrc: angular },
+    { name: "SQL", imageSrc: sql },
   ];
 
   const testimonialsData = [
+    {
+      message:
+        "I had the pleasure of working with Mukesh, a highly skilled Node.js developer with remarkable enthusiasm and a great spirit for tackling challenges. Mukesh consistently demonstrates exceptional problem-solving abilities and a deep understanding of backend development, creating efficient, scalable, and maintainable solutions.",
+      image: pratimPabrekar,
+      name: "Pratim Pabrekar",
+      role: "Team Lead",
+    },
+    {
+      message:
+        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
+      image: aliKarim,
+      name: "Ali Karim Sayed",
+      role: "Corporate Trainer",
+    },
     {
       message:
         "We thank Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
@@ -150,13 +167,7 @@ export default function Home() {
       name: "MJ Interior",
       role: "Interior Decoration Company",
     },
-    {
-      message:
-        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
-      image: aliKarim,
-      name: "Ali Karim Sayed",
-      role: "Corporate Trainer",
-    },
+
     {
       message:
         "I highly recommend Mukesh as a MERN Stack Developer and would love to work together. Mukesh is amazing at his job! He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. He makes sure that everyone is on the same page and focused on the main goal.",
@@ -253,13 +264,14 @@ export default function Home() {
             {skill.name}
           </Skill>
         ))}
-        <SecondaryBtn
-          onClick={() => showMoreMethod("about")}
-          data-aos="zoom-in-right"
-          data-aos-delay="700"
-        >
-          Explore Further Abilities
-        </SecondaryBtn>
+        <ShowMoreWrapper>
+          <SecondaryBtn
+            onClick={() => showMoreMethod("about")}
+            data-aos="zoom-in-up"
+          >
+            Explore Further Abilities
+          </SecondaryBtn>
+        </ShowMoreWrapper>
       </SkillsWrapper>
       <HeadingTwo>Voices of Appreciation</HeadingTwo>
       <TestimonialsWrapper>

@@ -14,12 +14,13 @@ import node from "../../../../public/assets/node.jpg";
 import next from "../../../../public/assets/next.jpg";
 import mongo from "../../../../public/assets/mongo.png";
 import react from "../../../../public/assets/react.webp";
-import styledc from "../../../../public/assets/styled.png";
+import styledC from "../../../../public/assets/styled.png";
 import express from "../../../../public/assets/express.jpg";
 import angular from "../../../../public/assets/angular.jpg";
 import tailwind from "../../../../public/assets/tailwind.png";
 import material from "../../../../public/assets/material.png";
 import bootstrap from "../../../../public/assets/bootstrap.png";
+import typescript from "../../../../public/assets/typescript.png";
 import profilePic from "../../../../public/assets/profile-picture-blue.png";
 
 export default function About() {
@@ -49,7 +50,8 @@ export default function About() {
     { name: "Next", imageSrc: next },
     { name: "Angular", imageSrc: angular },
     { name: "SQL", imageSrc: sql },
-    { name: "Styled", imageSrc: styledc },
+    { name: "Typescript", imageSrc: typescript },
+    { name: "Styled", imageSrc: styledC },
     { name: "Bootstrap", imageSrc: bootstrap },
     { name: "Tailwind", imageSrc: tailwind },
     { name: "Material", imageSrc: material },
@@ -61,7 +63,7 @@ export default function About() {
     { class: "third", text: "Chess" },
     { class: "forth", text: "Cricket" },
     { class: "", text: "Football" },
-    { class: "last", text: "Carrom" },
+    { class: "last", text: "Pool" },
   ];
 
   const languages = [
