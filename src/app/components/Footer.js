@@ -2,6 +2,8 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <DisplayWrapper>
       <p>
@@ -10,7 +12,7 @@ export default function Footer() {
           Next.js
         </Route>{" "}
         &nbsp;·&nbsp; Designed and Developed by{" "}
-        <Route href="/about">Mukesh Sharma</Route> &nbsp;·&nbsp; © 2024
+        <Route href="/about">Mukesh Sharma</Route> &nbsp;·&nbsp; © {currentYear}
         Portfolio
       </p>
     </DisplayWrapper>
