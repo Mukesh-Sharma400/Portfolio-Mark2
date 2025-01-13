@@ -7,13 +7,8 @@ export default function Footer() {
   return (
     <DisplayWrapper>
       <p>
-        Crafted with{" "}
-        <Route href="https://nextjs.org" target="_blank">
-          Next.js
-        </Route>{" "}
-        &nbsp;·&nbsp; Designed and Developed by{" "}
-        <Route href="/about">Mukesh Sharma</Route> &nbsp;·&nbsp; © {currentYear}
-        Portfolio
+        Designed and Developed by <Route href="/about">Mukesh Sharma</Route>{" "}
+        &nbsp;·&nbsp; © {currentYear} Portfolio
       </p>
     </DisplayWrapper>
   );
