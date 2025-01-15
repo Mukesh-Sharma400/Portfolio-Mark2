@@ -17,7 +17,7 @@ export const Resume = () => {
 
   return (
     <DisplayWrapper
-      href="https://drive.google.com/file/d/1-6CZx65dgTww6ZZiHYzilDT7Y1EB_ajo/view?usp=sharing"
+      href="https://drive.google.com/file/d/1UVL-SrGIx5ZCUtK2Ak3Pthrp0uKFRlWO/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
       data-bs-toggle="tooltip"

@@ -7,22 +7,22 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
-  title: "Mukesh Sharma - MERN Stack Developer",
+  title: "Mukesh Sharma - Full Stack Developer",
   description:
-    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
+    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   keywords:
-    "MERN stack, web development, MongoDB, Express.js, React, Node.js, full-stack developer",
+    "Full Stack Developer, Front End Developer, Back End Developer, Web Developer, MongoDB, ExpressJS, ReactJS, NodeJS",
   author: "Mukesh Sharma",
   image: "./icon.png",
   url: "https://mukesh-sharma.vercel.app",
   type: "website",
-  ogTitle: "Mukesh Sharma - MERN Stack Developer",
+  ogTitle: "Mukesh Sharma - Full Stack Developer",
   ogDescription:
-    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
+    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   ogImage: "./icon.png",
-  twitterTitle: "Mukesh Sharma - MERN Stack Developer",
+  twitterTitle: "Mukesh Sharma - Full Stack Developer",
   twitterDescription:
-    "Experienced MERN stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
+    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
   twitterImage: "./icon.png",
 };
 

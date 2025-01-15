@@ -214,7 +214,7 @@ export default function Home() {
           <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
         <MyStory>
-          Solution driven MERN Stack Developer with over a year of work
+          Solution driven Full Stack Developer with over a year of work
           experience building consumer focused online products and services.
           Designed and developed web apps across multiple APIs, third party
           integrations, and databases.

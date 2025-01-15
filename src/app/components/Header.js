@@ -94,7 +94,7 @@ export default function Header() {
           )}
           <div>
             <MyName>Mukesh Sharma</MyName>
-            <MyDesc>MERN STACK DEVELOPER</MyDesc>
+            <MyDesc>FULL STACK DEVELOPER</MyDesc>
           </div>
         </PicNameWrapper>
         <SwitchMenuWrapper>

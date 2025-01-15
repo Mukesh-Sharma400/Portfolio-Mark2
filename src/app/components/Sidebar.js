@@ -83,7 +83,7 @@ export default function Sidebar() {
           />
           <div>
             <MyName>Mukesh Sharma</MyName>
-            <MyDesc>MERN STACK DEVELOPER</MyDesc>
+            <MyDesc>FULL STACK DEVELOPER</MyDesc>
           </div>
         </PicNameWrapper>
         <SocialLinksWrapper>

@@ -6,19 +6,24 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { uiState } from "../../redux/uiSlice";
 import js from "../../../../public/assets/js.png";
+import git from "../../../../public/assets/git.png";
 import css from "../../../../public/assets/css.png";
 import sql from "../../../../public/assets/sql.png";
 import BaseLayout from "@/app/components/BaseLayout";
 import html from "../../../../public/assets/html.png";
 import node from "../../../../public/assets/node.jpg";
 import next from "../../../../public/assets/next.jpg";
+import agile from "../../../../public/assets/agile.png";
 import mongo from "../../../../public/assets/mongo.png";
 import react from "../../../../public/assets/react.webp";
+import gitHub from "../../../../public/assets/github.webp";
 import styledC from "../../../../public/assets/styled.png";
+import jenkins from "../../../../public/assets/jenkins.jpg";
 import express from "../../../../public/assets/express.jpg";
 import angular from "../../../../public/assets/angular.jpg";
 import tailwind from "../../../../public/assets/tailwind.png";
 import material from "../../../../public/assets/material.png";
+import bitBucket from "../../../../public/assets/bitbucket.png";
 import bootstrap from "../../../../public/assets/bootstrap.png";
 import typescript from "../../../../public/assets/typescript.png";
 import profilePic from "../../../../public/assets/profile-picture-blue.png";
@@ -55,6 +60,11 @@ export default function About() {
     { name: "Bootstrap", imageSrc: bootstrap },
     { name: "Tailwind", imageSrc: tailwind },
     { name: "Material", imageSrc: material },
+    { name: "Git", imageSrc: git },
+    { name: "GitHub", imageSrc: gitHub },
+    { name: "Bitbucket", imageSrc: bitBucket },
+    { name: "Jenkins", imageSrc: jenkins },
+    { name: "Agile", imageSrc: agile },
   ];
 
   const interests = [
@@ -78,7 +88,7 @@ export default function About() {
         <DetailsWrapper>
           <MyName data-aos="fade-right">Mukesh Sharma</MyName>
           <MyDesc data-aos="fade-right" data-aos-delay="100">
-            MERN STACK DEVELOPER
+            FULL STACK DEVELOPER
           </MyDesc>
           <MyStory>
             Hi, I'm Mukesh Sharma, a passionate IT professional currently
