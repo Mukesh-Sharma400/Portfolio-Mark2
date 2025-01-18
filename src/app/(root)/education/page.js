@@ -191,6 +191,9 @@ const EducationImageNameWrapper = styled.div`
   gap: 30px;
   transition: all 0.5s ease-in-out;
 
+  @media (max-width: 426px) {
+    gap: 20px;
+  }
   @media (max-width: 376px) {
     gap: 10px;
   }
