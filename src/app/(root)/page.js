@@ -214,10 +214,11 @@ export default function Home() {
           <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
         <MyStory>
-          Solution driven Full Stack Developer with over a year of work
-          experience building consumer focused online products and services.
-          Designed and developed web apps across multiple APIs, third party
-          integrations, and databases.
+          <b>Solution driven Full Stack Developer</b> with over a year of work
+          experience building{" "}
+          <b>consumer focused online products and services</b>. Designed and
+          developed <b>web apps</b> across multiple <b>APIs</b>,{" "}
+          <b>third party integrations</b>, and <b>databases</b>.
         </MyStory>
         <ButtonsWrapper>
           <PrimaryBtn href="/about" data-aos="zoom-in-up">
@@ -279,7 +280,7 @@ export default function Home() {
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
               <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>{testimonial.message}</Message>
+                <Message>❝ {testimonial.message}❞</Message>
                 <PicNameWrapper>
                   <Image
                     className="rounded-3"
@@ -466,6 +467,14 @@ const MyStory = styled.p`
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
+
+  & > b {
+    font-weight: 600;
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
+  }
 `;
 
 const ButtonsWrapper = styled.div`

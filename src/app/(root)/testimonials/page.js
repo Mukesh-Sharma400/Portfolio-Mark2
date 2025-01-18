@@ -23,7 +23,7 @@ export default function Testimonials() {
       message:
         "We thank Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
       image: appavengers,
-      name: "AppAvengers Labs Pvt. Ltd.",
+      name: "AppAvengers Labs Pvt Ltd",
       role: "Gujarat, India",
     },
     {
@@ -79,7 +79,7 @@ export default function Testimonials() {
         "Having worked with Mukesh for three years, I have to say he is an excellent professional. He helped me understand the project management process and introduced me to useful tools. I am impressed with his work ethic and communication skills.",
       image: femalePlaceholder,
       name: "Reshma Yadav",
-      role: "Student",
+      role: "IT Student",
     },
     {
       message:
@@ -99,9 +99,9 @@ export default function Testimonials() {
       <TestimonialsWrapper>
         <Testimonial data-aos="zoom-in-up">
           <Message>
-            I had the pleasure of working with Mukesh, a highly skilled Node.js
-            developer with remarkable enthusiasm and a great spirit for tackling
-            challenges. Mukesh consistently demonstrates exceptional
+            ❝ I had the pleasure of working with Mukesh, a highly skilled
+            Node.js developer with remarkable enthusiasm and a great spirit for
+            tackling challenges. Mukesh consistently demonstrates exceptional
             problem-solving abilities and a deep understanding of backend
             development, creating efficient, scalable, and maintainable
             solutions. What truly sets Mukesh apart is his strong sense of
@@ -114,7 +114,7 @@ export default function Testimonials() {
             responsibility, reflects in his work, where he not only meets
             expectations but often exceeds them. I strongly recommend Mukesh for
             any role that requires technical expertise, creativity, and a
-            positive attitude.
+            positive attitude.❞
           </Message>
           <PicNameWrapper>
             <Image
@@ -134,7 +134,7 @@ export default function Testimonials() {
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
               <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>{testimonial.message}</Message>
+                <Message>❝ {testimonial.message}❞</Message>
                 <PicNameWrapper>
                   <Image
                     className="rounded-3"
