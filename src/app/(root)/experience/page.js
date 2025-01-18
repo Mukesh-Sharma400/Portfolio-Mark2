@@ -25,41 +25,63 @@ export default function Experience() {
       company: "Playerzpot Media Pvt Ltd",
       imageSrc: playerzpot,
       alt: "Playerzpot Media Pvt Ltd",
-      period: "May 2024 - Present",
+      period: "05/2024 - Present",
       role: "SDE 1 - Nodejs",
       location: "Vashi",
-      content:
-        "As an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, I am involved in backend development using Node.js. My responsibilities include designing and implementing APIs, optimizing server performance, and ensuring the reliability of server-side applications. I engage in code reviews, and contribute to improving our development processes.",
+      content: [
+        "Delivered backend solutions for two major projects: <b>Opinion</b>, featuring <b>Trading</b> and <b>League</b> modules, and <b>Stock Saga</b>.",
+        "Designed and deployed several <b>RESTful APIs</b>, ensuring high performance and seamless integration with frontend systems.",
+        "Enhanced server response times by <b>10-20%</b> through caching, query optimization and load balancing.",
+        "Conducted <b>weekly code reviews</b>, fostering clean code practices and mentoring team members.",
+        "Engineered a <b>scalable and resilient backend API</b> structure to ensure high availability, achieving <b>seamless performance under heavy user concurrency</b>.",
+        "Handled <b>production deployment and monitoring</b>, ensuring high availability and reliability in a live environment.",
+      ],
     },
     {
       company: "AppAvengers Labs Pvt Ltd",
       imageSrc: appavengers,
       alt: "AppAvengers Labs Pvt Ltd",
-      period: "July 2023 - April 2024",
+      period: "07/2023 - 04/2024",
       role: "Junior Web Developer",
       location: "Remote",
-      content:
-        "As a Junior Web Developer at AppAvengers Labs Pvt Ltd, I'm contributing to web app development with Next.js, Angular and Web3 Technologies. I'm designing interfaces, implementing features, and engaging in code reviews for continuous learning.",
+      content: [
+        "Contributed to web app development using <b>Next.js</b>, <b>Angular</b>, and <b>Web3 technologies</b>.",
+        "Successfully delivered <b>3-4 different domain projects</b>, designing user interfaces an implementing core features.",
+        "Enhanced application <b>performance and usability</b> through efficient coding practices.",
+        "Participated in <b>code reviews</b> to ensure quality and foster continuous learning.",
+        "Creating <b>responsive web applications</b>, delivering a seamless user experience across all devices.",
+      ],
     },
     {
       company: "NullClass",
       imageSrc: nullclass,
       alt: "NullClass",
-      period: "December 2022 - January 2023",
+      period: "12/2022 - 01/2023",
       role: "Project Intern",
       location: "Remote",
-      content:
-        "As a NullClass Project Intern, I created a responsive MERN Stack app (Stack Overflow Clone) and added features like a chat bot and community section. I gained valuable experience in React, Node.js, Express.js, and MongoDB, improving my skills in building scalable and user-centric web applications.",
+      content: [
+        "Developed a responsive <b>MERN stack app</b> (Stack Overflow Clone) with advance features like a <b>chat bot</b> and <b>community section</b>.",
+        "Enhanced skills in <b>React.js</b>, <b>Node.js</b>, <b>Express.js</b>, and <b>MongoDB</b>.",
+        "Gained experience in building <b>scalable</b> and <b>user-centric web applications</b>.",
+        "Deployed both the <b>frontend</b> and <b>backend</b> on servers, ensuring <b>seamless integration</b> and optimal performance.",
+        "Successfully launched the application, making it <b>live and accessible</b> on the internet for users.",
+      ],
     },
     {
       company: "Hasbasoft Technology Pvt Ltd",
       imageSrc: hasbasoft,
       alt: "Hasbasoft Technology Pvt Ltd",
-      period: "August 2021 - October 2022",
+      period: "08/2021 - 10/2022",
       role: "MERN Stack Software Trainee",
       location: "Online",
-      content:
-        "As a Software Trainee at Hasbasoft Technology Pvt Ltd, I built several MERN Stack applications, including an Ecommerce platform. Through hands-on experience, I gained expertise in React, Node.js, Express.js, and MongoDB, developing dynamic and user-friendly web solutions in a professional software development environment.",
+      content: [
+        "Developed several <b>MERN stack applications</b>, including a dynamic e-commerce platform.",
+        "Enhanced skills in <b>React.js</b>, <b>Node.js</b>, <b>Express.js</b>, and <b>MongoDB</b>, gaining hands-on experience in building scalable applications.",
+        "Worked in a <b>professional development environment</b>, implementing best practices and modern web development techniques.",
+        "Designed and developed <b>user-friendly interfaces</b>, ensuring optimal performance and responsiveness.",
+        "Collaborated with mentors to refine coding skills and understand advanced <b>software development processes</b>.",
+        "Participated in <b>code reviews</b> and gained exposure to <b>real-world project management workflows</b>.",
+      ],
     },
   ];
 
@@ -118,24 +140,38 @@ export default function Experience() {
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>
             <ExperienceWrapper>
-              <LeftSide data-aos="fade-left">
+              <CompanyImageNameWrapper>
                 <CompanyImage
+                  data-aos="fade-left"
                   className="rounded-3"
                   src={experience.imageSrc}
                   alt={experience.alt}
-                  width={100}
-                  height={100}
+                  width={65}
+                  height={65}
                 />
-              </LeftSide>
-              <RightSide>
-                <CompanyName>
-                  {experience.company} <span>({experience.period})</span>
-                </CompanyName>
-                <Role>
-                  {experience.role} <span>({experience.location})</span>
-                </Role>
-                <Content>{experience.content}</Content>
-              </RightSide>
+                <div>
+                  <Role>{experience.role}</Role>
+                  <CompanyName>{experience.company}</CompanyName>
+                  <TimeLocationWrapper>
+                    <Time>
+                      <i className="bi bi-calendar3"></i>
+                      {experience.period}
+                    </Time>
+                    <Location>
+                      <i className="bi bi-geo-alt-fill"></i>
+                      {experience.location}
+                    </Location>
+                  </TimeLocationWrapper>
+                </div>
+              </CompanyImageNameWrapper>
+              <ContentWrapper>
+                {experience.content.map((point, index) => (
+                  <Content
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: point }}
+                  />
+                ))}
+              </ContentWrapper>
             </ExperienceWrapper>
             {index < experiencesData.length - 1 && <Divider />}
           </React.Fragment>
@@ -193,75 +229,80 @@ const ExperiencesWrapper = styled.div`
 const ExperienceWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   gap: 30px;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    flex-direction: column;
-  }
 `;
 
-const LeftSide = styled.div`
-  width: 20%;
-  position: relative;
+const CompanyImageNameWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
   transition: all 0.5s ease-in-out;
 `;
 
 const CompanyImage = styled(Image)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    position: initial;
-    transform: initial !important;
-  }
-`;
-
-const RightSide = styled.div`
-  width: 80%;
-  transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
-`;
-
-const CompanyName = styled.p`
-  font-size: 16px;
-  margin-bottom: 10px !important;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-  span {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greyColor100
-        : theme.darkMode.greyColor100};
-  }
 `;
 
 const Role = styled.p`
-  font-size: 14px;
-  margin-bottom: 10px !important;
+  font-size: 16px;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
-  span {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greyColor100
-        : theme.darkMode.greyColor100};
+`;
+
+const CompanyName = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  transition: all 0.5s ease-in-out;
+`;
+
+const TimeLocationWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Time = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
+
+  & > i {
+    margin-right: 5px;
   }
 `;
 
-const Content = styled.p`
+const Location = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
+
+  & > i {
+    margin-right: 5px;
+  }
+`;
+
+const ContentWrapper = styled.ul`
+  padding-left: 14px;
+`;
+
+const Content = styled.li`
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
@@ -270,6 +311,14 @@ const Content = styled.p`
       ? theme.lightMode.greyColor100
       : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
+
+  & > b {
+    font-weight: 600;
+    color: ${({ theme }) =>
+      theme.currentTheme === "light"
+        ? theme.lightMode.whiteColor150
+        : theme.globalColors.whiteColor};
+  }
 `;
 
 const Divider = styled.div`
