@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../../redux/uiSlice";
+import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
 import scct from "../../../../public/assets/scct-logo.jpeg";
 import pace from "../../../../public/assets/pace-logo.webp";
@@ -14,35 +14,57 @@ import certificateofaptitudetest from "../../../../public/assets/certificate-of-
 
 export default function Education() {
   const { theme } = useSelector(uiState);
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const educationsData = [
     {
-      degree: "Bachelors in Information Technology",
+      degree:
+        screenWidth > 500
+          ? "Bachelors in Information Technology"
+          : "Bachelors in I.T.",
       imageSrc: scct,
-      alt: "Sanpada College of Commerce & Technology",
-      period: "September 2020 - May 2023",
-      college: "Sanpada College of Commerce & Technology",
-      location: "Sanpada, Navi Mumbai",
+      alt:
+        screenWidth > 500
+          ? "Sanpada College of Commerce & Technology"
+          : "S.C.C.T.",
+      period: "09/2020 - 05/2023",
+      college:
+        screenWidth > 500
+          ? "Sanpada College of Commerce & Technology"
+          : "S.C.C.T.",
+      location: "Sanpada",
       content:
         "I always had a passion for web development and acquired skills in various web technologies. I have created many websites, which impressed all my colleagues and professors. I became a sought-after web developer, proving that hard work and dedication can lead to success.",
     },
     {
-      degree: "Higher School Certification",
+      degree: screenWidth > 500 ? "Higher School Certification" : "H.S.C.",
       imageSrc: pace,
       alt: "Pace Education Society",
-      period: "June 2016 - May 2018",
+      period: "06/2016 - 05/2018",
       college: "Pace Education Society",
-      location: "Nerul, Navi Mumbai",
+      location: "Nerul",
       content:
         "I was always fascinated by the mysteries of the universe. Despite not being the smartest student in my class, I spend every free moment delving into books and videos on cosmology and astrophysics.",
     },
     {
-      degree: "Secondary School Certification",
+      degree: screenWidth > 500 ? "Secondary School Certification" : "S.S.C.",
       imageSrc: tilak,
       alt: "Tilak International School",
-      period: "June 2015 - March 2016",
+      period: "06/2015 - 03/2016",
       college: "Tilak International School",
-      location: "Ghansoli, Navi Mumbai",
+      location: "Ghansoli",
       content:
         "I always had a keen interest in computers and technology. I used to participate in a school computer science competition despite my lack of confidence. I studied hard, boosting my confidence and setting me on a path towards a successful career in technology.",
     },
@@ -75,24 +97,31 @@ export default function Education() {
         {educationsData.map((education, index) => (
           <React.Fragment key={index}>
             <EducationWrapper>
-              <LeftSide data-aos="fade-left">
+              <EducationImageNameWrapper>
                 <EducationImage
+                  data-aos="fade-left"
                   className="rounded-3"
                   src={education.imageSrc}
                   alt={education.alt}
-                  width={100}
-                  height={100}
+                  width={65}
+                  height={65}
                 />
-              </LeftSide>
-              <RightSide>
-                <EducationName>
-                  {education.degree} <span>({education.period})</span>
-                </EducationName>
-                <College>
-                  {education.college} <span>({education.location})</span>
-                </College>
-                <Content>{education.content}</Content>
-              </RightSide>
+                <div style={{ width: "100%" }}>
+                  <EducationName>{education.degree}</EducationName>
+                  <College>{education.college}</College>
+                  <TimeLocationWrapper>
+                    <Time>
+                      <i className="bi bi-calendar3"></i>
+                      {education.period}
+                    </Time>
+                    <Location>
+                      <i className="bi bi-geo-alt-fill"></i>
+                      {education.location}
+                    </Location>
+                  </TimeLocationWrapper>
+                </div>
+              </EducationImageNameWrapper>
+              <Content>{education.content}</Content>
             </EducationWrapper>
             {index < educationsData.length - 1 && <Divider />}
           </React.Fragment>
@@ -150,71 +179,81 @@ const EducationsWrapper = styled.div`
 const EducationWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: all 0.5s ease-in-out;
+`;
+
+const EducationImageNameWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
   gap: 30px;
   transition: all 0.5s ease-in-out;
 
-  @media (max-width: 426px) {
-    flex-direction: column;
+  @media (max-width: 376px) {
+    gap: 10px;
   }
-`;
-
-const LeftSide = styled.div`
-  width: 20%;
-  position: relative;
-  transition: all 0.5s ease-in-out;
 `;
 
 const EducationImage = styled(Image)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
   transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    position: initial;
-    transform: initial !important;
-  }
-`;
-
-const RightSide = styled.div`
-  width: 80%;
-  transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
 `;
 
 const EducationName = styled.p`
   font-size: 16px;
-  margin-bottom: 10px !important;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
-  span {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greyColor100
-        : theme.darkMode.greyColor100};
-  }
 `;
 
 const College = styled.p`
   font-size: 14px;
-  margin-bottom: 10px !important;
   color: ${({ theme }) =>
     theme.currentTheme === "light"
       ? theme.lightMode.whiteColor150
       : theme.globalColors.whiteColor};
   transition: all 0.5s ease-in-out;
-  span {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greyColor100
-        : theme.darkMode.greyColor100};
+`;
+
+const TimeLocationWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.5s ease-in-out;
+
+  @media (max-width: 376px) {
+    gap: 0;
+    justify-content: space-between;
+  }
+`;
+
+const Time = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
+
+  & > i {
+    margin-right: 5px;
+  }
+`;
+
+const Location = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.greyColor100
+      : theme.darkMode.greyColor100};
+  transition: all 0.5s ease-in-out;
+
+  & > i {
+    margin-right: 5px;
   }
 `;
 

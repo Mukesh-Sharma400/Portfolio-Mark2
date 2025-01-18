@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { uiState } from "../../redux/uiSlice";
+import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
 import playerzpot from "../../../../public/assets/playerzpot.jpg";
 import nullclass from "../../../../public/assets/nullclass-logo.png";
@@ -19,6 +19,19 @@ import certificateofmusicwithjs from "../../../../public/assets/certificate-of-m
 
 export default function Experience() {
   const { theme } = useSelector(uiState);
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const experiencesData = [
     {
@@ -72,7 +85,10 @@ export default function Experience() {
       imageSrc: hasbasoft,
       alt: "Hasbasoft Technology Pvt Ltd",
       period: "08/2021 - 10/2022",
-      role: "MERN Stack Software Trainee",
+      role:
+        screenWidth > 400
+          ? "MERN Stack Software Trainee"
+          : "MERN Software Trainee",
       location: "Online",
       content: [
         "Developed several <b>MERN stack applications</b>, including a dynamic e-commerce platform.",
@@ -149,7 +165,7 @@ export default function Experience() {
                   width={65}
                   height={65}
                 />
-                <div>
+                <div style={{ width: "100%" }}>
                   <Role>{experience.role}</Role>
                   <CompanyName>{experience.company}</CompanyName>
                   <TimeLocationWrapper>
@@ -240,6 +256,10 @@ const CompanyImageNameWrapper = styled.div`
   align-items: center;
   gap: 30px;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 376px) {
+    gap: 10px;
+  }
 `;
 
 const CompanyImage = styled(Image)`
@@ -270,6 +290,11 @@ const TimeLocationWrapper = styled.div`
   align-items: center;
   gap: 2rem;
   transition: all 0.5s ease-in-out;
+
+  @media (max-width: 376px) {
+    gap: 0;
+    justify-content: space-between;
+  }
 `;
 
 const Time = styled.p`
