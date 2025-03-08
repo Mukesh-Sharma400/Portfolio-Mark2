@@ -280,7 +280,7 @@ export default function Home() {
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
               <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>❝ {testimonial.message}❞</Message>
+                <Message>❝{testimonial.message}❞</Message>
                 <PicNameWrapper>
                   <Image
                     className="rounded-3"

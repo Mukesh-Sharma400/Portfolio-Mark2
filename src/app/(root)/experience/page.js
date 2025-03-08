@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { uiState } from "../../redux/uiSlice";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
+import valuefy from "../../../../public/assets/valuefy.jpeg";
 import playerzpot from "../../../../public/assets/playerzpot.jpg";
 import nullclass from "../../../../public/assets/nullclass-logo.png";
 import hasbasoft from "../../../../public/assets/hasbasoft-logo.png";
@@ -35,10 +36,19 @@ export default function Experience() {
 
   const experiencesData = [
     {
+      company: "Valuefy Technologies Pvt Ltd",
+      imageSrc: valuefy,
+      alt: "Valuefy Technologies Pvt Ltd",
+      period: "03/2025 - Present",
+      role: "Software Engineer",
+      location: "Thane",
+      content: [],
+    },
+    {
       company: "Playerzpot Media Pvt Ltd",
       imageSrc: playerzpot,
       alt: "Playerzpot Media Pvt Ltd",
-      period: "05/2024 - Present",
+      period: "05/2024 - 02/2025",
       role: "SDE 1 - Nodejs",
       location: "Vashi",
       content: [

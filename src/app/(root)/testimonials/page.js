@@ -99,9 +99,9 @@ export default function Testimonials() {
       <TestimonialsWrapper>
         <Testimonial data-aos="zoom-in-up">
           <Message>
-            ❝ I had the pleasure of working with Mukesh, a highly skilled
-            Node.js developer with remarkable enthusiasm and a great spirit for
-            tackling challenges. Mukesh consistently demonstrates exceptional
+            ❝I had the pleasure of working with Mukesh, a highly skilled Node.js
+            developer with remarkable enthusiasm and a great spirit for tackling
+            challenges. Mukesh consistently demonstrates exceptional
             problem-solving abilities and a deep understanding of backend
             development, creating efficient, scalable, and maintainable
             solutions. What truly sets Mukesh apart is his strong sense of
@@ -134,7 +134,7 @@ export default function Testimonials() {
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
               <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>❝ {testimonial.message}❞</Message>
+                <Message>❝{testimonial.message}❞</Message>
                 <PicNameWrapper>
                   <Image
                     className="rounded-3"

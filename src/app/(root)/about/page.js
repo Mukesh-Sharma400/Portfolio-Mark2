@@ -92,12 +92,12 @@ export default function About() {
           </MyDesc>
           <MyStory>
             Hi, I'm Mukesh Sharma, a passionate IT professional currently
-            working as an SDE 1 - Node.js at Playerzpot Media Pvt Ltd. In my
-            role, I focus on backend development, designing and implementing
-            robust APIs, and optimizing server performance. Prior to this, I
-            gained valuable experience as a Junior Web Developer at AppAvengers
-            Labs Pvt Ltd, and honed my skills in the MERN Stack during an
-            internship at NullClass.
+            working as a Software Engineer at Valuefy. Previously, I worked as
+            an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, where I contributed
+            to backend development and API design. Before that, I gained
+            valuable experience as a Junior Web Developer at AppAvengers Labs
+            Pvt Ltd and further honed my skills in the MERN Stack during an
+            internship at NullClass
           </MyStory>
         </DetailsWrapper>
         <PicWrapper data-aos="fade-right" data-aos-delay="300">
