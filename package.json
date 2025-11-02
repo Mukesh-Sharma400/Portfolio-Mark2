@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@reduxjs/toolkit": "^2.0.1",
