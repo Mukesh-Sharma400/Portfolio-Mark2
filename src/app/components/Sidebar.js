@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
 import { useSelector } from "react-redux";
-import { uiState } from "../redux/uiSlice";
 import { usePathname } from "next/navigation";
-import profilePic from "../../../public/assets/profile-picture-blue.png";
+import profilePic from "#/profile-picture-blue.png";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -197,7 +197,7 @@ const SocialLink = styled(Link)`
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 50%;
   color: ${({ theme }) =>
     theme.currentTheme === "light"

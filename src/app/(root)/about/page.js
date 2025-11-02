@@ -1,32 +1,36 @@
 "use client";
 
+import js from "#/js.png";
+import git from "#/git.png";
+import css from "#/css.png";
+import sql from "#/sql.png";
+import html from "#/html.png";
+import node from "#/node.jpg";
+import next from "#/next.jpg";
 import Image from "next/image";
+import agile from "#/agile.png";
+import mongo from "#/mongo.png";
+import redis from "#/redis.png";
+import react from "#/react.webp";
+import docker from "#/docker.png";
+import gitHub from "#/github.webp";
+import styledC from "#/styled.png";
+import { uiState } from "%/uiSlice";
+import jenkins from "#/jenkins.jpg";
+import express from "#/express.jpg";
+import angular from "#/angular.jpg";
+import postman from "#/postman.png";
+import tailwind from "#/tailwind.png";
+import material from "#/material.png";
 import styled from "styled-components";
+import openshift from "#/openshift.png";
+import bitBucket from "#/bitbucket.png";
+import bootstrap from "#/bootstrap.png";
 import { useSelector } from "react-redux";
+import typescript from "#/typescript.png";
 import { useEffect, useState } from "react";
-import { uiState } from "../../redux/uiSlice";
-import js from "../../../../public/assets/js.png";
-import git from "../../../../public/assets/git.png";
-import css from "../../../../public/assets/css.png";
-import sql from "../../../../public/assets/sql.png";
+import profilePic from "#/profile-picture-blue.png";
 import BaseLayout from "@/app/components/BaseLayout";
-import html from "../../../../public/assets/html.png";
-import node from "../../../../public/assets/node.jpg";
-import next from "../../../../public/assets/next.jpg";
-import agile from "../../../../public/assets/agile.png";
-import mongo from "../../../../public/assets/mongo.png";
-import react from "../../../../public/assets/react.webp";
-import gitHub from "../../../../public/assets/github.webp";
-import styledC from "../../../../public/assets/styled.png";
-import jenkins from "../../../../public/assets/jenkins.jpg";
-import express from "../../../../public/assets/express.jpg";
-import angular from "../../../../public/assets/angular.jpg";
-import tailwind from "../../../../public/assets/tailwind.png";
-import material from "../../../../public/assets/material.png";
-import bitBucket from "../../../../public/assets/bitbucket.png";
-import bootstrap from "../../../../public/assets/bootstrap.png";
-import typescript from "../../../../public/assets/typescript.png";
-import profilePic from "../../../../public/assets/profile-picture-blue.png";
 
 export default function About() {
   const { theme } = useSelector(uiState);
@@ -44,42 +48,55 @@ export default function About() {
     };
   }, []);
 
-  const skillsData = [
-    { name: "HTML", imageSrc: html },
-    { name: "CSS", imageSrc: css },
-    { name: "JavaScript", imageSrc: js },
-    { name: "Mongo", imageSrc: mongo },
-    { name: "Express", imageSrc: express },
-    { name: "React", imageSrc: react },
-    { name: "Node", imageSrc: node },
-    { name: "Next", imageSrc: next },
-    { name: "Angular", imageSrc: angular },
-    { name: "SQL", imageSrc: sql },
-    { name: "Typescript", imageSrc: typescript },
-    { name: "Styled", imageSrc: styledC },
-    { name: "Bootstrap", imageSrc: bootstrap },
-    { name: "Tailwind", imageSrc: tailwind },
-    { name: "Material", imageSrc: material },
-    { name: "Git", imageSrc: git },
-    { name: "GitHub", imageSrc: gitHub },
-    { name: "Bitbucket", imageSrc: bitBucket },
-    { name: "Jenkins", imageSrc: jenkins },
-    { name: "Agile", imageSrc: agile },
-  ];
+  const skillsData = {
+    frontend: [
+      { name: "HTML", imageSrc: html },
+      { name: "CSS", imageSrc: css },
+      { name: "JavaScript", imageSrc: js },
+      { name: "TypeScript", imageSrc: typescript },
+      { name: "ReactJS", imageSrc: react },
+      { name: "NextJS", imageSrc: next },
+      { name: "Angular", imageSrc: angular },
+      { name: "Styled", imageSrc: styledC },
+      { name: "Material", imageSrc: material },
+      { name: "Bootstrap", imageSrc: bootstrap },
+      { name: "Tailwind", imageSrc: tailwind },
+    ],
+    backend: [
+      { name: "NodeJS", imageSrc: node },
+      { name: "ExpressJS", imageSrc: express },
+      { name: "MongoDB", imageSrc: mongo },
+      { name: "SQL", imageSrc: sql },
+      { name: "Redis", imageSrc: redis },
+      // { name: "RESTful APIs", imageSrc: api }, // optional if you have an icon
+      // { name: "Third-party Integrations", imageSrc: integration }, // optional
+    ],
+    devops: [
+      { name: "Docker", imageSrc: docker },
+      { name: "OpenShift", imageSrc: openshift },
+      { name: "Jenkins", imageSrc: jenkins },
+      { name: "Git", imageSrc: git },
+      { name: "GitHub", imageSrc: gitHub },
+      { name: "Bitbucket", imageSrc: bitBucket },
+      { name: "Postman", imageSrc: postman },
+      { name: "Agile", imageSrc: agile },
+      // { name: "API Testing", imageSrc: testing }, // optional if you have an icon
+    ],
+  };
 
   const interests = [
-    { class: "first", text: "Coding" },
-    { class: "", text: "Music" },
-    { class: "third", text: "Chess" },
-    { class: "forth", text: "Cricket" },
-    { class: "", text: "Football" },
-    { class: "last", text: "Pool" },
+    { text: "Coding", class: "first" },
+    { text: "Music", class: "" },
+    { text: "Chess", class: "third" },
+    { text: "Cricket", class: "forth" },
+    { text: "Football", class: "" },
+    { text: "Pool", class: "last" },
   ];
 
   const languages = [
-    { class: "first", text: "English" },
-    { class: "", text: "Hindi" },
-    { class: "last", text: "Marathi" },
+    { text: "English", class: "first" },
+    { text: "Hindi", class: "" },
+    { text: "Marathi", class: "last" },
   ];
 
   return (
@@ -91,13 +108,14 @@ export default function About() {
             FULL STACK DEVELOPER
           </MyDesc>
           <MyStory>
-            Hi, I'm Mukesh Sharma, a passionate IT professional currently
-            working as a Software Engineer at Valuefy. Previously, I worked as
-            an SDE 1 - Node.js at Playerzpot Media Pvt Ltd, where I contributed
-            to backend development and API design. Before that, I gained
-            valuable experience as a Junior Web Developer at AppAvengers Labs
-            Pvt Ltd and further honed my skills in the MERN Stack during an
-            internship at NullClass
+            Hi, I'm Mukesh Sharma, a passionate Software Development Engineer
+            currently working at Valuefy Technologies Pvt Ltd. Previously, I
+            contributed to backend development and API design at Playerzpot
+            Media Pvt Ltd, and before that, I gained valuable experience as a
+            Junior Web Developer at AppAvengers Labs Pvt Ltd. My journey began
+            with an internship at NullClass, where I built a strong foundation
+            in the MERN Stack and developed an interest in building efficient,
+            scalable applications.
           </MyStory>
         </DetailsWrapper>
         <PicWrapper data-aos="fade-right" data-aos-delay="300">
@@ -111,32 +129,48 @@ export default function About() {
         </PicWrapper>
       </IntroWrapper>
       <MyStory>
-        I specialize in MongoDB, Express, React, and Node.js, and I'm proficient
-        with tools like Redux, Sass, and Bootstrap. My experience spans
-        collaborating with diverse clients and industries, where I've adapted to
-        various project requirements and emphasized clean, maintainable, and
-        reusable code.
+        I specialize in both frontend and backend technologies, including
+        ReactJS, NextJS, Angular, Node.js, Express.js, MongoDB, SQL, and Redis.
+        I also work with tools and frameworks like Material UI, Tailwind CSS,
+        Bootstrap, and Styled Components to create responsive and modern
+        interfaces. While my primary focus lies in full-stack JavaScript
+        development, I have basic familiarity with DevOps tools such as Docker,
+        Jenkins, Git, and Postman, which help me understand and support the
+        deployment and integration processes.
       </MyStory>
       <MyStory>
-        As a self-motivated individual, I continuously seek opportunities to
-        enhance my skills and tackle new challenges. If you're looking for a
-        dedicated professional passionate about backend development and web
-        technologies, feel free to reach out for potential collaborations.
+        As a self-motivated and detail-oriented developer, I constantly seek
+        opportunities to improve my skills and embrace new challenges. I enjoy
+        collaborating with teams, solving complex problems, and writing clean,
+        maintainable code that delivers real impact. If you're looking for a
+        dedicated professional who’s passionate about backend development and
+        full-stack web technologies, I’d be glad to connect and collaborate.
       </MyStory>
       <SkillsSection id="skills">
         <HeadingTwo>Skills</HeadingTwo>
-        <SkillsWrapper>
-          {skillsData.map((skill, index) => (
-            <Skill
-              key={index}
-              data-aos="fade-right"
-              data-aos-delay={`${(index + 1) * 100}`}
-            >
-              <SkillImage src={skill.imageSrc} alt={skill.name} />
-              {skill.name}
-            </Skill>
-          ))}
-        </SkillsWrapper>
+        {Object.entries(skillsData).map(([category, skills]) => (
+          <Category key={category}>
+            <CategoryTitle>
+              {category === "frontend"
+                ? "Frontend & UI"
+                : category === "backend"
+                ? "Backend & Databases"
+                : "DevOps & Tools"}
+            </CategoryTitle>
+            <SkillsWrapper>
+              {skills.map((skill, index) => (
+                <Skill
+                  key={index}
+                  data-aos="fade-right"
+                  data-aos-delay={`${(index + 1) * 100}`}
+                >
+                  <SkillImage src={skill.imageSrc} alt={skill.name} />
+                  {skill.name}
+                </Skill>
+              ))}
+            </SkillsWrapper>
+          </Category>
+        ))}
       </SkillsSection>
       <InterestsSection>
         <HeadingTwo>Interests</HeadingTwo>
@@ -235,6 +269,18 @@ const HeadingTwo = styled.h2`
 
 const SkillsSection = styled.div`
   margin: 50px 0;
+  transition: all 0.5s ease-in-out;
+`;
+
+const Category = styled.div``;
+
+const CategoryTitle = styled.h6`
+  font-weight: 400;
+  color: ${({ theme }) =>
+    theme.currentTheme === "light"
+      ? theme.lightMode.whiteColor150
+      : theme.globalColors.whiteColor};
+  margin: 15px 0 10px !important;
   transition: all 0.5s ease-in-out;
 `;
 

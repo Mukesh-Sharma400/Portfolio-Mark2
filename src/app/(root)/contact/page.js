@@ -1,11 +1,11 @@
 "use client";
 
 import copy from "clipboard-copy";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { uiState } from "../../redux/uiSlice";
 import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
 

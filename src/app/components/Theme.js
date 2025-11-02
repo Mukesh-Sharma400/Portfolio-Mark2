@@ -1,7 +1,7 @@
 "use client";
 
+import { uiState } from "%/uiSlice";
 import { useSelector } from "react-redux";
-import { uiState } from "../redux/uiSlice";
 import { ThemeProvider } from "styled-components";
 import { darkMode, lightMode, globalColors } from "../theme";
 

@@ -1,22 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import { uiState } from "%/uiSlice";
+import valuefy from "#/valuefy.jpeg";
 import styled from "styled-components";
+import playerzpot from "#/playerzpot.jpg";
 import { useSelector } from "react-redux";
-import { uiState } from "../../redux/uiSlice";
+import nullclass from "#/nullclass-logo.png";
+import hasbasoft from "#/hasbasoft-logo.png";
+import appavengers from "#/app-avengers-logo.jpg";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
-import valuefy from "../../../../public/assets/valuefy.jpeg";
-import playerzpot from "../../../../public/assets/playerzpot.jpg";
-import nullclass from "../../../../public/assets/nullclass-logo.png";
-import hasbasoft from "../../../../public/assets/hasbasoft-logo.png";
-import appavengers from "../../../../public/assets/app-avengers-logo.jpg";
-import certificateofnetflix from "../../../../public/assets/certificate-of-netflix.png";
-import certificateoftraining from "../../../../public/assets/certificate-of-training.png";
-import certificateofdicegame from "../../../../public/assets/certificate-of-dicegame.png";
-import certificateofecommerce from "../../../../public/assets/certificate-of-ecommerce.png";
-import certificateofinternship from "../../../../public/assets/certificate-of-internship.png";
-import certificateofmusicwithjs from "../../../../public/assets/certificate-of-musicwithjs.png";
+import certificateofnetflix from "#/certificate-of-netflix.png";
+import certificateoftraining from "#/certificate-of-training.png";
+import certificateofdicegame from "#/certificate-of-dicegame.png";
+import certificateofecommerce from "#/certificate-of-ecommerce.png";
+import certificateofinternship from "#/certificate-of-internship.png";
+import certificateofmusicwithjs from "#/certificate-of-musicwithjs.png";
 
 export default function Experience() {
   const { theme } = useSelector(uiState);
@@ -40,16 +40,24 @@ export default function Experience() {
       imageSrc: valuefy,
       alt: "Valuefy Technologies Pvt Ltd",
       period: "03/2025 - Present",
-      role: "Software Engineer",
+      role: "Software Developer Engineer",
       location: "Thane",
-      content: [],
+      content: [
+        "Delivered backend solutions for the <b>National Pension System (NPS) onboarding module</b>, and provided <b>enhancements & maintenance</b> for the <b>Mutual Fund processing module</b>.",
+        "Built and optimized <b>RESTful APIs</b> for user <b>onboarding, data validation, and external client interactions</b>.",
+        "Integrated with <b>third-party APIs</b> to securely <b>fetch and process financial/transactional data</b>.",
+        "Managed <b>application deployment and scaling on OpenShift</b>, ensuring <b>high availability and reliability</b>.",
+        "Performed <b>Oracle database administration</b> and <b>query optimization</b> for <b>large-scale financial datasets</b>.",
+        "Diagnosed and resolved <b>network-related issues</b> impacting <b>application connectivity and performance</b>.",
+        "Provided <b>end-to-end maintenance & production support</b>, ensuring <b>smooth operation of critical financial workflows</b>.",
+      ],
     },
     {
       company: "Playerzpot Media Pvt Ltd",
       imageSrc: playerzpot,
       alt: "Playerzpot Media Pvt Ltd",
       period: "05/2024 - 02/2025",
-      role: "SDE 1 - Nodejs",
+      role: "Software Developer Engineer",
       location: "Vashi",
       content: [
         "Delivered backend solutions for two major projects: <b>Opinion</b>, featuring <b>Trading</b> and <b>League</b> modules, and <b>Stock Saga</b>.",

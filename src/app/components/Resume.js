@@ -1,7 +1,7 @@
 import { useEffect } from "react";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { uiState } from "../redux/uiSlice";
 
 export const Resume = () => {
   const { theme } = useSelector(uiState);
@@ -17,7 +17,7 @@ export const Resume = () => {
 
   return (
     <DisplayWrapper
-      href="https://drive.google.com/file/d/1UVL-SrGIx5ZCUtK2Ak3Pthrp0uKFRlWO/view?usp=sharing"
+      href="https://drive.google.com/file/d/1xxDSjREuSkkyRuOtyuRyTUZMYkhbp4RB/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
       data-bs-toggle="tooltip"

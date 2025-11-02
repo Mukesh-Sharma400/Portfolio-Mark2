@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { uiState } from "%/uiSlice";
+import scct from "#/scct-logo.jpeg";
+import pace from "#/pace-logo.webp";
+import tilak from "#/tilak-logo.webp";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { uiState } from "../../redux/uiSlice";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
-import scct from "../../../../public/assets/scct-logo.jpeg";
-import pace from "../../../../public/assets/pace-logo.webp";
-import tilak from "../../../../public/assets/tilak-logo.webp";
-import certificateofbrainstorm from "../../../../public/assets/certificate-of-brainstorm.png";
-import certificateofaptitudetest from "../../../../public/assets/certificate-of-aptitudetest.png";
+import certificateofbrainstorm from "#/certificate-of-brainstorm.png";
+import certificateofaptitudetest from "#/certificate-of-aptitudetest.png";
 
 export default function Education() {
   const { theme } = useSelector(uiState);

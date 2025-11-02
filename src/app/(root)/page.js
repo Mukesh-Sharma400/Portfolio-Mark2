@@ -1,32 +1,32 @@
 "use client";
 
+import sql from "#/sql.png";
 import Link from "next/link";
+import node from "#/node.jpg";
+import next from "#/next.jpg";
 import Image from "next/image";
+import mongo from "#/mongo.png";
 import { useState } from "react";
+import react from "#/react.webp";
 import copy from "clipboard-copy";
+import { uiState } from "%/uiSlice";
+import express from "#/express.jpg";
+import angular from "#/angular.jpg";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { uiState } from "../redux/uiSlice";
-import { Toast } from "../components/Toast";
+import mjinterior from "#/mjinterior.png";
 import { useRouter } from "next/navigation";
-import sql from "../../../public/assets/sql.png";
-import node from "../../../public/assets/node.jpg";
-import next from "../../../public/assets/next.jpg";
+import aliKarim from "#/ali-karim-sayed.png";
+import { Toast } from "@/app/components/Toast";
+import memories from "#/memories-thumbnail.jpg";
+import appavengers from "#/app-avengers-logo.jpg";
+import nitinPrajapati from "#/nitin-prajapati.jpg";
+import pratimPabrekar from "#/pratim-pabrekar.jpeg";
 import BaseLayout from "@/app/components/BaseLayout";
-import mongo from "../../../public/assets/mongo.png";
-import react from "../../../public/assets/react.webp";
-import express from "../../../public/assets/express.jpg";
-import angular from "../../../public/assets/angular.jpg";
-import mjinterior from "../../../public/assets/mjinterior.png";
-import aliKarim from "../../../public/assets/ali-karim-sayed.png";
-import youtube from "../../../public/assets/youtube-thumbnail.png";
-import memories from "../../../public/assets/memories-thumbnail.jpg";
+import socialnetwork from "#/socialnetwork-thumbnail.jpg";
+import opinion from "#/opinion-trading-league-thumbnail.png";
+import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import appavengers from "../../../public/assets/app-avengers-logo.jpg";
-import nitinPrajapati from "../../../public/assets/nitin-prajapati.jpg";
-import pratimPabrekar from "../../../public/assets/pratim-pabrekar.jpeg";
-import socialnetwork from "../../../public/assets/socialnetwork-thumbnail.jpg";
-import stackoverflow from "../../../public/assets/stack-overflow-thumbnail.jpg";
 
 export default function Home() {
   const router = new useRouter();
@@ -103,6 +103,18 @@ export default function Home() {
 
   const projectsData = [
     {
+      name: "NPS & Mutual Fund Module",
+      imageSrc: npsmutualfund,
+      href: "/projects/nps-mutual-fund-module",
+      description: "Valuefy Technologies Pvt Ltd",
+    },
+    {
+      name: "Opinion Trading & League",
+      imageSrc: opinion,
+      href: "/projects/opinion-trading-league",
+      description: "Playerzpot Media Pvt Ltd",
+    },
+    {
       name: "SocialNetwork Web App",
       imageSrc: socialnetwork,
       href: "/projects/socialnetwork",
@@ -113,18 +125,6 @@ export default function Home() {
       imageSrc: memories,
       href: "/projects/memories",
       description: "Social Blog Web Application",
-    },
-    {
-      name: "Stack Overflow Clone",
-      imageSrc: stackoverflow,
-      href: "/projects/stackoverflow",
-      description: "Copy of Stack Overflow Application",
-    },
-    {
-      name: "YouTube Clone",
-      imageSrc: youtube,
-      href: "/projects/youtube",
-      description: "Copy of YouTube Application",
     },
   ];
 
@@ -214,11 +214,15 @@ export default function Home() {
           <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
         <MyStory>
-          <b>Solution driven Full Stack Developer</b> with over a year of work
-          experience building{" "}
-          <b>consumer focused online products and services</b>. Designed and
-          developed <b>web apps</b> across multiple <b>APIs</b>,{" "}
-          <b>third party integrations</b>, and <b>databases</b>.
+          <b>Full Stack Developer</b> specialized in delivering{" "}
+          <b>high-performance backend solutions</b> within{" "}
+          <b>financial technology</b>
+          and <b>gaming</b> sectors. Expertise includes designing{" "}
+          <b>scalable RESTful APIs, optimizing database operations</b>, and
+          managing <b>cloud deployments on OpenShift</b> to ensure{" "}
+          <b>service reliability</b>. Adept at collaborating in{" "}
+          <b>Agile environments</b> to deliver{" "}
+          <b>robust, secure, and user-centric applications</b>.
         </MyStory>
         <ButtonsWrapper>
           <PrimaryBtn href="/about" data-aos="zoom-in-up">
@@ -568,7 +572,7 @@ const ProjectsWrapper = styled.div`
 `;
 
 const Project = styled(Link)`
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -578,7 +582,7 @@ const Project = styled(Link)`
 
 const ImageWrapper = styled.div`
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
@@ -586,7 +590,7 @@ const ImageWrapper = styled.div`
 
 const ProjectImage = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 

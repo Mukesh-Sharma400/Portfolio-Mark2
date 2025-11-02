@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { uiState } from "../redux/uiSlice";
 
 export const BackHeader = () => {
   const { theme } = useSelector(uiState);

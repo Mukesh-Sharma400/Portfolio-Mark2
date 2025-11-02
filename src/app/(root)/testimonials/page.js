@@ -1,19 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
+import mjinterior from "#/mjinterior.png";
 import { useSelector } from "react-redux";
-import { uiState } from "../../redux/uiSlice";
+import amanSharma from "#/aman-sharma.jpg";
+import aliKarim from "#/ali-karim-sayed.png";
+import appavengers from "#/app-avengers-logo.jpg";
+import nitinPrajapati from "#/nitin-prajapati.jpg";
+import pratimPabrekar from "#/pratim-pabrekar.jpeg";
 import BaseLayout from "@/app/components/BaseLayout";
-import mjinterior from "../../../../public/assets/mjinterior.png";
-import amanSharma from "../../../../public/assets/aman-sharma.jpg";
-import aliKarim from "../../../../public/assets/ali-karim-sayed.png";
+import malePlaceholder from "#/male-placeholder.jpg";
+import femalePlaceholder from "#/female-placeholder.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import appavengers from "../../../../public/assets/app-avengers-logo.jpg";
-import nitinPrajapati from "../../../../public/assets/nitin-prajapati.jpg";
-import pratimPabrekar from "../../../../public/assets/pratim-pabrekar.jpeg";
-import malePlaceholder from "../../../../public/assets/male-placeholder.jpg";
-import femalePlaceholder from "../../../../public/assets/female-placeholder.jpg";
 
 export default function Testimonials() {
   const { theme } = useSelector(uiState);

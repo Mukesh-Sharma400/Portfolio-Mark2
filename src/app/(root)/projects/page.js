@@ -2,76 +2,90 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { uiState } from "../../redux/uiSlice";
+import youtube from "#/youtube-thumbnail.png";
+import netflix from "#/netflix-thumbnail.jpg";
+import memories from "#/memories-thumbnail.jpg";
+import ecommerce from "#/ecommerce-thumbnail.jpg";
+import dashboard from "#/dashboard-thumbnail.webp";
+import mjinterior from "#/mjinterior-thumbnail.png";
+import primevideo from "#/primevideo-thumbnail.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
-import youtube from "../../../../public/assets/youtube-thumbnail.png";
-import netflix from "../../../../public/assets/netflix-thumbnail.jpg";
-import memories from "../../../../public/assets/memories-thumbnail.jpg";
-import ecommerce from "../../../../public/assets/ecommerce-thumbnail.jpg";
-import dashboard from "../../../../public/assets/dashboard-thumbnail.webp";
-import mjinterior from "../../../../public/assets/mjinterior-thumbnail.png";
-import primevideo from "../../../../public/assets/primevideo-thumbnail.jpg";
-import socialnetwork from "../../../../public/assets/socialnetwork-thumbnail.jpg";
-import stackoverflow from "../../../../public/assets/stack-overflow-thumbnail.jpg";
+import socialnetwork from "#/socialnetwork-thumbnail.jpg";
+import stackoverflow from "#/stack-overflow-thumbnail.jpg";
+import opinion from "#/opinion-trading-league-thumbnail.png";
+import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 
 export default function Projects() {
   const { theme } = useSelector(uiState);
 
   const projectsData = [
     {
+      name: "NPS & Mutual Fund Module",
+      imageSrc: npsmutualfund,
+      href: "/projects/nps-mutual-fund-module",
+      description: "Valuefy Technologies Pvt Ltd",
+    },
+    {
+      name: "Opinion Trading & League",
+      imageSrc: opinion,
+      href: "/projects/opinion-trading-league",
+      description: "Playerzpot Media Pvt Ltd",
+    },
+    {
       name: "SocialNetwork Web App",
       imageSrc: socialnetwork,
-      href: "/projects/socialnetwork",
+      href: "/projects/social-network",
       description: "Social Media Web Application",
     },
     {
       name: "Memories Web App",
       imageSrc: memories,
-      href: "/projects/memories",
+      href: "/projects/memories-webapp",
       description: "Social Blog Web Application",
     },
     {
       name: "Stack Overflow Clone",
       imageSrc: stackoverflow,
-      href: "/projects/stackoverflow",
+      href: "/projects/stack-overflow-clone",
       description: "Copy of Stack Overflow Application",
     },
     {
       name: "YouTube Clone",
       imageSrc: youtube,
-      href: "/projects/youtube",
+      href: "/projects/youtube-clone",
       description: "Copy of YouTube Application",
     },
     {
       name: "Dashboard Web App",
       imageSrc: dashboard,
-      href: "/projects/dashboard",
+      href: "/projects/dashboard-webapp",
       description: "Data Visualization Web Application",
     },
     {
       name: "E-Commerce Web App",
       imageSrc: ecommerce,
-      href: "/projects/ecommerce",
+      href: "/projects/ecommerce-webapp",
       description: "Shopping Web Application",
     },
     {
       name: "Prime Video Clone",
       imageSrc: primevideo,
-      href: "/projects/primevideo",
+      href: "/projects/prime-video-clone",
       description: "UI of Prime Video Landing Page",
     },
     {
       name: "Netflix Clone",
       imageSrc: netflix,
-      href: "/projects/netflix",
+      href: "/projects/netflix-clone",
       description: "UI of Netflix Landing Page",
     },
     {
       name: "MJ Interior",
       imageSrc: mjinterior,
-      href: "/projects/mjinterior",
+      href: "/projects/mj-interior",
       description: "MJ Interior Company Website",
     },
   ];
@@ -136,7 +150,7 @@ const ProjectsWrapper = styled.div`
 `;
 
 const Project = styled(Link)`
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -146,7 +160,7 @@ const Project = styled(Link)`
 
 const ImageWrapper = styled.div`
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
@@ -154,7 +168,7 @@ const ImageWrapper = styled.div`
 
 const ProjectImage = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
 

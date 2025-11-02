@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { themeFn, uiState } from "../redux/uiSlice";
+import { themeFn, uiState } from "%/uiSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function ThemeSwitch() {

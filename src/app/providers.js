@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import { store } from "./redux";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import Theme from "./components/Theme";
+import Theme from "@/app/components/Theme";
 import { persistStore } from "redux-persist";
 import StyledComponentsRegistry from "./registry";
 import { PersistGate } from "redux-persist/integration/react";
