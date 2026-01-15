@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
