@@ -159,7 +159,6 @@ export default function ProjectPage({ params }) {
   };
 
   const project = PROJECTS[slug];
-  console.log(project);
 
   return (
     <BaseLayout>

@@ -216,8 +216,8 @@ export default function Home() {
         <MyStory>
           <b>Full Stack Developer</b> specialized in delivering{" "}
           <b>high-performance backend solutions</b> within{" "}
-          <b>financial technology</b>
-          and <b>gaming</b> sectors. Expertise includes designing{" "}
+          <b>financial technology</b> and <b>gaming</b> sectors. Expertise
+          includes designing{" "}
           <b>scalable RESTful APIs, optimizing database operations</b>, and
           managing <b>cloud deployments on OpenShift</b> to ensure{" "}
           <b>service reliability</b>. Adept at collaborating in{" "}
