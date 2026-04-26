@@ -1,16 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
-import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
 import profilePic from "#/profile-picture-blue.png";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const { theme } = useSelector(uiState);
 
   const socialLinks = [
     {
@@ -63,7 +60,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
     const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
       return new window.bootstrap.Tooltip(tooltipTriggerEl);

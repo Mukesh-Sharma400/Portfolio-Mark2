@@ -1,22 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { uiState } from "%/uiSlice";
 import scct from "#/scct-logo.jpeg";
 import pace from "#/pace-logo.webp";
 import tilak from "#/tilak-logo.webp";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
+import { PageHeader } from "@/app/components/PageHeader";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { CertificateCard } from "@/app/components/CertificateCard";
 import certificateofbrainstorm from "#/certificate-of-brainstorm.png";
 import certificateofaptitudetest from "#/certificate-of-aptitudetest.png";
 
 export default function Education() {
-  const { theme } = useSelector(uiState);
   const [screenWidth, setScreenWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 0,
   );
+
+  const pageData = {
+    heading: "Education",
+    description: "Explore academic achievements and qualifications",
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -89,10 +94,7 @@ export default function Education() {
 
   return (
     <BaseLayout>
-      <Heading data-aos="fade-right">Education</Heading>
-      <Description data-aos="fade-right">
-        Explore academic achievements and qualifications
-      </Description>
+      <PageHeader pageData={pageData} />
       <EducationsWrapper>
         {educationsData.map((education, index) => (
           <React.Fragment key={index}>
@@ -127,46 +129,15 @@ export default function Education() {
           </React.Fragment>
         ))}
       </EducationsWrapper>
-      <HeadingTwo>Certificates</HeadingTwo>
+      <SectionHeader sectionHeading="Certificates" />
       <CertificatesWrapper>
         {certificatesData.map((certificate, index) => (
-          <CertificateWrapper key={index} data-aos="zoom-in-up">
-            <CertificateTitle>{certificate.title}</CertificateTitle>
-            <CertificateImage
-              src={certificate.imageSrc}
-              alt={certificate.alt}
-            />
-            <CertificateDesc>{certificate.description}</CertificateDesc>
-          </CertificateWrapper>
+          <CertificateCard key={index} certificate={certificate} />
         ))}
       </CertificatesWrapper>
     </BaseLayout>
   );
 }
-
-const Heading = styled.h1`
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Description = styled.p`
-  margin-bottom: 50px !important;
-  padding-bottom: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  border-bottom: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
-  transition: all 0.5s ease-in-out;
-`;
 
 const EducationsWrapper = styled.div`
   display: flex;
@@ -281,16 +252,6 @@ const Divider = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const HeadingTwo = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
 const CertificatesWrapper = styled.div`
   display: flex;
   gap: 20px;
@@ -299,49 +260,4 @@ const CertificatesWrapper = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
   }
-`;
-
-const CertificateWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0px;
-  border-radius: 10px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
-  transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    width: 100%;
-  }
-`;
-
-const CertificateTitle = styled.p`
-  font-size: 14px;
-  text-align: center;
-  padding: 0px 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-`;
-
-const CertificateImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  transition: all 0.5s ease-in-out;
-`;
-
-const CertificateDesc = styled.p`
-  font-size: 14px;
-  padding: 0px 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  transition: all 0.5s ease-in-out;
 `;

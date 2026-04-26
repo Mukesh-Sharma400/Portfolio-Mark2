@@ -1,21 +1,26 @@
 "use client";
 
 import copy from "clipboard-copy";
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import { Toast } from "@/app/components/Toast";
 import BaseLayout from "@/app/components/BaseLayout";
+import { PageHeader } from "@/app/components/PageHeader";
+import { SectionHeader } from "@/app/components/SectionHeader";
 
 export default function Contact() {
   const form = useRef();
   const timeoutRef = useRef(null);
   const phoneNumber = "+917021739604";
-  const { theme } = useSelector(uiState);
+
   const emailAddress = "mksh400@gmail.com";
   const [toast, setToast] = useState({ visible: false, message: "" });
+
+  const pageData = {
+    heading: "Contact",
+    description: "Get in touch for collaborations",
+  };
 
   const showToastMethod = (message) => {
     setToast({ visible: true, message });
@@ -63,7 +68,7 @@ export default function Contact() {
           "service_e4fjwoz",
           "template_1d6gvu8",
           form.current,
-          "a185DCLwfO5fjx4m0"
+          "a185DCLwfO5fjx4m0",
         )
         .then(
           (result) => {
@@ -72,7 +77,7 @@ export default function Contact() {
           },
           (error) => {
             showToastMethod("Oops something went wrong");
-          }
+          },
         );
     } else {
       showToastMethod("Please fill out all required fields correctly");
@@ -84,10 +89,7 @@ export default function Contact() {
       <ToastWrapper showToast={toast.visible}>
         <Toast message={toast.message} />
       </ToastWrapper>
-      <Heading data-aos="fade-right">Contact</Heading>
-      <Description data-aos="fade-right">
-        Get in touch for collaborations
-      </Description>
+      <PageHeader pageData={pageData} />
       <EmailNumberWrapper>
         <NumberWrapper>
           <Title>+91 7021739604</Title>
@@ -107,7 +109,7 @@ export default function Contact() {
         </SecondaryBtn>
       </ButtonsWrapper>
       <MessageWrapper>
-        <HeadingTwo>Send a message</HeadingTwo>
+        <SectionHeader sectionHeading="Send a message" />
         <FormWrapper
           ref={form}
           onSubmit={handleSendMessage}
@@ -126,7 +128,7 @@ export default function Contact() {
           <SendBtn type="submit">Send Message</SendBtn>
         </FormWrapper>
       </MessageWrapper>
-      <HeadingTwo>View on Map</HeadingTwo>
+      <SectionHeader sectionHeading="View on Map" />
       <GoogleMaps
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24866.562752799404!2d72.98647896047301!3d19.126320510200138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0ae08fd4fcb%3A0xeb29360c730e957f!2sGhansoli%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707053510196!5m2!1sen!2sin"
         loading="lazy"
@@ -143,30 +145,6 @@ const ToastWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Heading = styled.h1`
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Description = styled.p`
-  margin-bottom: 50px !important;
-  padding-bottom: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  border-bottom: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -275,16 +253,6 @@ const SecondaryBtn = styled.button`
 
 const MessageWrapper = styled.div`
   margin: 50px 0px;
-  transition: all 0.5s ease-in-out;
-`;
-
-const HeadingTwo = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
   transition: all 0.5s ease-in-out;
 `;
 

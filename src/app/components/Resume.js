@@ -1,14 +1,10 @@
 import { useEffect } from "react";
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 
 export const Resume = () => {
-  const { theme } = useSelector(uiState);
-
   useEffect(() => {
     const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
     const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
       return new window.bootstrap.Tooltip(tooltipTriggerEl);

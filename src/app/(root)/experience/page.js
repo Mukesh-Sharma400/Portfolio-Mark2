@@ -1,28 +1,33 @@
 "use client";
 
 import Image from "next/image";
-import { uiState } from "%/uiSlice";
 import valuefy from "#/valuefy.jpeg";
 import styled from "styled-components";
 import playerzpot from "#/playerzpot.jpg";
-import { useSelector } from "react-redux";
 import nullclass from "#/nullclass-logo.png";
 import hasbasoft from "#/hasbasoft-logo.png";
 import appavengers from "#/app-avengers-logo.jpg";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
+import { PageHeader } from "@/app/components/PageHeader";
+import { SectionHeader } from "@/app/components/SectionHeader";
 import certificateofnetflix from "#/certificate-of-netflix.png";
 import certificateoftraining from "#/certificate-of-training.png";
 import certificateofdicegame from "#/certificate-of-dicegame.png";
+import { CertificateCard } from "@/app/components/CertificateCard";
 import certificateofecommerce from "#/certificate-of-ecommerce.png";
 import certificateofinternship from "#/certificate-of-internship.png";
 import certificateofmusicwithjs from "#/certificate-of-musicwithjs.png";
 
 export default function Experience() {
-  const { theme } = useSelector(uiState);
   const [screenWidth, setScreenWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 0,
   );
+
+  const pageData = {
+    heading: "Experience",
+    description: "Navigate through professional milestones and achievements",
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -166,10 +171,7 @@ export default function Experience() {
 
   return (
     <BaseLayout>
-      <Heading data-aos="fade-right">Experience</Heading>
-      <Description data-aos="fade-right">
-        Navigate through professional milestones and achievements
-      </Description>
+      <PageHeader pageData={pageData} />
       <ExperiencesWrapper>
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>
@@ -211,46 +213,15 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </ExperiencesWrapper>
-      <HeadingTwo>Certificates</HeadingTwo>
+      <SectionHeader sectionHeading="Certificates" />
       <CertificatesWrapper>
         {certificatesData.map((certificate, index) => (
-          <CertificateWrapper key={index} data-aos="zoom-in-up">
-            <CertificateTitle>{certificate.title}</CertificateTitle>
-            <CertificateImage
-              src={certificate.imageSrc}
-              alt={certificate.alt}
-            />
-            <CertificateDesc>{certificate.description}</CertificateDesc>
-          </CertificateWrapper>
+          <CertificateCard key={index} certificate={certificate} />
         ))}
       </CertificatesWrapper>
     </BaseLayout>
   );
 }
-
-const Heading = styled.h1`
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Description = styled.p`
-  margin-bottom: 50px !important;
-  padding-bottom: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  border-bottom: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
-  transition: all 0.5s ease-in-out;
-`;
 
 const ExperiencesWrapper = styled.div`
   display: flex;
@@ -377,16 +348,6 @@ const Divider = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const HeadingTwo = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
 const CertificatesWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -400,45 +361,4 @@ const CertificatesWrapper = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-`;
-
-const CertificateWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0px;
-  border-radius: 10px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
-  transition: all 0.5s ease-in-out;
-`;
-
-const CertificateTitle = styled.p`
-  font-size: 14px;
-  text-align: center;
-  padding: 0px 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-`;
-
-const CertificateImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  transition: all 0.5s ease-in-out;
-`;
-
-const CertificateDesc = styled.p`
-  font-size: 14px;
-  padding: 0px 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  transition: all 0.5s ease-in-out;
 `;

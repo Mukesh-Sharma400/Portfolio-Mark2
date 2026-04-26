@@ -4,16 +4,13 @@ import sql from "#/sql.png";
 import Link from "next/link";
 import node from "#/node.jpg";
 import next from "#/next.jpg";
-import Image from "next/image";
 import mongo from "#/mongo.png";
 import { useState } from "react";
 import react from "#/react.webp";
 import copy from "clipboard-copy";
-import { uiState } from "%/uiSlice";
 import express from "#/express.jpg";
 import angular from "#/angular.jpg";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 import mjinterior from "#/mjinterior.png";
 import { useRouter } from "next/navigation";
 import aliKarim from "#/ali-karim-sayed.png";
@@ -23,14 +20,17 @@ import appavengers from "#/app-avengers-logo.jpg";
 import nitinPrajapati from "#/nitin-prajapati.jpg";
 import pratimPabrekar from "#/pratim-pabrekar.jpeg";
 import BaseLayout from "@/app/components/BaseLayout";
+import { SkillItem } from "@/app/components/SkillItem";
 import socialnetwork from "#/socialnetwork-thumbnail.jpg";
+import { ProjectCard } from "@/app/components/ProjectCard";
 import opinion from "#/opinion-trading-league-thumbnail.png";
 import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
+import { SectionHeader } from "@/app/components/SectionHeader";
+import { TestimonialCard } from "@/app/components/TestimonialCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function Home() {
   const router = new useRouter();
-  const { theme } = useSelector(uiState);
   const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
@@ -233,18 +233,10 @@ export default function Home() {
           </SecondaryBtn>
         </ButtonsWrapper>
       </IntroWrapper>
-      <HeadingTwo>Hall of Fame: My Best Work</HeadingTwo>
+      <SectionHeader sectionHeading="Hall of Fame: My Best Work" />
       <ProjectsWrapper>
         {projectsData.map((project, index) => (
-          <Project key={index} href={project.href} data-aos="zoom-in-up">
-            <ImageWrapper>
-              <ProjectImage src={project.imageSrc} alt={project.name} />
-            </ImageWrapper>
-            <div>
-              <ProjectName>{project.name}</ProjectName>
-              <ProjectDesc>{project.description}</ProjectDesc>
-            </div>
-          </Project>
+          <ProjectCard key={index} project={project} />
         ))}
       </ProjectsWrapper>
       <ShowMoreWrapper>
@@ -257,17 +249,10 @@ export default function Home() {
           Browse Complete Collection
         </SecondaryBtn>
       </ShowMoreWrapper>
-      <HeadingTwo>Proficiencies & Expertise</HeadingTwo>
+      <SectionHeader sectionHeading="Proficiencies & Expertise" />
       <SkillsWrapper>
         {skillsData.map((skill, index) => (
-          <Skill
-            key={index}
-            data-aos="fade-right"
-            data-aos-delay={`${(index + 1) * 100}`}
-          >
-            <SkillImage src={skill.imageSrc} alt={skill.name} />
-            {skill.name}
-          </Skill>
+          <SkillItem key={index} skill={skill} index={index} />
         ))}
       </SkillsWrapper>
       <ShowMoreWrapper>
@@ -278,27 +263,12 @@ export default function Home() {
           Explore Further Abilities
         </SecondaryBtn>
       </ShowMoreWrapper>
-      <HeadingTwo>Voices of Appreciation</HeadingTwo>
+      <SectionHeader sectionHeading="Voices of Appreciation" />
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>❝{testimonial.message}❞</Message>
-                <PicNameWrapper>
-                  <Image
-                    className="rounded-3"
-                    src={testimonial.image}
-                    alt="Profile Picture"
-                    width={50}
-                    height={50}
-                  />
-                  <div>
-                    <TestimonialName>{testimonial.name}</TestimonialName>
-                    <TestimonialDesc>{testimonial.role}</TestimonialDesc>
-                  </div>
-                </PicNameWrapper>
-              </Testimonial>
+              <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </Masonry>
         </ResponsiveMasonry>
@@ -549,17 +519,6 @@ const SecondaryBtn = styled.button`
   }
 `;
 
-const HeadingTwo = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-top: 50px !important;
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
 const ProjectsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -569,52 +528,6 @@ const ProjectsWrapper = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-`;
-
-const Project = styled(Link)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-decoration: none;
-  transition: all 0.5s ease-in-out;
-`;
-
-const ImageWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-`;
-
-const ProjectImage = styled(Image)`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transition: all 0.5s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const ProjectName = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-`;
-
-const ProjectDesc = styled.p`
-  font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  transition: all 0.5s ease-in-out;
 `;
 
 const SkillsWrapper = styled.div`
@@ -637,94 +550,11 @@ const SkillsWrapper = styled.div`
   }
 `;
 
-const Skill = styled.div`
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 5px;
-  padding-bottom: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
-  transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    margin: 0 auto;
-  }
-`;
-
-const SkillImage = styled(Image)`
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  transition: all 0.5s ease-in-out;
-`;
-
 const TestimonialsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Testimonial = styled.div`
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
-  transition: all 0.5s ease-in-out;
-`;
-
-const Message = styled.div`
-  font-size: 14px;
-  line-height: 20px;
-  font-style: italic;
-  letter-spacing: 1px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-`;
-
-const PicNameWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 20px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
-const TestimonialName = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  transition: all 0.5s ease-in-out;
-`;
-
-const TestimonialDesc = styled.p`
-  font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
   transition: all 0.5s ease-in-out;
 `;
 

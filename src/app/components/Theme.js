@@ -1,5 +1,3 @@
-"use client";
-
 import { uiState } from "%/uiSlice";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";

@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import mjinterior from "#/mjinterior.png";
-import { useSelector } from "react-redux";
 import amanSharma from "#/aman-sharma.jpg";
 import aliKarim from "#/ali-karim-sayed.png";
 import appavengers from "#/app-avengers-logo.jpg";
@@ -13,10 +11,16 @@ import pratimPabrekar from "#/pratim-pabrekar.jpeg";
 import BaseLayout from "@/app/components/BaseLayout";
 import malePlaceholder from "#/male-placeholder.jpg";
 import femalePlaceholder from "#/female-placeholder.jpg";
+import { PageHeader } from "@/app/components/PageHeader";
+import { TestimonialCard } from "@/app/components/TestimonialCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function Testimonials() {
-  const { theme } = useSelector(uiState);
+  const pageData = {
+    heading: "Testimonials",
+    description:
+      "Read what others have to say about experiences and collaborations",
+  };
 
   const testimonialsData = [
     {
@@ -92,10 +96,7 @@ export default function Testimonials() {
 
   return (
     <BaseLayout>
-      <Heading data-aos="fade-right">Testimonials</Heading>
-      <Description data-aos="fade-right">
-        Read what others have to say about experiences and collaborations
-      </Description>
+      <PageHeader pageData={pageData} />
       <TestimonialsWrapper>
         <Testimonial data-aos="zoom-in-up">
           <Message>
@@ -133,22 +134,7 @@ export default function Testimonials() {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
             {testimonialsData.map((testimonial, index) => (
-              <Testimonial key={index} data-aos="zoom-in-up">
-                <Message>❝{testimonial.message}❞</Message>
-                <PicNameWrapper>
-                  <Image
-                    className="rounded-3"
-                    src={testimonial.image}
-                    alt="Profile Picture"
-                    width={50}
-                    height={50}
-                  />
-                  <div>
-                    <Name>{testimonial.name}</Name>
-                    <Desc>{testimonial.role}</Desc>
-                  </div>
-                </PicNameWrapper>
-              </Testimonial>
+              <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </Masonry>
         </ResponsiveMasonry>
@@ -156,30 +142,6 @@ export default function Testimonials() {
     </BaseLayout>
   );
 }
-
-const Heading = styled.h1`
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Description = styled.p`
-  margin-bottom: 50px !important;
-  padding-bottom: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  border-bottom: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
-  transition: all 0.5s ease-in-out;
-`;
 
 const TestimonialsWrapper = styled.div`
   width: 100%;

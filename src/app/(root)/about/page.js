@@ -15,7 +15,6 @@ import react from "#/react.webp";
 import docker from "#/docker.png";
 import gitHub from "#/github.webp";
 import styledC from "#/styled.png";
-import { uiState } from "%/uiSlice";
 import jenkins from "#/jenkins.jpg";
 import express from "#/express.jpg";
 import angular from "#/angular.jpg";
@@ -26,16 +25,16 @@ import styled from "styled-components";
 import openshift from "#/openshift.png";
 import bitBucket from "#/bitbucket.png";
 import bootstrap from "#/bootstrap.png";
-import { useSelector } from "react-redux";
 import typescript from "#/typescript.png";
 import { useEffect, useState } from "react";
 import profilePic from "#/profile-picture-blue.png";
 import BaseLayout from "@/app/components/BaseLayout";
+import { SkillItem } from "@/app/components/SkillItem";
+import { SectionHeader } from "@/app/components/SectionHeader";
 
 export default function About() {
-  const { theme } = useSelector(uiState);
   const [screenWidth, setScreenWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 0,
   );
 
   useEffect(() => {
@@ -147,33 +146,26 @@ export default function About() {
         full-stack web technologies, I’d be glad to connect and collaborate.
       </MyStory>
       <SkillsSection id="skills">
-        <HeadingTwo>Skills</HeadingTwo>
+        <SectionHeader sectionHeading="Skills" />
         {Object.entries(skillsData).map(([category, skills]) => (
           <Category key={category}>
             <CategoryTitle>
               {category === "frontend"
                 ? "Frontend & UI"
                 : category === "backend"
-                ? "Backend & Databases"
-                : "DevOps & Tools"}
+                  ? "Backend & Databases"
+                  : "DevOps & Tools"}
             </CategoryTitle>
             <SkillsWrapper>
               {skills.map((skill, index) => (
-                <Skill
-                  key={index}
-                  data-aos="fade-right"
-                  data-aos-delay={`${(index + 1) * 100}`}
-                >
-                  <SkillImage src={skill.imageSrc} alt={skill.name} />
-                  {skill.name}
-                </Skill>
+                <SkillItem key={index} skill={skill} index={index} />
               ))}
             </SkillsWrapper>
           </Category>
         ))}
       </SkillsSection>
       <InterestsSection>
-        <HeadingTwo>Interests</HeadingTwo>
+        <SectionHeader sectionHeading="Interests" />
         <InterestsWrapper>
           {interests.map((interest, index) => (
             <Interest
@@ -188,7 +180,7 @@ export default function About() {
         </InterestsWrapper>
       </InterestsSection>
       <LanguagesSection>
-        <HeadingTwo>Languages</HeadingTwo>
+        <SectionHeader sectionHeading="Languages" />
         <LanguagesWrapper>
           {languages.map((language, index) => (
             <Language
@@ -257,16 +249,6 @@ const PicWrapper = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const HeadingTwo = styled.h2`
-  font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  margin-bottom: 15px !important;
-  transition: all 0.5s ease-in-out;
-`;
-
 const SkillsSection = styled.div`
   margin: 50px 0;
   transition: all 0.5s ease-in-out;
@@ -289,39 +271,6 @@ const SkillsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  transition: all 0.5s ease-in-out;
-`;
-
-const Skill = styled.div`
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 5px;
-  padding-bottom: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
-  transition: all 0.5s ease-in-out;
-
-  @media (max-width: 426px) {
-    margin: 0 auto;
-  }
-`;
-
-const SkillImage = styled(Image)`
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   transition: all 0.5s ease-in-out;
 `;
 

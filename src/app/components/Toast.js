@@ -1,10 +1,6 @@
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 
 export const Toast = ({ message }) => {
-  const { theme } = useSelector(uiState);
-
   return <DisplayWrapper>{message}</DisplayWrapper>;
 };
 

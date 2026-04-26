@@ -1,16 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
-import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import profilePic from "#/profile-picture-blue.png";
 
 export default function Header() {
   const pathname = usePathname();
-  const { theme } = useSelector(uiState);
   const [contentVisible, setContentVisible] = useState(false);
 
   const socialLinks = [
@@ -68,7 +65,7 @@ export default function Header() {
 
   useEffect(() => {
     const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
     const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
       return new window.bootstrap.Tooltip(tooltipTriggerEl);
@@ -272,7 +269,8 @@ const Line = styled.path`
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.5s ease-in-out;
 `;
