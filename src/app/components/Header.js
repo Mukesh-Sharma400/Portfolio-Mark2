@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import profilePic from "#/profile-picture-blue.png";
+import profilePic from "#/profile-picture-new.jpg";
 
 export default function Header() {
   const pathname = usePathname();
