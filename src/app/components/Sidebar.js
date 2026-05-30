@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
 import { usePathname } from "next/navigation";
-import profilePic from "#/profile-picture-blue.png";
+import profilePic from "#/profile-picture-new.jpg";
 
 export default function Sidebar() {
   const pathname = usePathname();
