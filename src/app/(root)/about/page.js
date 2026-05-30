@@ -27,7 +27,7 @@ import bitBucket from "#/bitbucket.png";
 import bootstrap from "#/bootstrap.png";
 import typescript from "#/typescript.png";
 import { useEffect, useState } from "react";
-import profilePic from "#/profile-picture-blue.png";
+import profilePic from "#/profile-picture-new.jpg";
 import BaseLayout from "@/app/components/BaseLayout";
 import { SkillItem } from "@/app/components/SkillItem";
 import { SectionHeader } from "@/app/components/SectionHeader";
