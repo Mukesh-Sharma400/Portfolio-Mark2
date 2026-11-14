@@ -10,6 +10,11 @@ import { BaseLayout } from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { SectionHeader } from "@/app/components/SectionHeader";
 
+// Configured via environment variables (see .env.example)
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 export default function Contact() {
   const form = useRef();
   const timeoutRef = useRef(null);
@@ -61,12 +66,19 @@ export default function Contact() {
         showToastMethod("Message should be more than 20 characters");
         return;
       }
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        console.error(
+          "EmailJS is not configured. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY.",
+        );
+        showToastMethod("Oops something went wrong");
+        return;
+      }
       emailjs
         .sendForm(
-          "service_e4fjwoz",
-          "template_1d6gvu8",
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
           form.current,
-          "a185DCLwfO5fjx4m0",
+          EMAILJS_PUBLIC_KEY,
         )
         .then(
           (result) => {
