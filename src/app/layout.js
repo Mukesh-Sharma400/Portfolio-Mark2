@@ -6,32 +6,51 @@ import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+const siteUrl = "https://mukesh-sharma.vercel.app";
+const title = "Mukesh Sharma - Full Stack Developer";
+const description =
+  "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.";
+const ogImage = {
+  url: "/assets/og-image.jpg",
+  alt: "Mukesh Sharma",
+};
+
 export const metadata = {
-  title: "Mukesh Sharma - Full Stack Developer",
-  description:
-    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
-  keywords:
-    "Full Stack Developer, Front End Developer, Back End Developer, Web Developer, MongoDB, ExpressJS, ReactJS, NodeJS",
-  author: "Mukesh Sharma",
-  image: "./icon.png",
-  url: "https://mukesh-sharma.vercel.app",
-  type: "website",
-  ogTitle: "Mukesh Sharma - Full Stack Developer",
-  ogDescription:
-    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
-  ogImage: "./icon.png",
-  twitterTitle: "Mukesh Sharma - Full Stack Developer",
-  twitterDescription:
-    "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.",
-  twitterImage: "./icon.png",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: [
+    "Full Stack Developer",
+    "Front End Developer",
+    "Back End Developer",
+    "Web Developer",
+    "MongoDB",
+    "ExpressJS",
+    "ReactJS",
+    "NodeJS",
+  ],
+  authors: [{ name: "Mukesh Sharma", url: siteUrl }],
+  creator: "Mukesh Sharma",
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "Mukesh Sharma",
+    title,
+    description,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description,
+    creator: "@mukesh_sharma36",
+    images: [ogImage],
+  },
 };
 
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="./icon.png" type="image/png" />
-      </head>
       <body>
         <Providers>{children}</Providers>
         <SpeedInsights />

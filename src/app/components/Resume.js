@@ -1,16 +1,6 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 
 export const Resume = () => {
-  useEffect(() => {
-    const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
-    );
-    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
-      return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
-
   return (
     <DisplayWrapper
       href="https://drive.google.com/file/d/1xxDSjREuSkkyRuOtyuRyTUZMYkhbp4RB/view?usp=sharing"

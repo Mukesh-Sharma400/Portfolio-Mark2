@@ -86,7 +86,7 @@ export default function Contact() {
 
   return (
     <BaseLayout>
-      <ToastWrapper showToast={toast.visible}>
+      <ToastWrapper $showToast={toast.visible}>
         <Toast message={toast.message} />
       </ToastWrapper>
       <PageHeader pageData={pageData} />
@@ -132,7 +132,7 @@ export default function Contact() {
       <GoogleMaps
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24866.562752799404!2d72.98647896047301!3d19.126320510200138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0ae08fd4fcb%3A0xeb29360c730e957f!2sGhansoli%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707053510196!5m2!1sen!2sin"
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
         data-aos="zoom-in-up"
       ></GoogleMaps>
     </BaseLayout>
@@ -141,7 +141,7 @@ export default function Contact() {
 
 const ToastWrapper = styled.div`
   position: fixed;
-  top: ${(props) => (props.showToast ? "7%" : "-20%")};
+  top: ${(props) => (props.$showToast ? "7%" : "-20%")};
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
