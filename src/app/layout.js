@@ -1,15 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-import "./global.css";
+import "./globals.css";
 import { Providers } from "./providers";
+import { profile } from "./data/site";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const siteUrl = "https://mukesh-sharma.vercel.app";
-const title = "Mukesh Sharma - Full Stack Developer";
-const description =
-  "Experienced Full stack developer specializing in creating robust and scalable web applications. Passionate about delivering high-quality solutions to meet client needs.";
+const siteUrl = profile.siteUrl;
+const title = `${profile.name} - ${profile.title}`;
+const description = profile.description;
 const ogImage = {
   url: "/assets/og-image.jpg",
   alt: "Mukesh Sharma",
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary",
     title,
     description,
-    creator: "@mukesh_sharma36",
+    creator: profile.twitterHandle,
     images: [ogImage],
   },
 };

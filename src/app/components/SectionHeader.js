@@ -6,10 +6,7 @@ export const SectionHeader = ({ sectionHeading }) => {
 
 const HeadingTwo = styled.h2`
   font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   margin-top: 50px !important;
   margin-bottom: 15px !important;
   transition: all 0.5s ease-in-out;

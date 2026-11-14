@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 
 // Initializes Bootstrap tooltips once per page and disposes them on navigation,
 // so each [data-bs-toggle="tooltip"] element has exactly one instance.
-export default function Tooltips() {
+export function Tooltips() {
   const pathname = usePathname();
 
   useEffect(() => {

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { themeFn, uiState } from "%/uiSlice";
+import { setTheme, selectUi } from "@/app/redux/uiSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function ThemeSwitch() {
-  const { theme } = useSelector(uiState);
+export function ThemeSwitch() {
+  const { theme } = useSelector(selectUi);
 
   const dispatch = useDispatch();
   const [isDarkMode, setIsDarkMode] = useState(theme === "dark");
@@ -15,7 +15,7 @@ export default function ThemeSwitch() {
 
   const handleToggle = () => {
     const newTheme = isDarkMode ? "light" : "dark";
-    dispatch(themeFn(newTheme));
+    dispatch(setTheme(newTheme));
     setIsDarkMode(!isDarkMode);
     localStorage.setItem("theme", newTheme);
   };

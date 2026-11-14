@@ -1,63 +1,15 @@
+import { routes, socialLinks } from "@/app/data/site";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import ThemeSwitch from "./ThemeSwitch";
+import { ThemeSwitch } from "./ThemeSwitch";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import profilePic from "#/profile-picture.webp";
 
-export default function Header() {
+export function Header() {
   const pathname = usePathname();
   const [contentVisible, setContentVisible] = useState(false);
-
-  const socialLinks = [
-    {
-      className: "bi bi-github",
-      href: "https://github.com/Mukesh-Sharma400",
-      tooltip: "GitHub",
-      ariaLabel: "GitHub",
-    },
-    {
-      className: "bi bi-linkedin",
-      href: "https://www.linkedin.com/in/mukesh-sharma-dev",
-      tooltip: "LinkedIn",
-      ariaLabel: "LinkedIn",
-    },
-    {
-      className: "bi bi-twitter-x",
-      href: "https://twitter.com/mukesh_sharma36",
-      tooltip: "Twitter / X",
-      ariaLabel: "Twitter / X",
-    },
-    {
-      className: "bi bi-facebook",
-      href: "https://www.facebook.com/MukeshSharma400",
-      tooltip: "Facebook",
-      ariaLabel: "Facebook",
-    },
-    {
-      className: "bi bi-instagram",
-      href: "https://www.instagram.com/mukesh_sharma400",
-      tooltip: "Instagram",
-      ariaLabel: "Instagram",
-    },
-    {
-      className: "bi bi-threads",
-      href: "https://www.threads.net/mukesh_sharma400",
-      tooltip: "Threads",
-      ariaLabel: "Threads",
-    },
-  ];
-
-  const routes = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/projects", label: "Projects" },
-    { path: "/education", label: "Education" },
-    { path: "/experience", label: "Experience" },
-    { path: "/testimonials", label: "Testimonials" },
-    { path: "/contact", label: "Contact" },
-  ];
 
   const toggleContentVisibility = () => {
     setContentVisible((prev) => !prev);
@@ -147,10 +99,7 @@ const DisplayWrapper = styled.div`
     flex-direction: column;
     padding: 20px;
     z-index: 1;
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor200
-        : theme.darkMode.blackColor200};
+    background-color: ${({ theme }) => theme.colors.background};
   }
 `;
 
@@ -181,34 +130,19 @@ const HomeButton = styled(Link)`
   justify-content: center;
   text-decoration: none;
   font-size: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor201
-      : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  background-color: ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor202
-        : theme.darkMode.blackColor202};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   }
 `;
 
 const MyName = styled.p`
   font-size: 16px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 321px) {
@@ -218,10 +152,7 @@ const MyName = styled.p`
 
 const MyDesc = styled.p`
   font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 321px) {
@@ -253,10 +184,7 @@ const HamburgerSvg = styled.svg`
 
 const Line = styled.path`
   fill: none;
-  stroke: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.globalColors.blackColor
-      : theme.globalColors.whiteColor};
+  stroke: ${({ theme }) => theme.colors.foreground};
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -300,55 +228,30 @@ const RoutesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 20px;
-  border-top: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
+  border-top: 2px solid ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 `;
 
 const Route = styled(Link)`
   text-align: center;
   text-decoration: none;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 16px;
   transition: all 0.5s ease-in-out;
 
   &.active {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.border};
   }
 
   &:focus {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201} !important;
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.border} !important;
   }
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor202
-        : theme.darkMode.blackColor202};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   }
 `;
 
@@ -359,11 +262,7 @@ const SocialLinksWrapper = styled.div`
   justify-content: center;
   gap: 16px;
   padding: 20px 0px 50px;
-  border-top: 2px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
+  border-top: 2px solid ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -376,25 +275,13 @@ const SocialLink = styled(Link)`
   text-decoration: none;
   font-size: 26px;
   border-radius: 50%;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor201
-      : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  background-color: ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor202
-        : theme.darkMode.blackColor202};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   }
 
   @media (max-width: 321px) {

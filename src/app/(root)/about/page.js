@@ -1,34 +1,11 @@
 "use client";
 
-import js from "#/js.webp";
-import git from "#/git.webp";
-import css from "#/css.webp";
-import sql from "#/sql.webp";
-import html from "#/html.webp";
-import node from "#/node.webp";
-import next from "#/next.webp";
+import { interests, languages, skills } from "@/app/data/skills";
 import Image from "next/image";
-import agile from "#/agile.webp";
-import mongo from "#/mongo.webp";
-import redis from "#/redis.webp";
-import react from "#/react.webp";
-import docker from "#/docker.webp";
-import gitHub from "#/github.webp";
-import styledC from "#/styled.webp";
-import jenkins from "#/jenkins.webp";
-import express from "#/express.webp";
-import angular from "#/angular.webp";
-import postman from "#/postman.webp";
-import tailwind from "#/tailwind.webp";
-import material from "#/material.webp";
 import styled from "styled-components";
-import openshift from "#/openshift.webp";
-import bitBucket from "#/bitbucket.webp";
-import bootstrap from "#/bootstrap.webp";
-import typescript from "#/typescript.webp";
 import { useEffect, useState } from "react";
 import profilePic from "#/profile-picture.webp";
-import BaseLayout from "@/app/components/BaseLayout";
+import { BaseLayout } from "@/app/components/BaseLayout";
 import { SkillItem } from "@/app/components/SkillItem";
 import { SectionHeader } from "@/app/components/SectionHeader";
 
@@ -46,57 +23,6 @@ export default function About() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const skillsData = {
-    frontend: [
-      { name: "HTML", imageSrc: html },
-      { name: "CSS", imageSrc: css },
-      { name: "JavaScript", imageSrc: js },
-      { name: "TypeScript", imageSrc: typescript },
-      { name: "ReactJS", imageSrc: react },
-      { name: "NextJS", imageSrc: next },
-      { name: "Angular", imageSrc: angular },
-      { name: "Styled", imageSrc: styledC },
-      { name: "Material", imageSrc: material },
-      { name: "Bootstrap", imageSrc: bootstrap },
-      { name: "Tailwind", imageSrc: tailwind },
-    ],
-    backend: [
-      { name: "NodeJS", imageSrc: node },
-      { name: "ExpressJS", imageSrc: express },
-      { name: "MongoDB", imageSrc: mongo },
-      { name: "SQL", imageSrc: sql },
-      { name: "Redis", imageSrc: redis },
-      // { name: "RESTful APIs", imageSrc: api }, // optional if you have an icon
-      // { name: "Third-party Integrations", imageSrc: integration }, // optional
-    ],
-    devops: [
-      { name: "Docker", imageSrc: docker },
-      { name: "OpenShift", imageSrc: openshift },
-      { name: "Jenkins", imageSrc: jenkins },
-      { name: "Git", imageSrc: git },
-      { name: "GitHub", imageSrc: gitHub },
-      { name: "Bitbucket", imageSrc: bitBucket },
-      { name: "Postman", imageSrc: postman },
-      { name: "Agile", imageSrc: agile },
-      // { name: "API Testing", imageSrc: testing }, // optional if you have an icon
-    ],
-  };
-
-  const interests = [
-    { text: "Coding", class: "first" },
-    { text: "Music", class: "" },
-    { text: "Chess", class: "third" },
-    { text: "Cricket", class: "forth" },
-    { text: "Football", class: "" },
-    { text: "Pool", class: "last" },
-  ];
-
-  const languages = [
-    { text: "English", class: "first" },
-    { text: "Hindi", class: "" },
-    { text: "Marathi", class: "last" },
-  ];
 
   return (
     <BaseLayout>
@@ -147,7 +73,7 @@ export default function About() {
       </MyStory>
       <SkillsSection id="skills">
         <SectionHeader sectionHeading="Skills" />
-        {Object.entries(skillsData).map(([category, skills]) => (
+        {Object.entries(skills).map(([category, skills]) => (
           <Category key={category}>
             <CategoryTitle>
               {category === "frontend"
@@ -170,7 +96,7 @@ export default function About() {
           {interests.map((interest, index) => (
             <Interest
               key={index}
-              className={interest.class}
+              className={interest.className}
               data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
               data-aos-delay={`${(index + 1) * 100}`}
             >
@@ -185,7 +111,7 @@ export default function About() {
           {languages.map((language, index) => (
             <Language
               key={index}
-              className={language.class}
+              className={language.className}
               data-aos={screenWidth > 600 ? "fade-right" : "fade-up"}
               data-aos-delay={`${(index + 1) * 100}`}
             >
@@ -217,19 +143,13 @@ const DetailsWrapper = styled.div`
 
 const MyName = styled.h1`
   line-height: 40px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
 const MyDesc = styled.h1`
   line-height: 40px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -238,10 +158,7 @@ const MyStory = styled.p`
   line-height: 20px;
   letter-spacing: 1px;
   margin-top: 10px !important;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -258,10 +175,7 @@ const Category = styled.div``;
 
 const CategoryTitle = styled.h6`
   font-weight: 400;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   margin: 15px 0 10px !important;
   transition: all 0.5s ease-in-out;
 `;
@@ -299,14 +213,8 @@ const Interest = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 
   &.first {
@@ -317,7 +225,7 @@ const Interest = styled.div`
     border-top-right-radius: 10px;
   }
 
-  &.forth {
+  &.fourth {
     border-bottom-left-radius: 10px;
   }
 
@@ -355,14 +263,8 @@ const Language = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 
   &.first {

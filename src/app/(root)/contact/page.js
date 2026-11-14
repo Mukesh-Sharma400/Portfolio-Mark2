@@ -1,20 +1,18 @@
 "use client";
 
+import { profile } from "@/app/data/site";
 import copy from "clipboard-copy";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { Toast } from "@/app/components/Toast";
-import BaseLayout from "@/app/components/BaseLayout";
+import { BaseLayout } from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { SectionHeader } from "@/app/components/SectionHeader";
 
 export default function Contact() {
   const form = useRef();
   const timeoutRef = useRef(null);
-  const phoneNumber = "+917021739604";
-
-  const emailAddress = "mksh400@gmail.com";
   const [toast, setToast] = useState({ visible: false, message: "" });
 
   const pageData = {
@@ -33,12 +31,12 @@ export default function Contact() {
   };
 
   const handleOpenDialer = () => {
-    const telUrl = `tel:${phoneNumber}`;
+    const telUrl = `tel:${profile.phone}`;
     window.location.href = telUrl;
   };
 
   const handleCopyEmail = () => {
-    const emailToCopy = `${emailAddress}`;
+    const emailToCopy = profile.email;
     copy(emailToCopy);
     showToastMethod("Email copied to clipboard");
   };
@@ -92,11 +90,11 @@ export default function Contact() {
       <PageHeader pageData={pageData} />
       <EmailNumberWrapper>
         <NumberWrapper>
-          <Title>+91 7021739604</Title>
+          <Title>{profile.phoneDisplay}</Title>
           <SubTitle>Phone</SubTitle>
         </NumberWrapper>
         <EmailWrapper>
-          <Title>mksh400@gmail.com</Title>
+          <Title>{profile.email}</Title>
           <SubTitle>Email</SubTitle>
         </EmailWrapper>
       </EmailNumberWrapper>
@@ -169,19 +167,13 @@ const NumberWrapper = styled.div`
 
 const Title = styled.p`
   font-size: 16px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
 const SubTitle = styled.p`
   font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -201,22 +193,13 @@ const PrimaryBtn = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.globalColors.whiteColor
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor300
-      : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.palette.white};
+  background-color: ${({ theme }) => theme.colors.buttonPrimary};
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transition: background-color 0.5s ease-in-out !important;
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.globalColors.blackColor
-        : theme.darkMode.blackColor202};
+    background-color: ${({ theme }) => theme.colors.buttonPrimaryHover};
   }
 `;
 
@@ -229,25 +212,14 @@ const SecondaryBtn = styled.button`
   justify-content: center;
   gap: 5px;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   background-color: transparent;
-  border: 1.5px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201} !important;
+  border: 1.5px solid ${({ theme }) => theme.colors.border} !important;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transition: border 0.5s ease-in-out !important;
-    border: 1.5px solid
-      ${({ theme }) =>
-        theme.currentTheme === "light"
-          ? theme.lightMode.greyColor100
-          : theme.darkMode.greyColor100} !important;
+    border: 1.5px solid ${({ theme }) => theme.colors.textSecondary} !important;
   }
 `;
 
@@ -282,14 +254,8 @@ const TextBox = styled.input`
   font-size: 16px;
   padding: 10px;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -299,14 +265,8 @@ const TextArea = styled.textarea`
   font-size: 16px;
   padding: 10px;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -319,21 +279,12 @@ const SendBtn = styled.button`
   justify-content: center;
   padding: 10px;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.globalColors.whiteColor
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greenColor200
-      : theme.darkMode.greenColor200};
+  color: ${({ theme }) => theme.palette.white};
+  background-color: ${({ theme }) => theme.colors.accent};
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.greenColor100
-        : theme.darkMode.greenColor100};
+    background-color: ${({ theme }) => theme.colors.accentTranslucent};
   }
 `;
 
