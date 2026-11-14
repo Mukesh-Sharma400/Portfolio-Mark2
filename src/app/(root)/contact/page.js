@@ -19,6 +19,7 @@ export default function Contact() {
   const form = useRef();
   const timeoutRef = useRef(null);
   const [toast, setToast] = useState({ visible: false, message: "" });
+  const [isSending, setIsSending] = useState(false);
 
   const pageData = {
     heading: "Contact",
@@ -48,6 +49,7 @@ export default function Contact() {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
+    if (isSending) return;
     const isValid = form.current.reportValidity();
     if (isValid) {
       const nameInput = form.current.elements.from_name;
@@ -73,6 +75,7 @@ export default function Contact() {
         showToastMethod("Oops something went wrong");
         return;
       }
+      setIsSending(true);
       emailjs
         .sendForm(
           EMAILJS_SERVICE_ID,
@@ -81,14 +84,15 @@ export default function Contact() {
           EMAILJS_PUBLIC_KEY,
         )
         .then(
-          (result) => {
+          () => {
             showToastMethod("Your message has been sent");
             e.target.reset();
           },
-          (error) => {
-            showToastMethod("Oops something went wrong");
+          () => {
+            showToastMethod("Oops something went wrong, please try again");
           },
-        );
+        )
+        .finally(() => setIsSending(false));
     } else {
       showToastMethod("Please fill out all required fields correctly");
     }
@@ -135,7 +139,9 @@ export default function Contact() {
             />
           </NameEmailWrapper>
           <TextArea type="text" placeholder="Message" name="message" required />
-          <SendBtn type="submit">Send Message</SendBtn>
+          <SendBtn type="submit" disabled={isSending} aria-busy={isSending}>
+            {isSending ? "Sending..." : "Send Message"}
+          </SendBtn>
         </FormWrapper>
       </MessageWrapper>
       <SectionHeader sectionHeading="View on Map" />
@@ -297,6 +303,11 @@ const SendBtn = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.accentTranslucent};
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
 
