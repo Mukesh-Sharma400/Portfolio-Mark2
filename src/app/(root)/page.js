@@ -211,7 +211,7 @@ export default function Home() {
           ))}
         </MyDesc>
         <Location>
-          <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
+          <i className="bi bi-geo-alt-fill"></i> New Navi Mumbai, India
         </Location>
         <MyStory>
           <b>Full Stack Developer</b> specialized in delivering{" "}
