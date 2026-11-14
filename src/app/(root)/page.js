@@ -1,36 +1,36 @@
 "use client";
 
-import sql from "#/sql.png";
+import sql from "#/sql.webp";
 import Link from "next/link";
-import node from "#/node.jpg";
-import next from "#/next.jpg";
-import mongo from "#/mongo.png";
+import node from "#/node.webp";
+import next from "#/next.webp";
+import mongo from "#/mongo.webp";
 import { useState } from "react";
 import react from "#/react.webp";
 import copy from "clipboard-copy";
-import express from "#/express.jpg";
-import angular from "#/angular.jpg";
+import express from "#/express.webp";
+import angular from "#/angular.webp";
 import styled from "styled-components";
-import mjinterior from "#/mjinterior.png";
+import mjinterior from "#/mjinterior.webp";
 import { useRouter } from "next/navigation";
-import aliKarim from "#/ali-karim-sayed.png";
+import aliKarim from "#/ali-karim-sayed.webp";
 import { Toast } from "@/app/components/Toast";
-import memories from "#/memories-thumbnail.jpg";
-import appavengers from "#/app-avengers-logo.jpg";
-import nitinPrajapati from "#/nitin-prajapati.jpg";
-import pratimPabrekar from "#/pratim-pabrekar.jpeg";
+import memories from "#/memories-thumbnail.webp";
+import appavengers from "#/app-avengers-logo.webp";
+import nitinPrajapati from "#/nitin-prajapati.webp";
+import pratimPabrekar from "#/pratim-pabrekar.webp";
 import BaseLayout from "@/app/components/BaseLayout";
 import { SkillItem } from "@/app/components/SkillItem";
-import socialnetwork from "#/socialnetwork-thumbnail.jpg";
+import socialnetwork from "#/socialnetwork-thumbnail.webp";
 import { ProjectCard } from "@/app/components/ProjectCard";
-import opinion from "#/opinion-trading-league-thumbnail.png";
+import opinion from "#/opinion-trading-league-thumbnail.webp";
 import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 import { SectionHeader } from "@/app/components/SectionHeader";
 import { TestimonialCard } from "@/app/components/TestimonialCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function Home() {
-  const router = new useRouter();
+  const router = useRouter();
   const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
@@ -117,13 +117,13 @@ export default function Home() {
     {
       name: "SocialNetwork Web App",
       imageSrc: socialnetwork,
-      href: "/projects/socialnetwork",
+      href: "/projects/social-network",
       description: "Social Media Web Application",
     },
     {
       name: "Memories Web App",
       imageSrc: memories,
-      href: "/projects/memories",
+      href: "/projects/memories-webapp",
       description: "Social Blog Web Application",
     },
   ];
@@ -179,7 +179,7 @@ export default function Home() {
 
   return (
     <BaseLayout>
-      <ToastWrapper showToast={showToast}>
+      <ToastWrapper $showToast={showToast}>
         <Toast message="Email copied to clipboard" />
       </ToastWrapper>
       <IntroWrapper>
@@ -211,7 +211,7 @@ export default function Home() {
           ))}
         </MyDesc>
         <Location>
-          <i className="bi bi-geo-alt-fill"></i> New Navi Mumbai, India
+          <i className="bi bi-geo-alt-fill"></i> Navi Mumbai, India
         </Location>
         <MyStory>
           <b>Full Stack Developer</b> specialized in delivering{" "}
@@ -289,7 +289,7 @@ export default function Home() {
 
 const ToastWrapper = styled.div`
   position: fixed;
-  top: ${(props) => (props.showToast ? "7%" : "-20%")};
+  top: ${(props) => (props.$showToast ? "7%" : "-20%")};
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;

@@ -2,6 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import { Resume } from "./Resume";
+import Tooltips from "./Tooltips";
 import styled from "styled-components";
 
 export default function BaseLayout({ children }) {
@@ -16,6 +17,7 @@ export default function BaseLayout({ children }) {
         </div>
       </MainContent>
       <Resume />
+      <Tooltips />
     </DisplayWrapper>
   );
 }

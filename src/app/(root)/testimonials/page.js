@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import styled from "styled-components";
-import mjinterior from "#/mjinterior.png";
-import amanSharma from "#/aman-sharma.jpg";
-import aliKarim from "#/ali-karim-sayed.png";
-import appavengers from "#/app-avengers-logo.jpg";
-import nitinPrajapati from "#/nitin-prajapati.jpg";
-import pratimPabrekar from "#/pratim-pabrekar.jpeg";
+import mjinterior from "#/mjinterior.webp";
+import amanSharma from "#/aman-sharma.webp";
+import aliKarim from "#/ali-karim-sayed.webp";
+import appavengers from "#/app-avengers-logo.webp";
+import nitinPrajapati from "#/nitin-prajapati.webp";
+import pratimPabrekar from "#/pratim-pabrekar.webp";
 import BaseLayout from "@/app/components/BaseLayout";
-import malePlaceholder from "#/male-placeholder.jpg";
-import femalePlaceholder from "#/female-placeholder.jpg";
+import malePlaceholder from "#/male-placeholder.webp";
+import femalePlaceholder from "#/female-placeholder.webp";
 import { PageHeader } from "@/app/components/PageHeader";
 import { TestimonialCard } from "@/app/components/TestimonialCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";

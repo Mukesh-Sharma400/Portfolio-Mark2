@@ -1,22 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import { uiState } from "%/uiSlice";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import youtube from "#/youtube-thumbnail.png";
-import netflix from "#/netflix-thumbnail.jpg";
-import memories from "#/memories-thumbnail.jpg";
-import ecommerce from "#/ecommerce-thumbnail.jpg";
+import youtube from "#/youtube-thumbnail.webp";
+import netflix from "#/netflix-thumbnail.webp";
+import memories from "#/memories-thumbnail.webp";
+import ecommerce from "#/ecommerce-thumbnail.webp";
 import dashboard from "#/dashboard-thumbnail.webp";
-import mjinterior from "#/mjinterior-thumbnail.png";
-import primevideo from "#/primevideo-thumbnail.jpg";
+import mjinterior from "#/mjinterior-thumbnail.webp";
+import primevideo from "#/primevideo-thumbnail.webp";
 import BaseLayout from "@/app/components/BaseLayout";
 import { BackHeader } from "@/app/components/BackHeader";
-import socialnetwork from "#/socialnetwork-thumbnail.jpg";
-import stackoverflow from "#/stack-overflow-thumbnail.jpg";
-import opinion from "#/opinion-trading-league-thumbnail.png";
+import socialnetwork from "#/socialnetwork-thumbnail.webp";
+import stackoverflow from "#/stack-overflow-thumbnail.webp";
+import opinion from "#/opinion-trading-league-thumbnail.webp";
 import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 
 export default function ProjectPage({ params }) {
@@ -159,6 +160,7 @@ export default function ProjectPage({ params }) {
   };
 
   const project = PROJECTS[slug];
+  if (!project) notFound();
 
   return (
     <BaseLayout>

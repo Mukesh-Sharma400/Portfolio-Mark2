@@ -1,19 +1,19 @@
 "use client";
 
 import styled from "styled-components";
-import youtube from "#/youtube-thumbnail.png";
-import netflix from "#/netflix-thumbnail.jpg";
-import memories from "#/memories-thumbnail.jpg";
-import ecommerce from "#/ecommerce-thumbnail.jpg";
+import youtube from "#/youtube-thumbnail.webp";
+import netflix from "#/netflix-thumbnail.webp";
+import memories from "#/memories-thumbnail.webp";
+import ecommerce from "#/ecommerce-thumbnail.webp";
 import dashboard from "#/dashboard-thumbnail.webp";
-import mjinterior from "#/mjinterior-thumbnail.png";
-import primevideo from "#/primevideo-thumbnail.jpg";
+import mjinterior from "#/mjinterior-thumbnail.webp";
+import primevideo from "#/primevideo-thumbnail.webp";
 import BaseLayout from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
-import socialnetwork from "#/socialnetwork-thumbnail.jpg";
-import stackoverflow from "#/stack-overflow-thumbnail.jpg";
+import socialnetwork from "#/socialnetwork-thumbnail.webp";
+import stackoverflow from "#/stack-overflow-thumbnail.webp";
 import { ProjectCard } from "@/app/components/ProjectCard";
-import opinion from "#/opinion-trading-league-thumbnail.png";
+import opinion from "#/opinion-trading-league-thumbnail.webp";
 import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 
 export default function Projects() {

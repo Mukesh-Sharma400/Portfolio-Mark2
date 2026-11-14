@@ -1,23 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import valuefy from "#/valuefy.jpeg";
+import valuefy from "#/valuefy.webp";
 import styled from "styled-components";
-import playerzpot from "#/playerzpot.jpg";
-import nullclass from "#/nullclass-logo.png";
-import hasbasoft from "#/hasbasoft-logo.png";
-import appavengers from "#/app-avengers-logo.jpg";
+import playerzpot from "#/playerzpot.webp";
+import nullclass from "#/nullclass-logo.webp";
+import hasbasoft from "#/hasbasoft-logo.webp";
+import appavengers from "#/app-avengers-logo.webp";
 import React, { useEffect, useState } from "react";
 import BaseLayout from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { SectionHeader } from "@/app/components/SectionHeader";
-import certificateofnetflix from "#/certificate-of-netflix.png";
-import certificateoftraining from "#/certificate-of-training.png";
-import certificateofdicegame from "#/certificate-of-dicegame.png";
+import certificateofnetflix from "#/certificate-of-netflix.webp";
+import certificateoftraining from "#/certificate-of-training.webp";
+import certificateofdicegame from "#/certificate-of-dicegame.webp";
 import { CertificateCard } from "@/app/components/CertificateCard";
-import certificateofecommerce from "#/certificate-of-ecommerce.png";
-import certificateofinternship from "#/certificate-of-internship.png";
-import certificateofmusicwithjs from "#/certificate-of-musicwithjs.png";
+import certificateofecommerce from "#/certificate-of-ecommerce.webp";
+import certificateofinternship from "#/certificate-of-internship.webp";
+import certificateofmusicwithjs from "#/certificate-of-musicwithjs.webp";
 
 export default function Experience() {
   const [screenWidth, setScreenWidth] = useState(

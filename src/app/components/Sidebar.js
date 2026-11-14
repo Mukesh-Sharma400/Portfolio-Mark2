@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
 import { usePathname } from "next/navigation";
-import profilePic from "#/profile-picture-new.jpg";
+import profilePic from "#/profile-picture.webp";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -57,15 +56,6 @@ export default function Sidebar() {
     { path: "/testimonials", label: "Testimonials" },
     { path: "/contact", label: "Contact" },
   ];
-
-  useEffect(() => {
-    const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
-    );
-    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
-      return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
 
   return (
     <DisplayWrapper>

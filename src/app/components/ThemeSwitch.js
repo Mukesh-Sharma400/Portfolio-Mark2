@@ -13,15 +13,6 @@ export default function ThemeSwitch() {
     setIsDarkMode(theme === "dark");
   }, [theme]);
 
-  useEffect(() => {
-    const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    );
-    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
-      return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
-
   const handleToggle = () => {
     const newTheme = isDarkMode ? "light" : "dark";
     dispatch(themeFn(newTheme));
@@ -33,13 +24,11 @@ export default function ThemeSwitch() {
     <div className="d-flex align-items-center justify-content-center">
       <ToggleLabel
         className="shadow"
-        htmlFor="switch"
         data-bs-toggle="tooltip"
         data-bs-title="Switch Theme"
         data-bs-custom-class="custom-tooltip"
       >
         <StyledSwitch
-          id="switch"
           type="checkbox"
           checked={!isDarkMode}
           onChange={handleToggle}

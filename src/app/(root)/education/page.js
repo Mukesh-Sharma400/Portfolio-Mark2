@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import scct from "#/scct-logo.jpeg";
+import scct from "#/scct-logo.webp";
 import pace from "#/pace-logo.webp";
 import tilak from "#/tilak-logo.webp";
 import styled from "styled-components";
@@ -10,8 +10,8 @@ import BaseLayout from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { SectionHeader } from "@/app/components/SectionHeader";
 import { CertificateCard } from "@/app/components/CertificateCard";
-import certificateofbrainstorm from "#/certificate-of-brainstorm.png";
-import certificateofaptitudetest from "#/certificate-of-aptitudetest.png";
+import certificateofbrainstorm from "#/certificate-of-brainstorm.webp";
+import certificateofaptitudetest from "#/certificate-of-aptitudetest.webp";
 
 export default function Education() {
   const [screenWidth, setScreenWidth] = useState(

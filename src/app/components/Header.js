@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import ThemeSwitch from "./ThemeSwitch";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
-import profilePic from "#/profile-picture-new.jpg";
+import profilePic from "#/profile-picture.webp";
 
 export default function Header() {
   const pathname = usePathname();
@@ -63,15 +63,6 @@ export default function Header() {
     setContentVisible((prev) => !prev);
   };
 
-  useEffect(() => {
-    const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
-    );
-    const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
-      return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
-
   return (
     <DisplayWrapper>
       <HeaderWrapper>
@@ -109,7 +100,7 @@ export default function Header() {
           </HamburgerWrapper>
         </SwitchMenuWrapper>
       </HeaderWrapper>
-      <ContentWrapper isVisible={contentVisible}>
+      <ContentWrapper $isVisible={contentVisible}>
         <RoutesWrapper className="gap-1">
           {routes.map((route, index) => (
             <Route
@@ -295,11 +286,11 @@ const HamburgerInput = styled.input`
 `;
 
 const ContentWrapper = styled.div`
-  height: ${(props) => (props.isVisible ? "calc(100vh - 90px)" : "0px")};
+  height: ${(props) => (props.$isVisible ? "calc(100vh - 90px)" : "0px")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: ${(props) => (props.isVisible ? "20px" : "0px")};
+  padding-top: ${(props) => (props.$isVisible ? "20px" : "0px")};
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 `;
