@@ -27,24 +27,12 @@ const DisplayWrapper = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor201
-      : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  background-color: ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor202
-        : theme.darkMode.blackColor202};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   }
 `;

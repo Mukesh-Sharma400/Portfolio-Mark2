@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import { store } from "./redux";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import Theme from "@/app/components/Theme";
+import { ThemeProvider } from "@/app/components/ThemeProvider";
 import { persistStore } from "redux-persist";
 import StyledComponentsRegistry from "./registry";
 import { PersistGate } from "redux-persist/integration/react";
@@ -21,7 +21,7 @@ export function Providers({ children }) {
     <Provider store={store}>
       <PersistGate loading={false} persistor={persistor}>
         <StyledComponentsRegistry>
-          <Theme>{children}</Theme>
+          <ThemeProvider>{children}</ThemeProvider>
         </StyledComponentsRegistry>
       </PersistGate>
     </Provider>

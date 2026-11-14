@@ -1,17 +1,13 @@
 "use client";
 
+import { educationCertificates, educations } from "@/app/data/education";
 import Image from "next/image";
-import scct from "#/scct-logo.webp";
-import pace from "#/pace-logo.webp";
-import tilak from "#/tilak-logo.webp";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import BaseLayout from "@/app/components/BaseLayout";
+import { BaseLayout } from "@/app/components/BaseLayout";
 import { PageHeader } from "@/app/components/PageHeader";
 import { SectionHeader } from "@/app/components/SectionHeader";
 import { CertificateCard } from "@/app/components/CertificateCard";
-import certificateofbrainstorm from "#/certificate-of-brainstorm.webp";
-import certificateofaptitudetest from "#/certificate-of-aptitudetest.webp";
 
 export default function Education() {
   const [screenWidth, setScreenWidth] = useState(
@@ -33,84 +29,33 @@ export default function Education() {
     };
   }, []);
 
-  const educationsData = [
-    {
-      degree:
-        screenWidth > 500
-          ? "Bachelors in Information Technology"
-          : "Bachelors in I.T.",
-      imageSrc: scct,
-      alt:
-        screenWidth > 500
-          ? "Sanpada College of Commerce & Technology"
-          : "S.C.C.T.",
-      period: "09/2020 - 05/2023",
-      college:
-        screenWidth > 500
-          ? "Sanpada College of Commerce & Technology"
-          : "S.C.C.T.",
-      location: "Sanpada",
-      content:
-        "I always had a passion for web development and acquired skills in various web technologies. I have created many websites, which impressed all my colleagues and professors. I became a sought-after web developer, proving that hard work and dedication can lead to success.",
-    },
-    {
-      degree: screenWidth > 500 ? "Higher School Certification" : "H.S.C.",
-      imageSrc: pace,
-      alt: "Pace Education Society",
-      period: "06/2016 - 05/2018",
-      college: "Pace Education Society",
-      location: "Nerul",
-      content:
-        "I was always fascinated by the mysteries of the universe. Despite not being the smartest student in my class, I spend every free moment delving into books and videos on cosmology and astrophysics.",
-    },
-    {
-      degree: screenWidth > 500 ? "Secondary School Certification" : "S.S.C.",
-      imageSrc: tilak,
-      alt: "Tilak International School",
-      period: "06/2015 - 03/2016",
-      college: "Tilak International School",
-      location: "Ghansoli",
-      content:
-        "I always had a keen interest in computers and technology. I used to participate in a school computer science competition despite my lack of confidence. I studied hard, boosting my confidence and setting me on a path towards a successful career in technology.",
-    },
-  ];
-
-  const certificatesData = [
-    {
-      title: "Certificate of Brain Storm",
-      imageSrc: certificateofbrainstorm,
-      alt: "Certificate of Brain Storm",
-      description:
-        "During my second year in Bachelors, I participated in the Brain Storm event, a competitive academic challenge designed to test and enhance problem-solving and critical thinking skills. I successfully secured a Certificate of Appreciation by scoring 80%, reflecting my strong analytical abilities and dedication to continuous learning in the field of IT.",
-    },
-    {
-      title: "Certificate of Aptitude Test",
-      imageSrc: certificateofaptitudetest,
-      alt: "Certificate of Aptitude Test",
-      description:
-        "During my first year in Bachelors, I took part in an Aptitude Test designed to evaluate logical reasoning, quantitative skills, and problem-solving abilities. I achieved an impressive score of 93%, earning a Certificate of Appreciation. This accomplishment underscores my strong analytical skills, quick thinking, and proficiency in handling challenging scenarios.",
-    },
-  ];
-
   return (
     <BaseLayout>
       <PageHeader pageData={pageData} />
       <EducationsWrapper>
-        {educationsData.map((education, index) => (
+        {educations.map((education, index) => (
           <React.Fragment key={index}>
             <EducationWrapper>
               <EducationImageNameWrapper>
                 <EducationImage
                   data-aos="fade-left"
                   className="rounded-3"
-                  src={education.imageSrc}
+                  src={education.image}
                   alt={education.alt}
                   width={65}
                   height={65}
                 />
                 <div style={{ width: "100%" }}>
-                  <EducationName>{education.degree}</EducationName>
-                  <College>{education.college}</College>
+                  <EducationName>
+                    {screenWidth > 500
+                      ? education.degree
+                      : (education.degreeShort ?? education.degree)}
+                  </EducationName>
+                  <College>
+                    {screenWidth > 500
+                      ? education.college
+                      : (education.collegeShort ?? education.college)}
+                  </College>
                   <TimeLocationWrapper>
                     <Time>
                       <i className="bi bi-calendar3"></i>
@@ -125,13 +70,13 @@ export default function Education() {
               </EducationImageNameWrapper>
               <Content>{education.content}</Content>
             </EducationWrapper>
-            {index < educationsData.length - 1 && <Divider />}
+            {index < educations.length - 1 && <Divider />}
           </React.Fragment>
         ))}
       </EducationsWrapper>
       <SectionHeader sectionHeading="Certificates" />
       <CertificatesWrapper>
-        {certificatesData.map((certificate, index) => (
+        {educationCertificates.map((certificate, index) => (
           <CertificateCard key={index} certificate={certificate} />
         ))}
       </CertificatesWrapper>
@@ -176,19 +121,13 @@ const EducationImage = styled(Image)`
 
 const EducationName = styled.p`
   font-size: 16px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
 const College = styled.p`
   font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -207,10 +146,7 @@ const TimeLocationWrapper = styled.div`
 
 const Time = styled.p`
   font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 
   & > i {
@@ -220,10 +156,7 @@ const Time = styled.p`
 
 const Location = styled.p`
   font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 
   & > i {
@@ -235,20 +168,14 @@ const Content = styled.p`
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
 
 const Divider = styled.div`
   width: 100%;
   height: 2px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor201
-      : theme.darkMode.blackColor201};
+  background-color: ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 `;
 

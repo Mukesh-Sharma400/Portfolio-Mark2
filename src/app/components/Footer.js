@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function Footer() {
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,24 +18,14 @@ const DisplayWrapper = styled.div`
   font-size: 14px;
   margin-top: 100px;
   padding-top: 30px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor200
-      : theme.darkMode.greyColor100};
-  border-top: 1px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.colors.textMuted};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 `;
 
 const Route = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 
   &:hover {

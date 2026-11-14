@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const SkillItem = ({ skill, index }) => {
   return (
     <Skill data-aos="fade-right" data-aos-delay={`${(index + 1) * 100}`}>
-      <SkillImage src={skill.imageSrc} alt={skill.name} />
+      <SkillImage src={skill.image} alt={skill.name} />
       {skill.name}
     </Skill>
   );
@@ -20,14 +20,8 @@ const Skill = styled.div`
   text-transform: uppercase;
   border-radius: 5px;
   padding-bottom: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 426px) {

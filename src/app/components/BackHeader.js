@@ -22,11 +22,7 @@ const BackHeaderWrapper = styled.div`
   width: 100%;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -40,25 +36,16 @@ const BackBtn = styled(Link)`
   gap: 5px;
   border-radius: 10px;
   text-decoration: none;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor200
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textMuted};
   background-color: transparent;
   transition: all 0.5s ease-in-out;
 
   span {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
+    color: ${({ theme }) => theme.colors.textPrimary};
     transition: all 0.5s ease-in-out;
   }
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 `;

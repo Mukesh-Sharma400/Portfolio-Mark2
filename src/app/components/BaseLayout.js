@@ -1,11 +1,11 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { Sidebar } from "./Sidebar";
 import { Resume } from "./Resume";
-import Tooltips from "./Tooltips";
+import { Tooltips } from "./Tooltips";
 import styled from "styled-components";
 
-export default function BaseLayout({ children }) {
+export function BaseLayout({ children }) {
   return (
     <DisplayWrapper>
       <Header />
@@ -25,10 +25,7 @@ export default function BaseLayout({ children }) {
 const DisplayWrapper = styled.div`
   width: 100%;
   display: flex;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor200
-      : theme.darkMode.blackColor200};
+  background-color: ${({ theme }) => theme.colors.background};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 768px) {
@@ -41,10 +38,7 @@ const MainContent = styled.div`
   width: calc(80% - 20px);
   margin: 20px 20px 20px auto;
   padding: 100px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.globalColors.whiteColor
-      : theme.darkMode.blackColor100};
+  background-color: ${({ theme }) => theme.colors.surface};
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1024px) {

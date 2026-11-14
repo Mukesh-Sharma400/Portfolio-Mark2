@@ -1,37 +1,24 @@
 "use client";
 
-import sql from "#/sql.webp";
+import { profile } from "@/app/data/site";
+import { featuredSkills } from "@/app/data/skills";
+import { featuredProjectCards } from "@/app/data/projects";
+import { featuredTestimonials } from "@/app/data/testimonials";
 import Link from "next/link";
-import node from "#/node.webp";
-import next from "#/next.webp";
-import mongo from "#/mongo.webp";
 import { useState } from "react";
-import react from "#/react.webp";
 import copy from "clipboard-copy";
-import express from "#/express.webp";
-import angular from "#/angular.webp";
 import styled from "styled-components";
-import mjinterior from "#/mjinterior.webp";
 import { useRouter } from "next/navigation";
-import aliKarim from "#/ali-karim-sayed.webp";
 import { Toast } from "@/app/components/Toast";
-import memories from "#/memories-thumbnail.webp";
-import appavengers from "#/app-avengers-logo.webp";
-import nitinPrajapati from "#/nitin-prajapati.webp";
-import pratimPabrekar from "#/pratim-pabrekar.webp";
-import BaseLayout from "@/app/components/BaseLayout";
+import { BaseLayout } from "@/app/components/BaseLayout";
 import { SkillItem } from "@/app/components/SkillItem";
-import socialnetwork from "#/socialnetwork-thumbnail.webp";
 import { ProjectCard } from "@/app/components/ProjectCard";
-import opinion from "#/opinion-trading-league-thumbnail.webp";
-import npsmutualfund from "#/nps-mutual-funds-thumbnail.webp";
 import { SectionHeader } from "@/app/components/SectionHeader";
 import { TestimonialCard } from "@/app/components/TestimonialCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function Home() {
   const router = useRouter();
-  const emailAddress = "mksh400@gmail.com";
   const [showToast, setShowToast] = useState(false);
 
   const nameArray = [
@@ -84,7 +71,7 @@ export default function Home() {
   };
 
   const handleCopyEmail = () => {
-    const emailToCopy = `${emailAddress}`;
+    const emailToCopy = profile.email;
     copy(emailToCopy);
     showToastMethod();
   };
@@ -100,82 +87,6 @@ export default function Home() {
       router.push("/testimonials");
     }
   };
-
-  const projectsData = [
-    {
-      name: "NPS & Mutual Fund Module",
-      imageSrc: npsmutualfund,
-      href: "/projects/nps-mutual-fund-module",
-      description: "Valuefy Technologies Pvt Ltd",
-    },
-    {
-      name: "Opinion Trading & League",
-      imageSrc: opinion,
-      href: "/projects/opinion-trading-league",
-      description: "Playerzpot Media Pvt Ltd",
-    },
-    {
-      name: "SocialNetwork Web App",
-      imageSrc: socialnetwork,
-      href: "/projects/social-network",
-      description: "Social Media Web Application",
-    },
-    {
-      name: "Memories Web App",
-      imageSrc: memories,
-      href: "/projects/memories-webapp",
-      description: "Social Blog Web Application",
-    },
-  ];
-
-  const skillsData = [
-    { name: "Mongo", imageSrc: mongo },
-    { name: "Express", imageSrc: express },
-    { name: "React", imageSrc: react },
-    { name: "Node", imageSrc: node },
-    { name: "Next", imageSrc: next },
-    { name: "Angular", imageSrc: angular },
-    { name: "SQL", imageSrc: sql },
-  ];
-
-  const testimonialsData = [
-    {
-      message:
-        "I had the pleasure of working with Mukesh, a highly skilled Node.js developer with remarkable enthusiasm and a great spirit for tackling challenges. Mukesh consistently demonstrates exceptional problem-solving abilities and a deep understanding of backend development, creating efficient, scalable, and maintainable solutions.",
-      image: pratimPabrekar,
-      name: "Pratim Pabrekar",
-      role: "Team Lead",
-    },
-    {
-      message:
-        "Mukesh Sharma consistently demonstrated exceptional aptitude and enthusiasm for learning the ins and outs of the MERN Stack. He exhibited a strong grasp of the core concepts and principles, showcasing their ability to apply them effectively in real-world scenarios. He has exhibited a remarkable work ethic and commitment to excellence throughout the training period. He consistently showed a thirst for knowledge, actively seeking additional resources and going above and beyond to expand their understanding of the MERN Stack. His dedication and passion for learning were evident in their consistent progress and the quality of their work.",
-      image: aliKarim,
-      name: "Ali Karim Sayed",
-      role: "Corporate Trainer",
-    },
-    {
-      message:
-        "We thank Mukesh Sharma for the association with App Avengers. During this employment we rated him as 'Best Candidate'.",
-      image: appavengers,
-      name: "AppAvengers Labs Pvt Ltd",
-      role: "Gujarat, India",
-    },
-    {
-      message:
-        "Mukesh Sharma's website design for our interior decoration company exceeded our expectations. His creativity, professionalism, and attention to detail are remarkable. The website perfectly captures our brand's essence and offers a seamless browsing experience. Mukesh was responsive and dedicated throughout the process. Highly recommend his services!",
-      image: mjinterior,
-      name: "MJ Interior",
-      role: "Interior Decoration Company",
-    },
-
-    {
-      message:
-        "I highly recommend Mukesh as a MERN Stack Developer and would love to work together. Mukesh is amazing at his job! He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. He makes sure that everyone is on the same page and focused on the main goal.",
-      image: nitinPrajapati,
-      name: "Nitin Prajapati",
-      role: "Full Stack Developer",
-    },
-  ];
 
   return (
     <BaseLayout>
@@ -235,7 +146,7 @@ export default function Home() {
       </IntroWrapper>
       <SectionHeader sectionHeading="Hall of Fame: My Best Work" />
       <ProjectsWrapper>
-        {projectsData.map((project, index) => (
+        {featuredProjectCards.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </ProjectsWrapper>
@@ -251,7 +162,7 @@ export default function Home() {
       </ShowMoreWrapper>
       <SectionHeader sectionHeading="Proficiencies & Expertise" />
       <SkillsWrapper>
-        {skillsData.map((skill, index) => (
+        {featuredSkills.map((skill, index) => (
           <SkillItem key={index} skill={skill} index={index} />
         ))}
       </SkillsWrapper>
@@ -267,7 +178,7 @@ export default function Home() {
       <TestimonialsWrapper>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 900: 2 }}>
           <Masonry gutter="16px">
-            {testimonialsData.map((testimonial, index) => (
+            {featuredTestimonials.map((testimonial, index) => (
               <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </Masonry>
@@ -312,14 +223,8 @@ const AvailableBadge = styled.p`
   gap: 10px;
   font-size: 14px;
   border-radius: 15px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greenColor200
-      : theme.darkMode.greenColor200};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greenColor150
-      : theme.darkMode.greenColor150};
+  color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }) => theme.colors.accentSubtle};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -327,28 +232,17 @@ const AvailableDot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greenColor200
-      : theme.darkMode.greenColor200};
+  background-color: ${({ theme }) => theme.colors.accent};
   transition: all 0.5s ease-in-out;
 
   animation: pulse-animation 2s infinite;
 
   @keyframes pulse-animation {
     0% {
-      box-shadow: 0 0 0 0px
-        ${({ theme }) =>
-          theme.currentTheme === "light"
-            ? theme.lightMode.greenColor150
-            : theme.darkMode.greenColor150};
+      box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.accentSubtle};
     }
     100% {
-      box-shadow: 0 0 0 8px
-        ${({ theme }) =>
-          theme.currentTheme === "light"
-            ? theme.lightMode.greenColor150
-            : theme.darkMode.greenColor150};
+      box-shadow: 0 0 0 8px ${({ theme }) => theme.colors.accentSubtle};
     }
   }
 `;
@@ -419,10 +313,7 @@ const MyName = styled.h1`
 
 const MyDesc = styled.h1`
   line-height: 40px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -436,18 +327,12 @@ const MyStory = styled.p`
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 
   & > b {
     font-weight: 600;
-    color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor150
-        : theme.globalColors.whiteColor};
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 `;
 
@@ -468,22 +353,13 @@ const PrimaryBtn = styled(Link)`
   justify-content: center;
   border-radius: 10px;
   text-decoration: none;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.globalColors.whiteColor
-      : theme.globalColors.whiteColor};
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor300
-      : theme.darkMode.blackColor201};
+  color: ${({ theme }) => theme.palette.white};
+  background-color: ${({ theme }) => theme.colors.buttonPrimary};
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transition: background-color 0.5s ease-in-out !important;
-    background-color: ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.globalColors.blackColor
-        : theme.darkMode.blackColor202};
+    background-color: ${({ theme }) => theme.colors.buttonPrimaryHover};
   }
 `;
 
@@ -496,26 +372,15 @@ const SecondaryBtn = styled.button`
   justify-content: center;
   gap: 5px;
   border-radius: 10px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   background-color: transparent;
-  border: 1.5px solid
-    ${({ theme }) =>
-      theme.currentTheme === "light"
-        ? theme.lightMode.whiteColor201
-        : theme.darkMode.blackColor201} !important;
+  border: 1.5px solid ${({ theme }) => theme.colors.border} !important;
   transition: all 0.5s ease-in-out;
 
   &:hover {
     transition: border 0.5s ease-in-out !important;
     transition-delay: none !important;
-    border: 1.5px solid
-      ${({ theme }) =>
-        theme.currentTheme === "light"
-          ? theme.lightMode.greyColor100
-          : theme.darkMode.greyColor100} !important;
+    border: 1.5px solid ${({ theme }) => theme.colors.textSecondary} !important;
   }
 `;
 

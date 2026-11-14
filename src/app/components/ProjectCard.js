@@ -6,7 +6,7 @@ export const ProjectCard = ({ project }) => {
   return (
     <Project href={project.href} data-aos="zoom-in-up">
       <ImageWrapper>
-        <ProjectImage src={project.imageSrc} alt={project.name} />
+        <ProjectImage src={project.image} alt={project.name} />
       </ImageWrapper>
       <div>
         <ProjectName>{project.name}</ProjectName>
@@ -46,18 +46,12 @@ const ProjectImage = styled(Image)`
 
 const ProjectName = styled.p`
   font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
 const ProjectDesc = styled.p`
   font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;

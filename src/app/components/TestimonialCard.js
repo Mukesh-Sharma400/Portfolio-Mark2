@@ -27,10 +27,7 @@ const Testimonial = styled.div`
   width: 100%;
   padding: 20px;
   border-radius: 10px;
-  background-color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor202
-      : theme.darkMode.blackColor202};
+  background-color: ${({ theme }) => theme.colors.surfaceTranslucent};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -39,10 +36,7 @@ const Message = styled.div`
   line-height: 20px;
   font-style: italic;
   letter-spacing: 1px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
@@ -57,18 +51,12 @@ const PicNameWrapper = styled.div`
 
 const TestimonialName = styled.p`
   font-size: 14px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.whiteColor150
-      : theme.globalColors.whiteColor};
+  color: ${({ theme }) => theme.colors.textPrimary};
   transition: all 0.5s ease-in-out;
 `;
 
 const TestimonialDesc = styled.p`
   font-size: 12px;
-  color: ${({ theme }) =>
-    theme.currentTheme === "light"
-      ? theme.lightMode.greyColor100
-      : theme.darkMode.greyColor100};
+  color: ${({ theme }) => theme.colors.textSecondary};
   transition: all 0.5s ease-in-out;
 `;
